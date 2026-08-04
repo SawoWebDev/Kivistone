@@ -1,0 +1,75 @@
+/* hero — full-bleed banner image with overlaid text */
+section.story{ padding:0; }
+.story-media{
+  position:relative; width:100%; overflow:hidden;
+  height:clamp(420px,44vw,600px);
+}
+.story-media > img{
+  position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+  object-position:62% 45%;
+  filter:grayscale(15%) contrast(1.05) brightness(0.8);
+}
+.story-scrim{
+  position:absolute; inset:0;
+  background:
+    linear-gradient(100deg, rgba(15,13,10,0.92) 0%, rgba(15,13,10,0.82) 35%, rgba(15,13,10,0.5) 58%, rgba(15,13,10,0.12) 78%, rgba(15,13,10,0) 92%),
+    linear-gradient(0deg, rgba(15,13,10,0.3) 0%, rgba(15,13,10,0) 30%, rgba(15,13,10,0) 70%, rgba(15,13,10,0.3) 100%);
+}
+.story-content{
+  position:relative; z-index:1; height:100%;
+  display:flex; flex-direction:column; justify-content:center;
+  color:var(--ink-inv);
+}
+.story-content > *{ max-width:min(100%,640px); }
+.story-content h1{
+  font-family:var(--font-display); font-weight:700; font-size:clamp(1.9rem,3.4vw,2.7rem);
+  letter-spacing:-0.02em; line-height:1.08; margin:0 0 1.3rem; color:var(--ink-inv);
+}
+.story-content p{ font-size:0.96rem; color:var(--muted-inv); line-height:1.78; margin:0 0 1.3rem; }
+.story-content a.inline-link{ color:var(--gold-light); border-bottom:1px solid var(--gold); font-weight:500; }
+.story-content a.inline-link:hover{ color:var(--gold); }
+.story-content .actions{ display:flex; align-items:center; gap:1.4rem; flex-wrap:wrap; margin-top:0.5rem; }
+@media (max-width:640px){
+  .story-media{ height:clamp(460px,120vw,600px); }
+  .story-scrim{
+    background:
+      linear-gradient(180deg, rgba(15,13,10,0.5) 0%, rgba(15,13,10,0.25) 30%, rgba(15,13,10,0.65) 62%, rgba(15,13,10,0.92) 100%);
+  }
+  .story-content{ justify-content:flex-end; padding-bottom:clamp(1.6rem,6vw,2.4rem); }
+}
+
+/* standards */
+section.standards{ padding:clamp(3.6rem,6vw,4.8rem) 0; }
+.standard-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.6rem; }
+@media (max-width:900px){ .standard-grid{ grid-template-columns:1fr; } }
+.standard-card{
+  background:var(--card); border:1px solid var(--hairline); border-radius:12px;
+  padding:clamp(1.6rem,2.6vw,2rem); box-shadow:var(--shadow);
+}
+.standard-ic{
+  width:46px; height:46px; border-radius:10px; background:var(--bg-dark-2); color:var(--gold-light);
+  display:flex; align-items:center; justify-content:center; font-size:1.05rem; margin-bottom:1.2rem;
+}
+.standard-label{
+  display:block; font-family:var(--font-mono); font-size:0.73rem; letter-spacing:0.05em;
+  text-transform:uppercase; color:var(--faint); margin-bottom:0.5rem;
+}
+.standard-card h3{
+  font-family:var(--font-display); font-weight:700; font-size:1.1rem; letter-spacing:-0.01em;
+  margin:0 0 0.7rem;
+}
+.standard-card p{ font-size:0.92rem; color:var(--muted); line-height:1.72; margin:0; }
+
+/* closing cta — dark banner floating on the light page, same treatment as the Contact hero banner */
+section.about-cta{ padding:clamp(3rem,5vw,4rem) 0 clamp(3.6rem,6vw,4.8rem); }
+.about-cta-card{
+  max-width:900px; margin:0 auto; background:var(--bg-dark-2); color:var(--ink-inv);
+  border-radius:20px; padding:clamp(2rem,4vw,2.8rem); display:flex; align-items:center;
+  justify-content:space-between; gap:2rem; flex-wrap:wrap; box-shadow:var(--shadow-lg);
+}
+.about-cta-card h3{
+  font-family:var(--font-display); font-weight:700; font-size:1.2rem; letter-spacing:-0.01em;
+  margin:0 0 0.4rem; color:var(--ink-inv);
+}
+.about-cta-card p{ font-size:0.9rem; color:var(--muted-inv); line-height:1.6; margin:0; }
+.about-cta-actions{ display:flex; align-items:center; gap:1rem; flex-wrap:wrap; }

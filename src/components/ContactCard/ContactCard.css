@@ -1,0 +1,23 @@
+/* lives inside the dark banner on the contact page, so it stays inverted */
+.contact-card{
+  background:var(--surface-dark); border:1px solid var(--divider-dark); border-radius:14px;
+  padding:1.8rem; display:flex; flex-direction:column;
+}
+.contact-row{ display:flex; align-items:flex-start; gap:0.95rem; padding:1.05rem 0; }
+.contact-row + .contact-row{ border-top:1px solid var(--divider-dark); }
+.contact-row:first-child{ padding-top:0; }
+.contact-row:last-child{ padding-bottom:0; }
+.contact-row .ic{
+  width:38px; height:38px; border-radius:50%; background:rgba(185,155,99,0.12); color:var(--gold-light);
+  display:flex; align-items:center; justify-content:center; font-size:0.9rem; flex-shrink:0;
+}
+.contact-row-body{ display:flex; flex-direction:column; gap:0.28rem; min-width:0; }
+.contact-row span.label{
+  font-family:var(--font-mono); font-size:0.68rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--faint-inv);
+}
+.contact-row a, .contact-row span.value{
+  font-family:var(--font-display); font-weight:600; font-size:0.92rem; color:var(--ink-inv);
+}
+.contact-row span.address{ display:flex; flex-direction:column; font-weight:500; line-height:1.6; }
+.contact-row a{ width:fit-content; transition:color .15s ease; }
+.contact-row a:hover{ color:var(--gold-light); }

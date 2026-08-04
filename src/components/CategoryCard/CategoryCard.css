@@ -1,0 +1,17 @@
+.cat-card{
+  background:var(--card); border-radius:10px; overflow:hidden; box-shadow:var(--shadow);
+  border:1px solid var(--hairline); transition:transform .25s ease, box-shadow .25s ease;
+  display:flex; flex-direction:column;
+}
+.cat-card:hover{ transform:translateY(-4px); box-shadow:0 24px 44px -20px rgba(30,28,22,0.28); }
+.cat-card .img{ aspect-ratio:5/4; overflow:hidden; }
+.cat-card .img img{ width:100%; height:100%; object-fit:cover; transition:transform .5s ease; }
+.cat-card:hover .img img{ transform:scale(1.045); }
+.cat-card .body{ padding:1.4rem 1.4rem 1.5rem; display:flex; flex-direction:column; flex:1; }
+.cat-card h3{ font-family:var(--font-display); font-weight:600; font-size:1.05rem; letter-spacing:-0.008em; margin:0 0 0.9rem; }
+.cat-card .go{
+  margin-top:auto; display:flex; justify-content:space-between; align-items:center; padding-top:1rem;
+  border-top:1px solid var(--hairline); font-family:var(--font-display); font-weight:600; font-size:0.8rem;
+}
+.cat-card .go i{ font-size:0.78rem; transition:transform .2s ease; }
+.cat-card:hover .go i{ transform:translateX(3px); }

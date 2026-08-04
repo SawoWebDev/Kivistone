@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kivistone — Finnish Soapstone Products</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;600;700;800&family=Onest:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+  :root{
+    --bg:#EDECE7; --bg-soft:#F4F3EE; --bg-dark:#1C1B17; --bg-dark-2:#211F1B; --card:#FFFFFF; --card-dark:#28261F;
+    --ink:#211F1B; --ink-secondary:#4C4A43; --muted:#726F65; --faint:#918D80;
+    --ink-inv:#EDEBE2; --muted-inv:#B7B2A2; --faint-inv:#8A8672;
+    --accent:#8C8577; --gold:#B99B63; --gold-light:#D3B888;
+    --divider:#D9D6CC; --hairline:#E5E3DA; --divider-dark:#38362C;
+    --btn-bg:#211F1B; --btn-text:#EDECE7;
+    --shadow: 0 1px 2px rgba(30,28,22,0.04), 0 12px 28px -14px rgba(30,28,22,0.18);
+    --shadow-lg: 0 20px 50px -20px rgba(20,18,14,0.35);
+  }
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:'Onest', sans-serif; -webkit-font-smoothing:antialiased;
+  }
+  img{ display:block; max-width:100%; filter:grayscale(45%) sepia(6%) contrast(1.04) brightness(0.99); }
+  .wrap{ max-width:1240px; margin:0 auto; padding:0 clamp(20px,5vw,56px); }
+  a{ text-decoration:none; color:inherit; }
+
+  /* ---------- glassy header ---------- */
+  header.site{
+    position:sticky; top:0; z-index:50;
+    background:rgba(244,243,238,0.55);
+    backdrop-filter:blur(18px) saturate(180%);
+    -webkit-backdrop-filter:blur(18px) saturate(180%);
+    border-bottom:1px solid rgba(255,255,255,0.5);
+    box-shadow:0 1px 0 rgba(255,255,255,0.6) inset, 0 8px 24px -18px rgba(30,28,22,0.25);
+  }
+  header.site .wrap{ display:flex; align-items:center; justify-content:space-between; padding-top:1.05rem; padding-bottom:1.05rem; }
+  .logo{ font-family:'Red Hat Display',sans-serif; font-weight:700; font-size:1.08rem; letter-spacing:-0.01em; display:flex; align-items:center; gap:0.55rem; }
+  .logo .mark{ width:9px; height:9px; background:var(--gold); display:inline-block; border-radius:1px; }
+  nav.links{ display:flex; gap:2.1rem; }
+  nav.links a{ font-size:0.85rem; color:var(--ink-secondary); font-weight:500; transition:color .15s ease; }
+  nav.links a:hover{ color:var(--ink); }
+  .nav-cta{
+    font-family:'Red Hat Display',sans-serif; font-weight:600; font-size:0.79rem;
+    background:var(--btn-bg); color:var(--btn-text); padding:0.6rem 1.15rem; border-radius:99px;
+    display:inline-flex; align-items:center; gap:0.5rem; box-shadow:var(--shadow);
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .nav-cta:hover{ transform:translateY(-1px); box-shadow:0 10px 22px -10px rgba(30,28,22,0.4); }
+  @media (max-width:860px){ nav.links{ display:none; } }
+
+  /* ---------- buttons (shared, improved) ---------- */
+  .btn-primary{
+    font-family:'Red Hat Display',sans-serif; font-weight:600; font-size:0.88rem;
+    background:var(--btn-bg); color:var(--btn-text); padding:0.95rem 1.8rem; border-radius:99px;
+    display:inline-flex; align-items:center; gap:0.65rem; box-shadow:var(--shadow);
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .btn-primary:hover{ transform:translateY(-2px); box-shadow:0 16px 30px -14px rgba(30,28,22,0.4); }
+  .btn-text{ font-family:'Red Hat Display',sans-serif; font-weight:600; font-size:0.86rem; border-bottom:1px solid var(--divider); padding-bottom:2px; transition:border-color .15s ease; }
+  .btn-text:hover{ border-color:var(--ink); }
+  .btn-gold{
+    font-family:'Red Hat Display',sans-serif; font-weight:700; font-size:0.92rem;
+    background:linear-gradient(135deg, var(--gold-light), var(--gold)); color:#1C1B17;
+    padding:1.05rem 2.1rem; border-radius:99px; display:inline-flex; align-items:center; gap:0.7rem;
+    box-shadow:0 14px 30px -12px rgba(185,155,99,0.55);
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .btn-gold:hover{ transform:translateY(-2px); box-shadow:0 18px 36px -12px rgba(185,155,99,0.65); }
+  .btn-outline{
+    font-family:'Red Hat Display',sans-serif; font-weight:600; font-size:0.86rem;
+    background:transparent; color:var(--ink); padding:0.9rem 1.7rem; border-radius:99px;
+    border:1px solid var(--divider); display:inline-flex; align-items:center; gap:0.6rem;
+    transition:border-color .15s ease, background .15s ease;
+  }
+  .btn-outline:hover{ border-color:var(--ink); background:rgba(0,0,0,0.02); }
+  .btn-outline-inv{
+    font-family:'Red Hat Display',sans-serif; font-weight:600; font-size:0.86rem;
+    background:transparent; color:var(--ink-inv); padding:0.9rem 1.7rem; border-radius:99px;
+    border:1px solid var(--divider-dark); display:inline-flex; align-items:center; gap:0.6rem;
+    transition:border-color .15s ease, background .15s ease;
+  }
+  .btn-outline-inv:hover{ border-color:var(--gold); background:rgba(185,155,99,0.08); }
+
+  /* ---------- hero ---------- */
+  section.hero{ padding:clamp(3.4rem,7vw,5.8rem) 0 clamp(3.6rem,6vw,5rem); }
+  section.hero .wrap{ display:grid; grid-template-columns:1fr 0.92fr; gap:3.6rem; align-items:center; }
+  @media (max-width:900px){ section.hero .wrap{ grid-template-columns:1fr; } }
+  .hero h1{ font-family:'Red Hat Display',sans-serif; font-weight:700; letter-spacing:-0.022em; font-size:clamp(2.2rem,4.6vw,3.5rem); line-height:1.05; margin:0 0 1.15rem; }
+  .hero .lede{ font-size:1.02rem; color:var(--muted); line-height:1.72; max-width:46ch; margin:0 0 2rem; }
+  .hero-actions{ display:flex; align-items:center; gap:1.6rem; flex-wrap:wrap; }
+  .hero-image{ border-radius:10px; overflow:hidden; box-shadow:var(--shadow-lg); aspect-ratio:4/5; }
+  .hero-image img{ width:100%; height:100%; object-fit:cover; }
+
+  /* ---------- section headers (no eyebrow) ---------- */
+  .section-head{ margin-bottom:2.6rem; max-width:60ch; }
+  .section-head h2{ font-family:'Red Hat Display',sans-serif; font-weight:700; font-size:clamp(1.5rem,2.6vw,2rem); letter-spacing:-0.015em; margin:0 0 0.9rem; }
+  .section-head p{ font-size:0.95rem; color:var(--muted); line-height:1.65; margin:0; }
+
+  /* ---------- alternating section base styles ---------- */
+  section.light{ background:var(--bg-soft); }
+  section.dark{ background:var(--bg-dark-2); color:var(--ink-inv); }
+  section.dark .section-head h2{ color:var(--ink-inv); }
+  section.dark .section-head p{ color:var(--muted-inv); }
+
+  /* ---------- about soapstone (dark) ---------- */
+  section.about{ padding:clamp(3.4rem,6vw,4.8rem) 0; }
+  .about-wrap{ display:grid; grid-template-columns:0.85fr 1fr; gap:3.4rem; align-items:center; }
+  @media (max-width:900px){ .about-wrap{ grid-template-columns:1fr; } .about-wrap .about-image{ order:-1; } }
+  .about-image{ border-radius:8px; overflow:hidden; box-shadow:var(--shadow-lg); aspect-ratio:4/5; }
+  .about-image img{ width:100%; height:100%; object-fit:cover; }
+  .about-text h2{ font-family:'Red Hat Display',sans-serif; font-weight:700; font-size:clamp(1.5rem,2.6vw,2rem); letter-spacing:-0.015em; margin:0 0 1.3rem; color:var(--ink-inv); }
+  .about-text p{ font-size:0.94rem; color:var(--muted-inv); line-height:1.78; margin:0 0 1.1rem; }
+  .about-text a.inline-link{ color:var(--gold-light); border-bottom:1px solid var(--gold); font-weight:500; }
+  .about-text a.inline-link:hover{ color:var(--gold); }
+
+  /* ---------- categories (light) ---------- */
+  section.categories{ padding:clamp(3.6rem,6vw,4.8rem) 0; }
+  .card-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.6rem; }
+  @media (max-width:900px){ .card-grid{ grid-template-columns:1fr 1fr; } }
+  @media (max-width:640px){ .card-grid{ grid-template-columns:1fr; } }
+  .cat-card{
+    background:var(--card); border-radius:10px; overflow:hidden; box-shadow:var(--shadow);
+    border:1px solid var(--hairline); transition:transform .25s ease, box-shadow .25s ease;
+    display:flex; flex-direction:column;
+  }
+  .cat-card:hover{ transform:translateY(-4px); box-shadow:0 24px 44px -20px rgba(30,28,22,0.28); }
+  .cat-card .img{ aspect-ratio:5/4; overflow:hidden; }
+  .cat-card .img img{ width:100%; height:100%; object-fit:cover; transition:transform .5s ease; }
+  .cat-card:hover .img img{ transform:scale(1.045); }
+  .cat-card .body{ padding:1.4rem 1.4rem 1.5rem; display:flex; flex-direction:column; flex:1; }
+  .cat-card h3{ font-family:'Red Hat Display',sans-serif; font-weight:600; font-size:1.05rem; letter-spacing:-0.008em; margin:0 0 0.9rem; }
+  .cat-card .go{ margin-top:auto; display:flex; justify-content:space-between; align-items:center; padding-top:1rem; border-top:1px solid var(--hairline); font-family:'Red Hat Display',sans-serif; font-weight:600; font-size:0.8rem; }
+  .cat-card .go i{ font-size:0.78rem; transition:transform .2s ease; }
+  .cat-card:hover .go i{ transform:translateX(3px); }
+
+  /* ---------- about us + contact (dark, combined) ---------- */
+  section.story-contact{ padding:clamp(3.6rem,6vw,4.8rem) 0; }
+  .sc-wrap{ display:grid; grid-template-columns:1.1fr 0.9fr; gap:3.6rem; }
+  @media (max-width:900px){ .sc-wrap{ grid-template-columns:1fr; } }
+  .sc-wrap h2{ font-family:'Red Hat Display',sans-serif; font-weight:700; font-size:clamp(1.5rem,2.6vw,2rem); letter-spacing:-0.015em; margin:0 0 1.2rem; color:var(--ink-inv); }
+  .sc-wrap p{ font-size:0.94rem; color:var(--muted-inv); line-height:1.75; margin:0 0 1.3rem; max-width:48ch; }
+  .contact-card{
+    background:rgba(255,255,255,0.04); border:1px solid var(--divider-dark); border-radius:10px;
+    padding:1.8rem; display:flex; flex-direction:column; gap:1.2rem;
+  }
+  .contact-row{ display:flex; align-items:center; gap:0.9rem; }
+  .contact-row .ic{ width:38px; height:38px; border-radius:50%; background:rgba(185,155,99,0.12); color:var(--gold-light); display:flex; align-items:center; justify-content:center; font-size:0.9rem; flex-shrink:0; }
+  .contact-row div{ display:flex; flex-direction:column; }
+  .contact-row span.label{ font-family:'IBM Plex Mono',monospace; font-size:0.68rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--faint-inv); }
+  .contact-row a, .contact-row span.value{ font-family:'Red Hat Display',sans-serif; font-weight:600; font-size:0.92rem; color:var(--ink-inv); }
+  .contact-row a:hover{ color:var(--gold-light); }
+
+  /* ---------- brochure (white, distinct from dark neighbors) ---------- */
+  section.brochure{ background:#FFFFFF; padding:clamp(3.8rem,6vw,5.2rem) 0; }
+  .brochure-card{
+    max-width:900px; margin:0 auto; background:var(--bg-soft); border:1px solid var(--hairline);
+    border-radius:16px; padding:clamp(2.2rem,4vw,3.2rem); display:flex; align-items:center;
+    justify-content:space-between; gap:2rem; flex-wrap:wrap; box-shadow:var(--shadow);
+  }
+  .brochure-info{ display:flex; align-items:center; gap:1.3rem; }
+  .brochure-info .file-ic{
+    width:58px; height:58px; border-radius:12px; background:var(--bg-dark-2); color:var(--gold-light);
+    display:flex; align-items:center; justify-content:center; font-size:1.3rem; flex-shrink:0;
+  }
+  .brochure-info h3{ font-family:'Red Hat Display',sans-serif; font-weight:700; font-size:1.2rem; margin:0 0 0.3rem; letter-spacing:-0.01em; }
+  .brochure-info p{ font-family:'IBM Plex Mono',monospace; font-size:0.78rem; color:var(--faint); margin:0; }
+
+  /* ---------- footer (dark) ---------- */
+  footer{ background:var(--bg-dark); color:var(--ink-inv); padding:clamp(3.2rem,5vw,4rem) 0 2.2rem; }
+  footer .logo{ color:var(--ink-inv); margin-bottom:0.9rem; }
+  .footer-grid{ display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:2.4rem; padding-bottom:2.4rem; border-bottom:1px solid var(--divider-dark); }
+  @media (max-width:780px){ .footer-grid{ grid-template-columns:1fr 1fr; } }
+  .footer-grid p.about-blurb{ font-size:0.85rem; color:var(--muted-inv); line-height:1.6; max-width:32ch; }
+  .footer-col h5{ font-family:'IBM Plex Mono',monospace; font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--faint-inv); margin:0 0 1rem; }
+  .footer-col a{ display:block; font-size:0.86rem; color:var(--muted-inv); margin-bottom:0.75rem; transition:color .15s ease; }
+  .footer-col a:hover{ color:var(--ink-inv); }
+  .social-row{ display:flex; flex-wrap:wrap; gap:0.4rem; margin-top:1.6rem; }
+  .social-row a{
+    width:36px; height:36px; border-radius:50%; border:1px solid var(--divider-dark);
+    display:inline-flex; align-items:center; justify-content:center; font-size:0.92rem;
+    color:var(--muted-inv); transition:color .2s ease, border-color .2s ease, background .2s ease;
+  }
+  .social-row a:hover{ color:var(--ink-inv); border-color:var(--gold); background:rgba(185,155,99,0.1); }
+  .footer-bottom{ display:flex; justify-content:space-between; align-items:center; padding-top:1.6rem; flex-wrap:wrap; gap:0.8rem; }
+  .footer-bottom span{ font-family:'IBM Plex Mono',monospace; font-size:0.72rem; color:var(--faint-inv); }
+</style>
+</head>
+<body>
+
+  <header class="site">
+    <div class="wrap">
+      <div class="logo"><span class="mark"></span>Kivistone</div>
+      <nav class="links">
+        <a href="#about">About soapstone</a>
+        <a href="#categories">Categories</a>
+        <a href="#story">About us</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="nav-cta" href="#brochure"><i class="fa-solid fa-arrow-down-to-line"></i>Brochure</a>
+    </div>
+  </header>
+
+  <section class="hero light">
+    <div class="wrap">
+      <div>
+        <h1>Stone, shaped once, kept for generations</h1>
+        <p class="lede">Kivistone carves candle holders, drinkware, warmers, and tableware from Finnish soapstone — a material old enough to outlive trends, hand-finished piece by piece for homes, gifts, and everyday use.</p>
+        <div class="hero-actions">
+          <a class="btn-primary" href="#categories"><i class="fa-solid fa-arrow-right"></i>View the collection</a>
+          <a class="btn-text" href="#about">Learn about soapstone</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="https://picsum.photos/seed/kivistone-hero/900/1100" alt="Finnish soapstone pieces in a minimalist interior">
+      </div>
+    </div>
+  </section>
+
+  <section class="about dark" id="about">
+    <div class="wrap about-wrap">
+      <div class="about-text">
+        <h2>About soapstone</h2>
+        <p>Soapstone is a soft metamorphic rock, high in talc content. For centuries it has been a material of choice for artisans making sculptures, cooking slabs and bowls, and it's widely used for inlaid designs, artistic pieces, and as a heating appliance material. Soapstone stores heat and cold exceptionally well, which makes it well suited to drink coolers, sizzling plates, and pizza stones.</p>
+        <p>Finland is one of the largest suppliers of soapstone in the world, and it's used as a prime material in most heating masonry for fireplaces. The use of soapstone keeps evolving — most sauna heater manufacturers in Finland, like <a class="inline-link" href="http://www.sawo.com/" target="_blank" rel="noopener noreferrer">SAWO</a>, now design electric sauna heaters with soapstone.</p>
+        <p>A scratched soapstone surface is easy to restore. Buffing it with fine-grit sandpaper brings it back to its original finish, and wiping it with mineral oil gives it a darker, richer look.</p>
+      </div>
+      <div class="about-image">
+        <img src="https://picsum.photos/seed/kivistone-quarry/800/1000" alt="Raw soapstone block texture">
+      </div>
+    </div>
+  </section>
+
+  <section class="categories light" id="categories">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>View the categories of Kivistone soapstone products</h2>
+        <p>Browse the full range by category — each collection is hand-finished from the same Finnish soapstone.</p>
+      </div>
+      <div class="card-grid">
+        <a class="cat-card" href="http://www.kivistone.com/?page_id=281" target="_blank" rel="noopener noreferrer">
+          <div class="img"><img src="https://picsum.photos/seed/kivistone-candle/700/560" alt="Candle Holders"></div>
+          <div class="body"><h3>Candle Holders</h3><div class="go"><span>Browse category</span><i class="fa-solid fa-arrow-right"></i></div></div>
+        </a>
+        <a class="cat-card" href="http://www.kivistone.com/?page_id=284" target="_blank" rel="noopener noreferrer">
+          <div class="img"><img src="https://picsum.photos/seed/kivistone-cups/700/560" alt="Cups and Coolers"></div>
+          <div class="body"><h3>Cups and Coolers</h3><div class="go"><span>Browse category</span><i class="fa-solid fa-arrow-right"></i></div></div>
+        </a>
+        <a class="cat-card" href="http://www.kivistone.com/?page_id=286" target="_blank" rel="noopener noreferrer">
+          <div class="img"><img src="https://picsum.photos/seed/kivistone-scent/700/560" alt="Scent Warmer"></div>
+          <div class="body"><h3>Scent Warmer</h3><div class="go"><span>Browse category</span><i class="fa-solid fa-arrow-right"></i></div></div>
+        </a>
+        <a class="cat-card" href="http://www.kivistone.com/?page_id=1257" target="_blank" rel="noopener noreferrer">
+          <div class="img"><img src="https://picsum.photos/seed/kivistone-plates/700/560" alt="Dish Plates"></div>
+          <div class="body"><h3>Dish Plates</h3><div class="go"><span>Browse category</span><i class="fa-solid fa-arrow-right"></i></div></div>
+        </a>
+        <a class="cat-card" href="http://www.kivistone.com/?page_id=522" target="_blank" rel="noopener noreferrer">
+          <div class="img"><img src="https://picsum.photos/seed/kivistone-misc/700/560" alt="Miscellaneous"></div>
+          <div class="body"><h3>Miscellaneous</h3><div class="go"><span>Browse category</span><i class="fa-solid fa-arrow-right"></i></div></div>
+        </a>
+        <a class="cat-card" href="http://www.kivistone.com/" target="_blank" rel="noopener noreferrer">
+          <div class="img"><img src="https://picsum.photos/seed/kivistone-allshop/700/560" alt="Full shop"></div>
+          <div class="body"><h3>View full shop</h3><div class="go"><span>Visit kivistone.com</span><i class="fa-solid fa-arrow-right"></i></div></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="story-contact dark" id="story">
+    <div class="wrap sc-wrap">
+      <div>
+        <h2>About Kivistone</h2>
+        <p>Kivistone began as a small workshop turning raw Finnish soapstone into everyday objects — candle holders, cups, warmers, and dishware — each piece cut, shaped, and finished by hand using stone quarried in Finland.</p>
+        <p>The material does the talking: soapstone holds heat and cold longer than most surfaces, softens with age instead of wearing out, and never quite looks the same twice, since no two blocks carry identical veining.</p>
+        <a class="btn-outline-inv" href="http://www.kivistone.com/" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i>Visit the studio site</a>
+      </div>
+      <div class="contact-card" id="contact">
+        <div class="contact-row">
+          <div class="ic"><i class="fa-solid fa-envelope"></i></div>
+          <div><span class="label">Email</span><a href="mailto:studio@kivistone.fi">studio@kivistone.fi</a></div>
+        </div>
+        <div class="contact-row">
+          <div class="ic"><i class="fa-solid fa-phone"></i></div>
+          <div><span class="label">Phone</span><a href="tel:+35894567210">+358 9 4567 210</a></div>
+        </div>
+        <div class="contact-row">
+          <div class="ic"><i class="fa-solid fa-location-dot"></i></div>
+          <div><span class="label">Studio</span><span class="value">Helsinki, Finland</span></div>
+        </div>
+        <div class="contact-row">
+          <div class="ic"><i class="fa-solid fa-globe"></i></div>
+          <div><span class="label">Website</span><a href="http://www.kivistone.com/" target="_blank" rel="noopener noreferrer">kivistone.com</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="brochure" id="brochure">
+    <div class="wrap">
+      <div class="brochure-card">
+        <div class="brochure-info">
+          <div class="file-ic"><i class="fa-solid fa-file-pdf"></i></div>
+          <div>
+            <h3>Kivistone full catalog</h3>
+            <p>PDF · complete product range &amp; specifications</p>
+          </div>
+        </div>
+        <a class="btn-gold" href="http://www.kivistone.com/kivistone%20brochure_5.pdf" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-arrow-down-to-line"></i>Download brochure</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <div class="logo"><span class="mark"></span>Kivistone</div>
+          <p class="about-blurb">A collection of beautiful products carved from Finnish soapstone — for interiors, household use, and gifting.</p>
+          <div class="social-row">
+            <a href="http://facebook.com/SAWOsaunaworld" target="_blank" rel="noopener noreferrer" aria-label="Kivistone on Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+            <a href="https://www.instagram.com/sawosauna/" target="_blank" rel="noopener noreferrer" aria-label="Kivistone on Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+            <a href="https://ph.linkedin.com/company/sawo-inc" target="_blank" rel="noopener noreferrer" aria-label="Kivistone on LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+            <a href="https://www.youtube.com/@SAWOsauna" target="_blank" rel="noopener noreferrer" aria-label="Kivistone on YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+            <a href="https://www.tiktok.com/@sawosauna" target="_blank" rel="noopener noreferrer" aria-label="Kivistone on TikTok"><i class="fab fa-tiktok" aria-hidden="true"></i></a>
+            <a href="mailto:help@sawo.com" aria-label="Email Kivistone support"><i class="fas fa-envelope" aria-hidden="true"></i></a>
+            <a href="tel:+63323412233" aria-label="Call Kivistone"><i class="fas fa-phone" aria-hidden="true"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>Shop</h5>
+          <a href="http://www.kivistone.com/?page_id=281" target="_blank" rel="noopener noreferrer">Candle Holders</a>
+          <a href="http://www.kivistone.com/?page_id=284" target="_blank" rel="noopener noreferrer">Cups and Coolers</a>
+          <a href="http://www.kivistone.com/?page_id=286" target="_blank" rel="noopener noreferrer">Scent Warmer</a>
+          <a href="http://www.kivistone.com/?page_id=1257" target="_blank" rel="noopener noreferrer">Dish Plates</a>
+          <a href="http://www.kivistone.com/?page_id=522" target="_blank" rel="noopener noreferrer">Miscellaneous</a>
+        </div>
+        <div class="footer-col">
+          <h5>Studio</h5>
+          <a href="#about">About soapstone</a>
+          <a href="#story">About us</a>
+          <a href="#contact">Contact</a>
+          <a href="#brochure">Download brochure</a>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <a href="mailto:studio@kivistone.fi">studio@kivistone.fi</a>
+          <a href="tel:+35894567210">+358 9 4567 210</a>
+          <a href="http://www.kivistone.com/" target="_blank" rel="noopener noreferrer">kivistone.com</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Kivistone. All rights reserved.</span>
+        <span>Finnish soapstone, hand-finished in small batches</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

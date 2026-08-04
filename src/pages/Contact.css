@@ -1,0 +1,48 @@
+section.contact-page{ padding:clamp(2.4rem,4vw,3.4rem) 0 clamp(4rem,7vw,6rem); }
+
+/* Dark banner floating on the light page — the only inverted block above the footer */
+.contact-banner{
+  background:var(--bg-dark-2); color:var(--ink-inv);
+  border-radius:20px; box-shadow:var(--shadow-lg);
+  padding:clamp(2rem,4vw,3.2rem);
+  display:grid; grid-template-columns:minmax(0,1.05fr) minmax(0,0.95fr);
+  gap:clamp(2rem,4vw,3.4rem); align-items:center;
+  margin-bottom:clamp(2.4rem,4vw,3.4rem);
+}
+@media (max-width:860px){ .contact-banner{ grid-template-columns:1fr; } }
+
+.banner-copy h1{
+  font-family:var(--font-display); font-weight:700; font-size:clamp(1.8rem,3.2vw,2.5rem);
+  letter-spacing:-0.02em; line-height:1.15; margin:0 0 1.1rem; color:var(--ink-inv);
+}
+.banner-copy p{ font-size:0.95rem; color:var(--muted-inv); line-height:1.75; margin:0; max-width:46ch; }
+
+.contact-grid{ display:grid; grid-template-columns:minmax(0,1.35fr) minmax(0,0.65fr); gap:clamp(1.8rem,3vw,2.8rem); align-items:start; }
+@media (max-width:960px){ .contact-grid{ grid-template-columns:1fr; } }
+
+.block-title{
+  font-family:var(--font-display); font-weight:700; font-size:1.15rem; letter-spacing:-0.01em;
+  margin:0 0 1.2rem; color:var(--ink);
+}
+
+.contact-side{ display:flex; flex-direction:column; gap:1.4rem; }
+
+.side-block{
+  background:var(--card); border:1px solid var(--hairline); border-radius:14px;
+  padding:1.6rem 1.8rem; box-shadow:var(--shadow);
+}
+.side-block h2{
+  font-family:var(--font-display); font-weight:700; font-size:1.05rem; letter-spacing:-0.01em;
+  margin:0 0 1.1rem; color:var(--ink);
+}
+
+.product-links{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; }
+.product-links li + li{ border-top:1px solid var(--hairline); }
+.product-links a{
+  display:flex; align-items:center; gap:0.7rem; padding:0.7rem 0;
+  font-size:0.9rem; color:var(--ink-secondary); transition:color .15s ease, gap .15s ease;
+}
+.product-links a i{ font-size:0.6rem; color:var(--gold); }
+.product-links a:hover{ color:var(--ink); gap:0.95rem; }
+
+.brochure-block p{ font-size:0.88rem; color:var(--muted); line-height:1.65; margin:0 0 1.2rem; }
