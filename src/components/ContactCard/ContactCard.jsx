@@ -9,7 +9,7 @@ const ROWS = [
   { icon: 'fa-solid fa-envelope', label: 'Email', value: 'sales@kivistone.com', href: 'mailto:sales@kivistone.com' },
   { icon: 'fa-solid fa-phone', label: 'Telephone', value: '+63-32-341 2233', href: 'tel:+63323412233' },
   { icon: 'fa-solid fa-fax', label: 'Fax', value: '+63-32-341 2255' },
-  { icon: 'fa-solid fa-globe', label: 'Website', value: 'kivistone.com', href: 'http://www.kivistone.com/' },
+  { icon: 'fa-solid fa-globe', label: 'Website', value: 'kivistone.com', href: 'https://www.kivistone.com/' },
 ];
 
 export default function ContactCard() {

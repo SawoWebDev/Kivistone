@@ -10,11 +10,11 @@ const LOCAL_BUSINESS_JSON_LD = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
   name: 'Kivistone (SAWO Inc.)',
-  image: 'https://www.kivistone.com/assets/home/water-kettle.webp',
+  image: 'https://kivistone.vercel.app/assets/home/water-kettle.webp',
   email: 'sales@kivistone.com',
   telephone: '+63-32-341-2233',
   faxNumber: '+63-32-341-2255',
-  url: 'https://www.kivistone.com',
+  url: 'https://kivistone.vercel.app',
   address: {
     '@type': 'PostalAddress',
     streetAddress: 'Mactan Export Processing Zone 2',
@@ -82,7 +82,7 @@ export default function Contact() {
                 <p>The full product range and specifications, as a PDF.</p>
                 <Button
                   variant="gold"
-                  href="http://www.kivistone.com/kivistone%20brochure_5.pdf"
+                  href="https://www.kivistone.com/kivistone%20brochure_5.pdf"
                   external
                   icon="fa-solid fa-file-pdf"
                 >
@@ -117,7 +117,7 @@ export default function Contact() {
             <div className="contact-cta-actions">
               <Button
                 variant="gold"
-                href="http://www.kivistone.com/kivistone%20brochure_5.pdf"
+                href="https://www.kivistone.com/kivistone%20brochure_5.pdf"
                 external
                 icon="fa-solid fa-download"
               >

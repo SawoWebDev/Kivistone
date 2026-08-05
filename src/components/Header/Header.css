@@ -17,6 +17,7 @@
 }
 .logo-text{ text-transform:uppercase; }
 .logo-stone{ color:var(--gold); transition:color .2s ease; }
+.site-header .logo-stone{ color:var(--gold-deep); }
 /* drawn as a circle rather than relying on the "." glyph, so size/position are exact
    instead of drifting with font metrics */
 .logo-dot{

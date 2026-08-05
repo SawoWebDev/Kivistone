@@ -36,26 +36,26 @@ export default function Footer() {
           </div>
 
           <div className="footer-col">
-            <h5>Products</h5>
+            <p className="footer-heading">Products</p>
             {categories.map((c) => (
               <Link key={c.slug} to={`/products/${c.slug}`}>{c.title}</Link>
             ))}
           </div>
 
           <div className="footer-col">
-            <h5>Company</h5>
+            <p className="footer-heading">Company</p>
             <Link to="/about">About</Link>
             <Link to="/contact">Contact</Link>
-            <a href="http://www.kivistone.com/kivistone%20brochure_5.pdf" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.kivistone.com/kivistone%20brochure_5.pdf" target="_blank" rel="noopener noreferrer">
               Download brochure
             </a>
           </div>
 
           <div className="footer-col">
-            <h5>Get in touch</h5>
+            <p className="footer-heading">Get in touch</p>
             <a href="mailto:studio@kivistone.fi">studio@kivistone.fi</a>
             <a href="tel:+35894567210">+358 9 4567 210</a>
-            <a href="http://www.kivistone.com/" target="_blank" rel="noopener noreferrer">kivistone.com</a>
+            <a href="https://www.kivistone.com/" target="_blank" rel="noopener noreferrer">kivistone.com</a>
           </div>
         </div>
 

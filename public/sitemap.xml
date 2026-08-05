@@ -1,159 +1,303 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://www.kivistone.com/</loc>
+    <loc>https://kivistone.vercel.app/</loc>
   </url>
   <url>
-    <loc>https://www.kivistone.com/about</loc>
+    <loc>https://kivistone.vercel.app/about</loc>
   </url>
   <url>
-    <loc>https://www.kivistone.com/contact</loc>
+    <loc>https://kivistone.vercel.app/contact</loc>
   </url>
   <url>
-    <loc>https://www.kivistone.com/products</loc>
+    <loc>https://kivistone.vercel.app/products</loc>
   </url>
   <url>
-    <loc>https://www.kivistone.com/products/candle-holders</loc>
+    <loc>https://kivistone.vercel.app/products/candle-holders</loc>
+    <image:image>
+      <image:loc>https://kivistone.vercel.app/assets/products/candle-holders.webp</image:loc>
+    </image:image>
   </url>
   <url>
-    <loc>https://www.kivistone.com/products/dish-plates</loc>
+    <loc>https://kivistone.vercel.app/products/dish-plates</loc>
+    <image:image>
+      <image:loc>https://kivistone.vercel.app/assets/products/plate.webp</image:loc>
+    </image:image>
   </url>
   <url>
-    <loc>https://www.kivistone.com/products/cups-and-coolers</loc>
+    <loc>https://kivistone.vercel.app/products/cups-and-coolers</loc>
+    <image:image>
+      <image:loc>https://kivistone.vercel.app/assets/products/cups-and-coolers.webp</image:loc>
+    </image:image>
   </url>
   <url>
-    <loc>https://www.kivistone.com/products/scent-warmers</loc>
+    <loc>https://kivistone.vercel.app/products/scent-warmers</loc>
+    <image:image>
+      <image:loc>https://kivistone.vercel.app/assets/products/scent-warmer.webp</image:loc>
+    </image:image>
   </url>
   <url>
-    <loc>https://www.kivistone.com/products/miscellaneous</loc>
+    <loc>https://kivistone.vercel.app/products/miscellaneous</loc>
+    <image:image>
+      <image:loc>https://kivistone.vercel.app/assets/products/picture-frame.webp</image:loc>
+    </image:image>
   </url>
   <url>
-    <loc>https://www.kivistone.com/products/candle-holders/r-95</loc>
+    <loc>https://kivistone.vercel.app/products/candle-holders/r-95</loc>
+    <image:image>
+      <image:loc>https://kivistone.vercel.app/assets/products/candle-holders/r-95.webp</image:loc>
+    </image:image>
   </url>
   <url>
-    <loc>https://www.kivistone.com/products/candle-holders/r-107</loc>
+    <loc>https://kivistone.vercel.app/products/candle-holders/r-107</loc>
+    <image:image>
+      <image:loc>https://kivistone.vercel.app/assets/products/candle-holders/r-107.webp</image:loc>
+    </image:image>
   </url>
   <url>
-    <loc>https://www.kivistone.com/products/candle-holders/r-108</loc>
+    <loc>https://kivistone.vercel.app/products/candle-holders/r-108</loc>
+    <image:image>
+      <image:loc>https://kivistone.vercel.app/assets/products/candle-holders/r-108.webp</image:loc>
+    </image:image>
   </url>
   <url>
-    <loc>https://www.kivistone.com/products/candle-holders/r-180</loc>
+    <loc>https://kivistone.vercel.app/products/candle-holders/r-180</loc>
+    <image:image>
+      <image:loc>https://kivistone.vercel.app/assets/products/candle-holders/r-180.webp</image:loc>
+    </image:image>
   </url>
   <url>
-    <loc>https://www.kivistone.com/products/candle-holders/r-105</loc>
+    <loc>https://kivistone.vercel.app/products/candle-holders/r-105</loc>
+    <image:image>
+      <image:loc>https://kivistone.vercel.app/assets/products/candle-holders/r-105.webp</image:loc>
+    </image:image>
   </url>
   <url>
-    <loc>https://www.kivistone.com/products/candle-holders/r-106</loc>
+    <loc>https://kivistone.vercel.app/products/candle-holders/r-106</loc>
+    <image:image>
+      <image:loc>https://kivistone.vercel.app/assets/products/candle-holders/r-106.webp</image:loc>
+    </image:image>
   </url>
   <url>
-    <loc>https://www.kivistone.com/products/candle-holders/r-109</loc>
+    <loc>https://kivistone.vercel.app/products/candle-holders/r-109</loc>
+    <image:image>
+      <image:loc>https://kivistone.vercel.app/assets/products/candle-holders/r-109.webp</image:loc>
+    </image:image>
   </url>
   <url>
-    <loc>https://www.kivistone.com/products/candle-holders/r-115</loc>
+    <loc>https://kivistone.vercel.app/products/candle-holders/r-115</loc>
+    <image:image>
+      <image:loc>https://kivistone.vercel.app/assets/products/candle-holders/r-115.webp</image:loc>
+    </image:image>
   </url>
   <url>
-    <loc>https://www.kivistone.com/products/dish-plates/r-151</loc>
+    <loc>https://kivistone.vercel.app/products/dish-plates/r-151</loc>
+    <image:image>
+      <image:loc>https://kivistone.vercel.app/assets/products/dish-plates/r-151.webp</image:loc>
+    </image:image>
   </url>
   <url>
-    <loc>https://www.kivistone.com/products/dish-plates/r-152</loc>
+    <loc>https://kivistone.vercel.app/products/dish-plates/r-152</loc>
+    <image:image>
+      <image:loc>https://kivistone.vercel.app/assets/products/dish-plates/r-152.webp</image:loc>
+    </image:image>
   </url>
   <url>
-    <loc>https://www.kivistone.com/products/dish-plates/r-153-d</loc>
+    <loc>https://kivistone.vercel.app/products/dish-plates/r-153-d</loc>
+    <image:image>
+      <image:loc>https://kivistone.vercel.app/assets/products/dish-plates/r-153-d.webp</image:loc>
+    </image:image>
   </url>
   <url>
-    <loc>https://www.kivistone.com/products/dish-plates/r-153-a</loc>
+    <loc>https://kivistone.vercel.app/products/dish-plates/r-153-a</loc>
+    <image:image>
+      <image:loc>https://kivistone.vercel.app/assets/products/dish-plates/r-153-a.webp</image:loc>
+    </image:image>
   </url>
   <url>
-    <loc>https://www.kivistone.com/products/cups-and-coolers/r-100</loc>
+    <loc>https://kivistone.vercel.app/products/cups-and-coolers/r-100</loc>
+    <image:image>
+      <image:loc>https://kivistone.vercel.app/assets/products/cups-and-coolers/r-100.webp</image:loc>
+    </image:image>
   </url>
   <url>
-    <loc>https://www.kivistone.com/products/cups-and-coolers/r-110</loc>
+    <loc>https://kivistone.vercel.app/products/cups-and-coolers/r-110</loc>
+    <image:image>
+      <image:loc>https://kivistone.vercel.app/assets/products/cups-and-coolers/r-110.webp</image:loc>
+    </image:image>
   </url>
   <url>
-    <loc>https://www.kivistone.com/products/cups-and-coolers/r-111</loc>
+    <loc>https://kivistone.vercel.app/products/cups-and-coolers/r-111</loc>
+    <image:image>
+      <image:loc>https://kivistone.vercel.app/assets/products/cups-and-coolers/r-111.webp</image:loc>
+    </image:image>
   </url>
   <url>
-    <loc>https://www.kivistone.com/products/cups-and-coolers/r-112</loc>
+    <loc>https://kivistone.vercel.app/products/cups-and-coolers/r-112</loc>
+    <image:image>
+      <image:loc>https://kivistone.vercel.app/assets/products/cups-and-coolers/r-112.webp</image:loc>
+    </image:image>
   </url>
   <url>
-    <loc>https://www.kivistone.com/products/cups-and-coolers/r-200</loc>
+    <loc>https://kivistone.vercel.app/products/cups-and-coolers/r-200</loc>
+    <image:image>
+      <image:loc>https://kivistone.vercel.app/assets/products/cups-and-coolers/r-200.webp</image:loc>
+    </image:image>
   </url>
   <url>
-    <loc>https://www.kivistone.com/products/cups-and-coolers/r-90</loc>
+    <loc>https://kivistone.vercel.app/products/cups-and-coolers/r-90</loc>
+    <image:image>
+      <image:loc>https://kivistone.vercel.app/assets/products/cups-and-coolers/r-90.webp</image:loc>
+    </image:image>
   </url>
   <url>
-    <loc>https://www.kivistone.com/products/cups-and-coolers/r-92</loc>
+    <loc>https://kivistone.vercel.app/products/cups-and-coolers/r-92</loc>
+    <image:image>
+      <image:loc>https://kivistone.vercel.app/assets/products/cups-and-coolers/r-92.webp</image:loc>
+    </image:image>
   </url>
   <url>
-    <loc>https://www.kivistone.com/products/cups-and-coolers/r-93</loc>
+    <loc>https://kivistone.vercel.app/products/cups-and-coolers/r-93</loc>
+    <image:image>
+      <image:loc>https://kivistone.vercel.app/assets/products/cups-and-coolers/r-93.webp</image:loc>
+    </image:image>
   </url>
   <url>
-    <loc>https://www.kivistone.com/products/cups-and-coolers/r-141</loc>
+    <loc>https://kivistone.vercel.app/products/cups-and-coolers/r-141</loc>
+    <image:image>
+      <image:loc>https://kivistone.vercel.app/assets/products/cups-and-coolers/r-141.webp</image:loc>
+    </image:image>
   </url>
   <url>
-    <loc>https://www.kivistone.com/products/cups-and-coolers/r-204</loc>
+    <loc>https://kivistone.vercel.app/products/cups-and-coolers/r-204</loc>
+    <image:image>
+      <image:loc>https://kivistone.vercel.app/assets/products/cups-and-coolers/r-204.webp</image:loc>
+    </image:image>
   </url>
   <url>
-    <loc>https://www.kivistone.com/products/cups-and-coolers/r-206</loc>
+    <loc>https://kivistone.vercel.app/products/cups-and-coolers/r-206</loc>
+    <image:image>
+      <image:loc>https://kivistone.vercel.app/assets/products/cups-and-coolers/r-206.webp</image:loc>
+    </image:image>
   </url>
   <url>
-    <loc>https://www.kivistone.com/products/cups-and-coolers/r-203</loc>
+    <loc>https://kivistone.vercel.app/products/cups-and-coolers/r-203</loc>
+    <image:image>
+      <image:loc>https://kivistone.vercel.app/assets/products/cups-and-coolers/r-203.webp</image:loc>
+    </image:image>
   </url>
   <url>
-    <loc>https://www.kivistone.com/products/cups-and-coolers/r-301</loc>
+    <loc>https://kivistone.vercel.app/products/cups-and-coolers/r-301</loc>
+    <image:image>
+      <image:loc>https://kivistone.vercel.app/assets/products/cups-and-coolers/r-301.webp</image:loc>
+    </image:image>
   </url>
   <url>
-    <loc>https://www.kivistone.com/products/scent-warmers/r-501</loc>
+    <loc>https://kivistone.vercel.app/products/scent-warmers/r-501</loc>
+    <image:image>
+      <image:loc>https://kivistone.vercel.app/assets/products/scent-warmers/r-501.webp</image:loc>
+    </image:image>
   </url>
   <url>
-    <loc>https://www.kivistone.com/products/scent-warmers/r-502</loc>
+    <loc>https://kivistone.vercel.app/products/scent-warmers/r-502</loc>
+    <image:image>
+      <image:loc>https://kivistone.vercel.app/assets/products/scent-warmers/r-502.webp</image:loc>
+    </image:image>
   </url>
   <url>
-    <loc>https://www.kivistone.com/products/scent-warmers/r-503</loc>
+    <loc>https://kivistone.vercel.app/products/scent-warmers/r-503</loc>
+    <image:image>
+      <image:loc>https://kivistone.vercel.app/assets/products/scent-warmers/r-503.webp</image:loc>
+    </image:image>
   </url>
   <url>
-    <loc>https://www.kivistone.com/products/scent-warmers/r-504</loc>
+    <loc>https://kivistone.vercel.app/products/scent-warmers/r-504</loc>
+    <image:image>
+      <image:loc>https://kivistone.vercel.app/assets/products/scent-warmers/r-504.webp</image:loc>
+    </image:image>
   </url>
   <url>
-    <loc>https://www.kivistone.com/products/scent-warmers/r-120</loc>
+    <loc>https://kivistone.vercel.app/products/scent-warmers/r-120</loc>
+    <image:image>
+      <image:loc>https://kivistone.vercel.app/assets/products/scent-warmers/r-120.webp</image:loc>
+    </image:image>
   </url>
   <url>
-    <loc>https://www.kivistone.com/products/scent-warmers/r-122</loc>
+    <loc>https://kivistone.vercel.app/products/scent-warmers/r-122</loc>
+    <image:image>
+      <image:loc>https://kivistone.vercel.app/assets/products/scent-warmers/r-122.webp</image:loc>
+    </image:image>
   </url>
   <url>
-    <loc>https://www.kivistone.com/products/scent-warmers/r-123</loc>
+    <loc>https://kivistone.vercel.app/products/scent-warmers/r-123</loc>
+    <image:image>
+      <image:loc>https://kivistone.vercel.app/assets/products/scent-warmers/r-123.webp</image:loc>
+    </image:image>
   </url>
   <url>
-    <loc>https://www.kivistone.com/products/scent-warmers/r-160</loc>
+    <loc>https://kivistone.vercel.app/products/scent-warmers/r-160</loc>
+    <image:image>
+      <image:loc>https://kivistone.vercel.app/assets/products/scent-warmers/r-160.webp</image:loc>
+    </image:image>
   </url>
   <url>
-    <loc>https://www.kivistone.com/products/scent-warmers/aro-euca10</loc>
+    <loc>https://kivistone.vercel.app/products/scent-warmers/aro-euca10</loc>
+    <image:image>
+      <image:loc>https://kivistone.vercel.app/assets/products/scent-warmers/aro-euca10.webp</image:loc>
+    </image:image>
   </url>
   <url>
-    <loc>https://www.kivistone.com/products/scent-warmers/aro-ff10</loc>
+    <loc>https://kivistone.vercel.app/products/scent-warmers/aro-ff10</loc>
+    <image:image>
+      <image:loc>https://kivistone.vercel.app/assets/products/scent-warmers/aro-euca10.webp</image:loc>
+    </image:image>
   </url>
   <url>
-    <loc>https://www.kivistone.com/products/miscellaneous/r-404</loc>
+    <loc>https://kivistone.vercel.app/products/miscellaneous/r-404</loc>
+    <image:image>
+      <image:loc>https://kivistone.vercel.app/assets/products/miscellaneous/r-404.webp</image:loc>
+    </image:image>
   </url>
   <url>
-    <loc>https://www.kivistone.com/products/miscellaneous/r-405</loc>
+    <loc>https://kivistone.vercel.app/products/miscellaneous/r-405</loc>
+    <image:image>
+      <image:loc>https://kivistone.vercel.app/assets/products/miscellaneous/r-405.webp</image:loc>
+    </image:image>
   </url>
   <url>
-    <loc>https://www.kivistone.com/products/miscellaneous/r-406</loc>
+    <loc>https://kivistone.vercel.app/products/miscellaneous/r-406</loc>
+    <image:image>
+      <image:loc>https://kivistone.vercel.app/assets/products/miscellaneous/r-406.webp</image:loc>
+    </image:image>
   </url>
   <url>
-    <loc>https://www.kivistone.com/products/miscellaneous/r-407</loc>
+    <loc>https://kivistone.vercel.app/products/miscellaneous/r-407</loc>
+    <image:image>
+      <image:loc>https://kivistone.vercel.app/assets/products/miscellaneous/r-407.webp</image:loc>
+    </image:image>
   </url>
   <url>
-    <loc>https://www.kivistone.com/products/miscellaneous/r-116</loc>
+    <loc>https://kivistone.vercel.app/products/miscellaneous/r-116</loc>
+    <image:image>
+      <image:loc>https://kivistone.vercel.app/assets/products/miscellaneous/r-116.webp</image:loc>
+    </image:image>
   </url>
   <url>
-    <loc>https://www.kivistone.com/products/miscellaneous/r-170</loc>
+    <loc>https://kivistone.vercel.app/products/miscellaneous/r-170</loc>
+    <image:image>
+      <image:loc>https://kivistone.vercel.app/assets/products/miscellaneous/r-170.webp</image:loc>
+    </image:image>
   </url>
   <url>
-    <loc>https://www.kivistone.com/products/miscellaneous/r-165</loc>
+    <loc>https://kivistone.vercel.app/products/miscellaneous/r-165</loc>
+    <image:image>
+      <image:loc>https://kivistone.vercel.app/assets/products/miscellaneous/r-165.webp</image:loc>
+    </image:image>
   </url>
   <url>
-    <loc>https://www.kivistone.com/products/miscellaneous/r-403</loc>
+    <loc>https://kivistone.vercel.app/products/miscellaneous/r-403</loc>
+    <image:image>
+      <image:loc>https://kivistone.vercel.app/assets/products/miscellaneous/r-403.webp</image:loc>
+    </image:image>
   </url>
 </urlset>

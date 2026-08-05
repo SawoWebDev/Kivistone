@@ -1,24 +1,29 @@
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { lazy, Suspense } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import MainLayout from './layouts/MainLayout.jsx';
 import Home from './pages/Home.jsx';
-import About from './pages/About.jsx';
-import Contact from './pages/Contact.jsx';
-import Products from './pages/Products.jsx';
-import ProductCategoryPage from './pages/products/ProductCategoryPage.jsx';
-import ProductDetailPage from './pages/products/ProductDetailPage.jsx';
+
+const About = lazy(() => import('./pages/About.jsx'));
+const Contact = lazy(() => import('./pages/Contact.jsx'));
+const Products = lazy(() => import('./pages/Products.jsx'));
+const ProductCategoryPage = lazy(() => import('./pages/products/ProductCategoryPage.jsx'));
+const ProductDetailPage = lazy(() => import('./pages/products/ProductDetailPage.jsx'));
+const NotFound = lazy(() => import('./pages/NotFound.jsx'));
 
 export default function App() {
   return (
-    <Routes>
-      <Route element={<MainLayout />}>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/products" element={<Products />} />
-        <Route path="/products/:slug" element={<ProductCategoryPage />} />
-        <Route path="/products/:slug/:productId" element={<ProductDetailPage />} />
-        <Route path="*" element={<Navigate to="/" replace />} />
-      </Route>
-    </Routes>
+    <Suspense fallback={null}>
+      <Routes>
+        <Route element={<MainLayout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/products/:slug" element={<ProductCategoryPage />} />
+          <Route path="/products/:slug/:productId" element={<ProductDetailPage />} />
+          <Route path="*" element={<NotFound />} />
+        </Route>
+      </Routes>
+    </Suspense>
   );
 }

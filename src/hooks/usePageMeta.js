@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
 const SITE_NAME = 'Kivistone';
-const SITE_ORIGIN = 'https://www.kivistone.com';
+const SITE_ORIGIN = 'https://kivistone.vercel.app';
 
 function setMetaTag(attr, key, content) {
   let tag = document.querySelector(`meta[${attr}="${key}"]`);
@@ -52,7 +52,7 @@ function setJsonLd(data) {
    absolute or root-relative URL. `jsonLd` is an optional object (or array of
    objects) serialized into one or more <script type="application/ld+json">
    tags for the life of the page. */
-export default function usePageMeta({ title, description, image, path, jsonLd } = {}) {
+export default function usePageMeta({ title, description, image, path, jsonLd, noIndex } = {}) {
   const jsonLdKey = jsonLd ? JSON.stringify(jsonLd) : undefined;
 
   useEffect(() => {
@@ -65,6 +65,7 @@ export default function usePageMeta({ title, description, image, path, jsonLd } 
       ? (image.startsWith('http') ? image : `${SITE_ORIGIN}${image}`)
       : undefined;
 
+    cleanups.push(setMetaTag('name', 'robots', noIndex ? 'noindex, nofollow' : 'index, follow'));
     if (description) cleanups.push(setMetaTag('name', 'description', description));
     if (url) cleanups.push(setLinkTag('canonical', url));
 
@@ -89,5 +90,5 @@ export default function usePageMeta({ title, description, image, path, jsonLd } 
       document.title = prevTitle;
       cleanups.forEach((restore) => restore());
     };
-  }, [title, description, image, path, jsonLdKey]);
+  }, [title, description, image, path, jsonLdKey, noIndex]);
 }

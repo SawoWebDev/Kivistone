@@ -1,8 +1,9 @@
-import { Link, Navigate, useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import Button from '../../components/Button/Button.jsx';
 import { getCategory } from '../../data/categories.js';
 import { getProduct, getProductsForCategory } from '../../data/products.js';
 import usePageMeta from '../../hooks/usePageMeta.js';
+import NotFound from '../NotFound.jsx';
 import './ProductDetailPage.css';
 
 export default function ProductDetailPage() {
@@ -27,7 +28,7 @@ export default function ProductDetailPage() {
               '@type': 'Product',
               name: product.name,
               sku: product.id,
-              image: `https://www.kivistone.com${product.image}`,
+              image: `https://kivistone.vercel.app${product.image}`,
               description: `${product.name}, part of the Kivistone ${category.title} range, hand-finished from natural Finnish soapstone.`,
               material: 'Soapstone',
               brand: { '@type': 'Brand', name: 'Kivistone' },
@@ -40,10 +41,10 @@ export default function ProductDetailPage() {
               '@context': 'https://schema.org',
               '@type': 'BreadcrumbList',
               itemListElement: [
-                { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.kivistone.com/' },
-                { '@type': 'ListItem', position: 2, name: 'Products', item: 'https://www.kivistone.com/products' },
-                { '@type': 'ListItem', position: 3, name: category.title, item: `https://www.kivistone.com/products/${category.slug}` },
-                { '@type': 'ListItem', position: 4, name: product.name, item: `https://www.kivistone.com/products/${category.slug}/${product.id}` },
+                { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://kivistone.vercel.app/' },
+                { '@type': 'ListItem', position: 2, name: 'Products', item: 'https://kivistone.vercel.app/products' },
+                { '@type': 'ListItem', position: 3, name: category.title, item: `https://kivistone.vercel.app/products/${category.slug}` },
+                { '@type': 'ListItem', position: 4, name: product.name, item: `https://kivistone.vercel.app/products/${category.slug}/${product.id}` },
               ],
             },
           ],
@@ -51,7 +52,7 @@ export default function ProductDetailPage() {
       : undefined
   );
 
-  if (!category || !product) return <Navigate to="/products" replace />;
+  if (!category || !product) return <NotFound />;
 
   return (
     <section className="product-detail light">

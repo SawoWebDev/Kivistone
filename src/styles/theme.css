@@ -42,7 +42,7 @@
   --accent:#8C8C8C;
   --gold:#b08e4e;
   --gold-light:#EACB86;  /* gold text on dark surfaces */
-  --gold-deep:#a08348;   /* gold text on light surfaces */
+  --gold-deep:#8a6f3d;   /* gold text on light surfaces (WCAG AA, 4.5:1 on --card) */
   --danger:#9C4E40;
   --danger-inv:#DA9A8F;  /* error text on dark surfaces */
 

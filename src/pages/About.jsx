@@ -92,7 +92,7 @@ export default function About() {
             <div className="about-cta-actions">
               <Button
                 variant="gold"
-                href="http://www.kivistone.com/kivistone%20brochure_5.pdf"
+                href="https://www.kivistone.com/kivistone%20brochure_5.pdf"
                 external
                 icon="fa-solid fa-download"
               >

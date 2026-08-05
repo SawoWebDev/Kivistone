@@ -128,8 +128,8 @@ export default function Header() {
             aria-label="Toggle silver mode"
             onClick={() => setSilver((v) => !v)}
           >
-            <span className={silver ? '' : 'active'}>G</span>
-            <span className={silver ? 'active' : ''}>S</span>
+            <span className={silver ? '' : 'active'} aria-hidden="true">G</span>
+            <span className={silver ? 'active' : ''} aria-hidden="true">S</span>
           </button>
 
           <button
@@ -197,8 +197,8 @@ export default function Header() {
             aria-label="Toggle silver mode"
             onClick={() => setSilver((v) => !v)}
           >
-            <span className={silver ? '' : 'active'}>G</span>
-            <span className={silver ? 'active' : ''}>S</span>
+            <span className={silver ? '' : 'active'} aria-hidden="true">G</span>
+            <span className={silver ? 'active' : ''} aria-hidden="true">S</span>
           </button>
         </div>
       </div>

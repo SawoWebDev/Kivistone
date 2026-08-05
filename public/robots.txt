@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.kivistone.com/sitemap.xml
+Sitemap: https://kivistone.vercel.app/sitemap.xml

@@ -1,9 +1,10 @@
 import { useEffect, useMemo, useState } from 'react';
-import { Link, Navigate, useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import Button from '../../components/Button/Button.jsx';
 import { getCategory, categories } from '../../data/categories.js';
 import { getProductsForCategory } from '../../data/products.js';
 import usePageMeta from '../../hooks/usePageMeta.js';
+import NotFound from '../NotFound.jsx';
 import './ProductCategoryPage.css';
 
 const PLACEHOLDER_COUNT = 6;
@@ -35,16 +36,16 @@ export default function ProductCategoryPage() {
             '@context': 'https://schema.org',
             '@type': 'BreadcrumbList',
             itemListElement: [
-              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.kivistone.com/' },
-              { '@type': 'ListItem', position: 2, name: 'Products', item: 'https://www.kivistone.com/products' },
-              { '@type': 'ListItem', position: 3, name: category.title, item: `https://www.kivistone.com/products/${category.slug}` },
+              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://kivistone.vercel.app/' },
+              { '@type': 'ListItem', position: 2, name: 'Products', item: 'https://kivistone.vercel.app/products' },
+              { '@type': 'ListItem', position: 3, name: category.title, item: `https://kivistone.vercel.app/products/${category.slug}` },
             ],
           },
         }
       : undefined
   );
 
-  if (!category) return <Navigate to="/products" replace />;
+  if (!category) return <NotFound />;
 
   const [titleAccent, ...titleRestWords] = category.title.split(' ');
   const titleRest = titleRestWords.join(' ');
@@ -63,7 +64,7 @@ export default function ProductCategoryPage() {
             <p className="lede">{category.description}</p>
             <Button
               variant="secondary-inv"
-              href="http://www.kivistone.com/kivistone%20brochure_5.pdf"
+              href="https://www.kivistone.com/kivistone%20brochure_5.pdf"
               external
               icon="fa-solid fa-file-pdf"
               className="pc-hero-brochure"

@@ -10,8 +10,8 @@ const ORGANIZATION_JSON_LD = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: 'Kivistone',
-  url: 'https://www.kivistone.com',
-  logo: 'https://www.kivistone.com/favicon.svg',
+  url: 'https://kivistone.vercel.app',
+  logo: 'https://kivistone.vercel.app/favicon.svg',
   description: 'Kivistone carves candle holders, dish plates, cups and coolers, scent warmers, and gift items from genuine Finnish soapstone.',
   address: {
     '@type': 'PostalAddress',
@@ -83,7 +83,7 @@ export default function Home() {
                 every piece we ship.
               </p>
               <Button variant="gold" to="/about" icon="fa-solid fa-chevron-right" iconPosition="right" className="about-more">
-                Learn More
+                More about Kivistone
               </Button>
             </div>
             <div className="about-image">
@@ -119,7 +119,7 @@ export default function Home() {
             </p>
             <Button
               variant="dark"
-              href="http://www.kivistone.com/kivistone%20brochure_5.pdf"
+              href="https://www.kivistone.com/kivistone%20brochure_5.pdf"
               external
               icon="fa-solid fa-file-pdf"
               iconPosition="right"
