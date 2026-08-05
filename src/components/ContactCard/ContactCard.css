@@ -1,7 +1,8 @@
-/* lives inside the dark banner on the contact page, so it stays inverted */
+/* lives inside dark/gold banners, so it stays inverted */
 .contact-card{
-  background:var(--surface-dark); border:1px solid var(--divider-dark); border-radius:14px;
+  background:var(--bg-dark); border:1px solid var(--divider-dark); border-radius:14px;
   padding:1.8rem; display:flex; flex-direction:column;
+  box-shadow:var(--shadow-lg);
 }
 .contact-row{ display:flex; align-items:flex-start; gap:0.95rem; padding:1.05rem 0; }
 .contact-row + .contact-row{ border-top:1px solid var(--divider-dark); }
@@ -10,6 +11,7 @@
 .contact-row .ic{
   width:38px; height:38px; border-radius:50%; background:rgba(185,155,99,0.12); color:var(--gold-light);
   display:flex; align-items:center; justify-content:center; font-size:0.9rem; flex-shrink:0;
+  box-shadow:inset 0 1px 1px rgba(255,255,255,0.18), inset 0 -2px 3px rgba(0,0,0,0.35), 0 2px 4px rgba(0,0,0,0.2);
 }
 .contact-row-body{ display:flex; flex-direction:column; gap:0.28rem; min-width:0; }
 .contact-row span.label{

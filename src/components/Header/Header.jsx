@@ -33,7 +33,7 @@ export default function Header() {
     <header className="site-header">
       <div className="wrap">
         <NavLink to="/" className="logo">
-          <span className="mark" />Kivistone
+          <span className="logo-text">Kivistone</span>
         </NavLink>
 
         <nav className="nav-links">
@@ -56,7 +56,7 @@ export default function Header() {
             <div className="dropdown">
               <NavLink className="dd-all" to="/products" end>
                 All products
-                <i className="fa-solid fa-arrow-right" aria-hidden="true" />
+                <i className="fa-solid fa-chevron-right" aria-hidden="true" />
               </NavLink>
               <div className="dd-list">
                 {categories.map((c) => (
@@ -73,7 +73,7 @@ export default function Header() {
         </nav>
 
         <Button
-          variant="primary"
+          variant="dark"
           className="nav-cta"
           to="/products"
           icon="fa-solid fa-chevron-right"

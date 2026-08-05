@@ -7,55 +7,95 @@ import './Contact.css';
 
 export default function Contact() {
   return (
-    <section className="contact-page">
-      <div className="wrap">
-        <div className="contact-banner">
-          <div className="banner-copy">
-            <h1>Tell us what you&rsquo;re looking for</h1>
+    <>
+      <section className="contact-hero">
+        <div className="contact-hero-media">
+          <img src="/assets/home/Home-hero.jpg" alt="Kivistone soapstone pieces ready for enquiry" />
+          <div className="contact-hero-scrim" />
+          <div className="wrap contact-hero-content">
+            <h1><span className="accent">Tell us</span><br />what you&rsquo;re looking for</h1>
             <p>
-              Questions about a piece, a bulk order, or working with Finnish soapstone in general — our sales
-              team at the SAWO factory in Cebu handles enquiries, samples, and export quotes.
+              From a single gift piece to an export order, our team is ready to help you find the right
+              soapstone product and quote it accurately.
             </p>
           </div>
-          <ContactCard />
         </div>
+      </section>
 
-        <div className="contact-grid">
-          <div className="contact-main">
-            <h2 className="block-title">Send an enquiry</h2>
-            <ContactForm />
-          </div>
-
-          <aside className="contact-side">
-            <div className="side-block">
-              <h2>Products</h2>
-              <ul className="product-links">
-                {categories.map((c) => (
-                  <li key={c.slug}>
-                    <Link to={`/products/${c.slug}`}>
-                      <i className="fa-solid fa-plus" aria-hidden="true" />
-                      {c.title}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+      <section className="contact-page">
+        <div className="wrap">
+          <h2 className="block-title">Send an enquiry</h2>
+          <div className="contact-grid">
+            <div className="contact-main">
+              <ContactForm />
             </div>
 
-            <div className="side-block brochure-block">
-              <h2>Catalog</h2>
-              <p>The full product range and specifications, as a PDF.</p>
+            <aside className="contact-side">
+              <div className="side-block">
+                <h2>Products</h2>
+                <ul className="product-links">
+                  {categories.map((c) => (
+                    <li key={c.slug}>
+                      <Link to={`/products/${c.slug}`}>
+                        <i className="fa-solid fa-plus" aria-hidden="true" />
+                        {c.title}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="side-block brochure-block">
+                <h2>Catalog</h2>
+                <p>The full product range and specifications, as a PDF.</p>
+                <Button
+                  variant="gold"
+                  href="http://www.kivistone.com/kivistone%20brochure_5.pdf"
+                  external
+                  icon="fa-solid fa-file-pdf"
+                >
+                  Download brochure
+                </Button>
+              </div>
+            </aside>
+          </div>
+
+          <div className="contact-banner">
+            <div className="banner-copy">
+              <h2>Tell us what you&rsquo;re looking for</h2>
+              <p>
+                Questions about a piece, a bulk order, or working with Finnish soapstone in general: our sales
+                team at the SAWO factory in Cebu handles enquiries, samples, and export quotes.
+              </p>
+            </div>
+            <ContactCard />
+          </div>
+        </div>
+      </section>
+
+      <section className="contact-cta">
+        <div className="wrap">
+          <div className="contact-cta-card">
+            <div>
+              <h3>See the full range</h3>
+              <p>Soapstone products and gift items, the complete catalog with specifications.</p>
+            </div>
+            <div className="contact-cta-actions">
               <Button
-                variant="outline"
+                variant="gold"
                 href="http://www.kivistone.com/kivistone%20brochure_5.pdf"
                 external
-                icon="fa-solid fa-file-pdf"
+                icon="fa-solid fa-download"
               >
                 Download brochure
               </Button>
+              <Button variant="secondary" to="/products" icon="fa-solid fa-chevron-right" iconPosition="right">
+                Browse products
+              </Button>
             </div>
-          </aside>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }

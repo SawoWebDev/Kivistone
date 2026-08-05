@@ -4,17 +4,25 @@ import Header from '../components/Header/Header.jsx';
 import Footer from '../components/Footer/Footer.jsx';
 
 export default function MainLayout() {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
 
   useEffect(() => {
+    if (hash) {
+      const target = document.getElementById(hash.slice(1));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        return;
+      }
+    }
     window.scrollTo(0, 0);
-  }, [pathname]);
+  }, [pathname, hash]);
 
   return (
     <>
       <Header />
-      <main>
+      <main style={{ position: 'relative' }}>
         <Outlet />
+        <div key={pathname} className="page-fade-overlay" aria-hidden="true" />
       </main>
       <Footer />
     </>

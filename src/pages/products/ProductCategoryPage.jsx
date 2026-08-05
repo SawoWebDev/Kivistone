@@ -11,30 +11,26 @@ export default function ProductCategoryPage() {
   if (!category) return <Navigate to="/products" replace />;
 
   const others = categories.filter((c) => c.slug !== category.slug).slice(0, 4);
+  const [titleAccent, ...titleRestWords] = category.title.split(' ');
+  const titleRest = titleRestWords.join(' ');
 
   return (
     <>
-      <section className="product-hero light">
-        <div className="wrap">
-          <nav className="crumbs" aria-label="Breadcrumb">
-            <Link to="/products">Products</Link>
-            <i className="fa-solid fa-chevron-right" aria-hidden="true" />
-            <span>{category.title}</span>
-          </nav>
-
-          <div className="ph-grid">
-            <div>
-              <h1>{category.title}</h1>
-              <p className="lede">{category.description}</p>
-              <ul className="specs">
-                {category.specs.map((s) => (
-                  <li key={s}>{s}</li>
-                ))}
-              </ul>
-            </div>
-            <div className="ph-image">
-              <img src={category.image} alt={category.title} />
-            </div>
+      <section className="product-hero">
+        <div className="pc-hero-media">
+          <img src={category.image} alt={category.title} />
+          <div className="pc-hero-scrim" />
+          <div className="wrap pc-hero-content">
+            <h1>
+              <span className="accent">{titleAccent}</span>
+              {titleRest && <><br />{titleRest}</>}
+            </h1>
+            <p className="lede">{category.description}</p>
+            <ul className="specs">
+              {category.specs.map((s) => (
+                <li key={s}>{s}</li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
@@ -52,7 +48,7 @@ export default function ProductCategoryPage() {
                 <div className="img">
                   <img
                     src={`https://picsum.photos/seed/${category.seed}-${n}/700/560`}
-                    alt={`${category.title} — style ${String(n).padStart(2, '0')}`}
+                    alt={`${category.title} style ${String(n).padStart(2, '0')}`}
                     loading="lazy"
                   />
                 </div>
@@ -62,7 +58,7 @@ export default function ProductCategoryPage() {
           </div>
 
           <div className="product-cta">
-            <Button variant="outline" to="/contact" icon="fa-solid fa-envelope">
+            <Button variant="secondary" to="/contact" icon="fa-solid fa-envelope">
               Enquire about this range
             </Button>
             <Button
@@ -82,7 +78,7 @@ export default function ProductCategoryPage() {
           <div className="more-head">
             <h2>Other ranges</h2>
             <Link className="more-all" to="/products">
-              All products <i className="fa-solid fa-arrow-right" aria-hidden="true" />
+              All products <i className="fa-solid fa-chevron-right" aria-hidden="true" />
             </Link>
           </div>
           <div className="more-grid">
@@ -94,6 +90,20 @@ export default function ProductCategoryPage() {
                 <h3>{c.title}</h3>
               </Link>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="product-closing-cta">
+        <div className="wrap">
+          <div className="closing-cta-card">
+            <div>
+              <h3>Have a question about {category.title}?</h3>
+              <p>Sizes, finishes, samples, or a bulk quote — reach out and our sales team will get back to you.</p>
+            </div>
+            <Button variant="gold" to="/contact" icon="fa-solid fa-envelope" iconPosition="right">
+              Contact us
+            </Button>
           </div>
         </div>
       </section>

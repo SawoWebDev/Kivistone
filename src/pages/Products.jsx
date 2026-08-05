@@ -13,14 +13,9 @@ function ProductCard({ category, index, variant = 'standard' }) {
       <div className="body">
         <h3>{category.title}</h3>
         <p>{variant === 'feature' ? category.description : category.short}</p>
-        <ul className="specs">
-          {category.specs.map((s) => (
-            <li key={s}>{s}</li>
-          ))}
-        </ul>
         <div className="go">
           <span>View the range</span>
-          <i className="fa-solid fa-arrow-right" aria-hidden="true" />
+          <i className="fa-solid fa-chevron-right" aria-hidden="true" />
         </div>
       </div>
     </Link>
@@ -35,19 +30,19 @@ export default function Products() {
           <img src="/assets/home/prod_all1.jpg" alt="A curated arrangement of Kivistone soapstone products" />
           <div className="ph-scrim" />
           <div className="wrap ph-content">
-            <h1>Products</h1>
+            <h1><span className="accent">The full</span><br />Kivistone collection</h1>
             <p className="lede">
-              The Kivistone is an impenetrable product — its beauty will last a lifetime. Have a timeless
+              The Kivistone is an impenetrable product, its beauty will last a lifetime. Have a timeless
               Kivistone for yourself, or for the people you'd like to keep something for. We also make
               custom-made designs to your requirements: send your requests or drawings to our sales team
               and we'll get back to you the soonest.
             </p>
             <div className="ph-actions">
-              <Button variant="primary" to="/contact" icon="fa-solid fa-pen-ruler">
+              <Button variant="gold" to="/contact" icon="fa-solid fa-pen-ruler">
                 Request a custom design
               </Button>
               <Button
-                variant="secondary"
+                variant="secondary-inv"
                 href="http://www.kivistone.com/kivistone%20brochure_5.pdf"
                 external
                 icon="fa-solid fa-file-pdf"
@@ -99,35 +94,35 @@ export default function Products() {
               <h2>Bring us a drawing, we'll carve it</h2>
               <p>
                 Corporate gifts, commemorative pieces, sauna fittings, a shape that only makes sense in your
-                kitchen — if it can be drawn, it can usually be cut from soapstone. Send a sketch, a photo or a
+                kitchen: if it can be drawn, it can usually be cut from soapstone. Send a sketch, a photo or a
                 rough measurement and our sales team will come back with what it takes to make it.
               </p>
               <div className="cb-actions">
                 <Button variant="gold" to="/contact" icon="fa-solid fa-envelope">
                   Talk to our sales team
                 </Button>
-                <Button variant="outline-inv" to="/about">
+                <Button variant="secondary-inv" to="/about">
                   Why soapstone
                 </Button>
               </div>
             </div>
             <ol className="cb-steps">
               <li>
-                <span>01</span>
+                <span className="cb-step-ic"><i className="fa-solid fa-pen-ruler" aria-hidden="true" /></span>
                 <div>
                   <h4>Send your drawing</h4>
                   <p>A sketch, CAD file or even a photo of the thing you have in mind.</p>
                 </div>
               </li>
               <li>
-                <span>02</span>
+                <span className="cb-step-ic"><i className="fa-solid fa-swatchbook" aria-hidden="true" /></span>
                 <div>
                   <h4>We quote and sample</h4>
                   <p>Dimensions, finish and volume pricing come back from the workshop.</p>
                 </div>
               </li>
               <li>
-                <span>03</span>
+                <span className="cb-step-ic"><i className="fa-solid fa-truck-fast" aria-hidden="true" /></span>
                 <div>
                   <h4>Carved and shipped</h4>
                   <p>Each piece is hand-finished, checked, and packed for transport.</p>

@@ -10,7 +10,7 @@ export const categories = [
     image: '/assets/products/candle-holders.jpg',
     feature: true,
     description:
-      'Fire and stone — two of nature’s fundamental elements put together into a harmonious yet impressive blend. Whether the occasion is official or festive, KiviStone candle holders won’t be left unnoticed.',
+      'Fire and stone, two of nature’s fundamental elements put together into a harmonious yet impressive blend. Whether the occasion is official or festive, KiviStone candle holders won’t be left unnoticed.',
     short: 'Two of nature’s fundamental elements, put together into a harmonious yet impressive blend.',
     specs: ['Tealight & taper', 'Flame safe', 'Hand-finished'],
   },
@@ -21,7 +21,7 @@ export const categories = [
     image: '/assets/products/plate.jpg',
     feature: true,
     description:
-      'Soapstone is a good conductor of heat and withstands high temperature without any damage. As a natural material it emits no harmful chemicals and does not change the taste of the food heated above it — perfect for sizzling plates and hot dishes.',
+      'Soapstone is a good conductor of heat and withstands high temperature without any damage. As a natural material it emits no harmful chemicals and does not change the taste of the food heated above it, perfect for sizzling plates and hot dishes.',
     short: 'Holds high heat without damage, and never taints the taste of what you serve on it.',
     specs: ['Oven & grill safe', 'Holds heat', 'Food-safe stone'],
   },
@@ -31,8 +31,8 @@ export const categories = [
     seed: 'kivistone-cups',
     image: '/assets/products/cups-and-coolers.jpg',
     description:
-      'Put a KiviStone cooler in the freezer for a few moments. Take it out and place your drinks or wine on it to keep them cool for hours — no ice, no dilution, no condensation rings.',
-    short: 'A few minutes in the freezer keeps drinks and wine cool for hours — no ice, no dilution.',
+      'Put a KiviStone cooler in the freezer for a few moments. Take it out and place your drinks or wine on it to keep them cool for hours: no ice, no dilution, no condensation rings.',
+    short: 'A few minutes in the freezer keeps drinks and wine cool for hours, no ice, no dilution.',
     specs: ['Freezer ready', 'Wine & spirits', 'No dilution'],
   },
   {
@@ -41,7 +41,7 @@ export const categories = [
     seed: 'kivistone-scent',
     image: '/assets/products/scent-warmer.jpg',
     description:
-      'Enjoy the relaxing and vitalizing effect of aromatic oils. Light a candle, pour scented oil into the basin and loosen up — the stone spreads the heat gently, so the fragrance releases slowly rather than burning off.',
+      'Enjoy the relaxing and vitalizing effect of aromatic oils. Light a candle, pour scented oil into the basin and loosen up: the stone spreads the heat gently, so the fragrance releases slowly rather than burning off.',
     short: 'Light a candle, pour oil into the basin, and let the stone release the fragrance slowly.',
     specs: ['Tealight powered', 'Deep oil basin', 'Even diffusion'],
   },
@@ -71,7 +71,7 @@ export const categories = [
     seed: 'kivistone-coaster',
     image: '/assets/products/stone-coaster.jpg',
     description:
-      'The first absorbent stone coasters, car coasters and trivets. CoasterStone offers the widest selection of art available in the marketplace — with over 2,000 designs to choose from, there is something for any style or preference.',
+      'The first absorbent stone coasters, car coasters and trivets. CoasterStone offers the widest selection of art available in the marketplace, with over 2,000 designs to choose from, there’s something for any style or preference.',
     short: 'Absorbent stone coasters, car coasters and trivets, with over 2,000 designs to choose from.',
     specs: ['2,000+ designs', 'Absorbent', 'Sets & trivets'],
   },
@@ -81,8 +81,8 @@ export const categories = [
     seed: 'kivistone-aroma',
     image: '/assets/products/aroma.jpg',
     description:
-      'Carved for fragrant, grape-based pomace brandy of Italian origin — the kind that carries 35–60% alcohol by volume (70 to 120 US proof). The stone holds the chill and opens up the aroma as you drink.',
-    short: 'Carved for fragrant, grape-based pomace brandy — the stone holds the chill and opens the aroma.',
+      'Carved for fragrant, grape-based pomace brandy of Italian origin, the kind that carries 35–60% alcohol by volume (70 to 120 US proof). The stone holds the chill and opens up the aroma as you drink.',
+    short: 'Carved for fragrant, grape-based pomace brandy, the stone holds the chill and opens the aroma.',
     specs: ['Chill or warm', 'Sold in pairs', 'Carved detail'],
   },
 ];

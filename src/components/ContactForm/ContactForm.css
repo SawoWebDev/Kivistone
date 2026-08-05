@@ -1,72 +1,77 @@
 .form-card{
-  background:var(--card); border:1px solid var(--hairline); border-radius:16px;
-  padding:clamp(1.6rem,3vw,2.4rem); box-shadow:var(--shadow);
+  background:var(--bg-dark-2); border:1px solid var(--divider-dark); border-radius:16px;
+  padding:clamp(1.6rem,3vw,2.4rem); box-shadow:var(--shadow-lg);
+  display:flex; flex-direction:column; flex:1;
 }
 
-.field-grid{ display:grid; grid-template-columns:1fr 1fr; gap:1.15rem 1.3rem; }
-.field-full{ grid-column:1 / -1; }
+.field-grid{
+  display:grid; grid-template-columns:1fr 1fr; grid-template-rows:auto auto 1fr;
+  gap:1.15rem 1.3rem; flex:1;
+}
+.field-full{ grid-column:1 / -1; display:flex; flex-direction:column; }
+.field-full textarea{ flex:1; }
 @media (max-width:640px){ .field-grid{ grid-template-columns:1fr; } }
 
 .field{ display:flex; flex-direction:column; gap:0.45rem; }
 .field label{
   font-family:var(--font-mono); font-size:0.68rem; letter-spacing:0.08em; text-transform:uppercase;
-  color:var(--muted); display:flex; align-items:center; gap:0.5rem;
+  color:var(--muted-inv); display:flex; align-items:center; gap:0.5rem;
 }
 .field label .req{
-  font-size:0.6rem; letter-spacing:0.06em; color:var(--gold-deep);
+  font-size:0.6rem; letter-spacing:0.06em; color:var(--gold-light);
   background:rgba(185,155,99,0.16); border-radius:99px; padding:0.15rem 0.45rem;
 }
 
 .field input,
 .field select,
 .field textarea{
-  font-family:var(--font-body); font-size:0.92rem; color:var(--ink);
-  background:rgba(20,22,23,0.035); border:1px solid var(--divider); border-radius:10px;
+  font-family:var(--font-body); font-size:0.92rem; color:var(--ink-inv);
+  background:var(--field-dark); border:1px solid var(--divider-dark); border-radius:10px;
   padding:0.85rem 1rem; width:100%;
   transition:border-color .15s ease, background .15s ease, box-shadow .15s ease;
 }
 .field textarea{ resize:vertical; min-height:160px; line-height:1.6; }
 .field input::placeholder,
-.field textarea::placeholder{ color:var(--faint); }
+.field textarea::placeholder{ color:var(--faint-inv); }
 
 .field input:hover,
 .field select:hover,
-.field textarea:hover{ border-color:var(--accent); }
+.field textarea:hover{ border-color:var(--accent); background:var(--field-dark-hover); }
 
 .field input:focus,
 .field select:focus,
 .field textarea:focus{
   outline:none; border-color:var(--gold);
-  background:var(--card); box-shadow:0 0 0 3px rgba(185,155,99,0.18);
+  background:var(--field-dark-hover); box-shadow:0 0 0 3px rgba(185,155,99,0.22);
 }
 
-.field [aria-invalid="true"]{ border-color:var(--danger); }
-.field [aria-invalid="true"]:focus{ box-shadow:0 0 0 3px rgba(156,78,64,0.16); }
+.field [aria-invalid="true"]{ border-color:var(--danger-inv); }
+.field [aria-invalid="true"]:focus{ box-shadow:0 0 0 3px rgba(218,154,143,0.2); }
 
-.field .err{ font-size:0.78rem; color:var(--danger); }
+.field .err{ font-size:0.78rem; color:var(--danger-inv); }
 
 /* native select arrow removed so the chevron matches the rest of the UI */
 .select-wrap{ position:relative; }
 .select-wrap select{ appearance:none; -webkit-appearance:none; padding-right:2.6rem; cursor:pointer; }
+.select-wrap select option{ background:var(--field-dark); color:var(--ink-inv); }
 .select-wrap i{
   position:absolute; right:1rem; top:50%; transform:translateY(-50%);
-  font-size:0.7rem; color:var(--muted); pointer-events:none;
+  font-size:0.7rem; color:var(--muted-inv); pointer-events:none;
 }
 
 .form-foot{
   display:flex; align-items:center; gap:1.2rem; flex-wrap:wrap;
-  margin-top:1.8rem; padding-top:1.6rem; border-top:1px solid var(--hairline);
+  margin-top:1.8rem; padding-top:1.6rem; border-top:1px solid var(--divider-dark);
 }
-.form-note{ font-size:0.82rem; color:var(--muted); }
 .form-card .btn[disabled]{ opacity:0.65; cursor:default; transform:none; }
 
 .form-sent{ display:flex; flex-direction:column; align-items:center; text-align:center; gap:0.9rem; padding:3.4rem 2rem; }
 .form-sent .sent-ic{
   width:56px; height:56px; border-radius:50%; display:flex; align-items:center; justify-content:center;
-  background:rgba(185,155,99,0.16); color:var(--gold-deep); font-size:1.2rem;
+  background:rgba(185,155,99,0.16); color:var(--gold-light); font-size:1.2rem;
 }
 .form-sent h3{
   font-family:var(--font-display); font-weight:700; font-size:1.25rem; letter-spacing:-0.01em;
-  margin:0; color:var(--ink);
+  margin:0; color:var(--ink-inv);
 }
-.form-sent p{ margin:0 0 0.6rem; font-size:0.92rem; color:var(--muted); line-height:1.7; max-width:42ch; }
+.form-sent p{ margin:0 0 0.6rem; font-size:0.92rem; color:var(--muted-inv); line-height:1.7; max-width:42ch; }

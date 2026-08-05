@@ -1,4 +1,4 @@
-/* hero — full-bleed banner image with overlaid text, vertically centred */
+/* hero: full-bleed banner image with overlaid text, vertically centred */
 .hero-media{
   position:relative; width:100%; overflow:hidden;
   height:clamp(420px,44vw,600px);
@@ -11,8 +11,8 @@
 .hero-scrim{
   position:absolute; inset:0;
   background:
-    linear-gradient(100deg, rgba(15,13,10,0.92) 0%, rgba(15,13,10,0.82) 35%, rgba(15,13,10,0.5) 58%, rgba(15,13,10,0.12) 78%, rgba(15,13,10,0) 92%),
-    linear-gradient(0deg, rgba(15,13,10,0.3) 0%, rgba(15,13,10,0) 30%, rgba(15,13,10,0) 70%, rgba(15,13,10,0.3) 100%);
+    linear-gradient(100deg, rgba(12,12,12,0.92) 0%, rgba(12,12,12,0.82) 35%, rgba(12,12,12,0.5) 58%, rgba(12,12,12,0.12) 78%, rgba(12,12,12,0) 92%),
+    linear-gradient(0deg, rgba(12,12,12,0.3) 0%, rgba(12,12,12,0) 30%, rgba(12,12,12,0) 70%, rgba(12,12,12,0.3) 100%);
 }
 .hero-content{
   position:relative; z-index:1; height:100%;
@@ -24,21 +24,20 @@
   font-family:var(--font-display); font-weight:700; letter-spacing:-0.022em;
   font-size:clamp(2rem,4.6vw,3.4rem); line-height:1.05; margin:0 0 1.1rem;
 }
+.hero h1 .accent{ color:var(--gold-light); }
 .hero .lede{ font-size:1rem; color:var(--muted-inv); line-height:1.72; margin:0 0 1.9rem; }
 .hero-actions{ display:flex; align-items:center; gap:1.4rem; flex-wrap:wrap; }
-/* hero pair sits at the larger gold-CTA size so both buttons share a height */
-.hero-actions .btn{ font-size:0.92rem; padding:1.05rem 2.1rem; }
 @media (max-width:640px){
   .hero-media{ height:clamp(460px,120vw,600px); }
   .hero-media > img{ object-position:70% 50%; }
   .hero-scrim{
     background:
-      linear-gradient(180deg, rgba(15,13,10,0.5) 0%, rgba(15,13,10,0.25) 30%, rgba(15,13,10,0.65) 62%, rgba(15,13,10,0.92) 100%);
+      linear-gradient(180deg, rgba(12,12,12,0.5) 0%, rgba(12,12,12,0.25) 30%, rgba(12,12,12,0.65) 62%, rgba(12,12,12,0.92) 100%);
   }
   .hero-content{ justify-content:flex-end; padding-bottom:clamp(1.6rem,6vw,2.4rem); }
 }
 
-/* about soapstone — dark card inset on the page's light background, like the Contact banner */
+/* about us: dark card inset on the page's light background, like the Contact banner */
 section.about{ padding:clamp(2.4rem,4vw,3.4rem) 0; }
 .about-card{
   display:grid; grid-template-columns:0.85fr 1fr; gap:3.4rem; align-items:center;
@@ -54,47 +53,57 @@ section.about{ padding:clamp(2.4rem,4vw,3.4rem) 0; }
   letter-spacing:-0.015em; margin:0 0 1.3rem; color:var(--ink-inv);
 }
 .about-text p{ font-size:0.94rem; color:var(--muted-inv); line-height:1.78; margin:0 0 1.1rem; }
-.about-text a.inline-link{ color:var(--gold-light); border-bottom:1px solid var(--gold); font-weight:500; }
+.about-text a.inline-link{ color:var(--gold-light); font-weight:500; }
 .about-text a.inline-link:hover{ color:var(--gold); }
 
-/* bulk-order promo */
-section.promo{ padding:clamp(3rem,5vw,4rem) 0; }
-.promo-card{
-  display:grid; grid-template-columns:0.9fr 1.1fr; align-items:stretch; gap:0;
-  background:var(--card); border:1px solid var(--hairline); border-radius:16px;
-  overflow:hidden; box-shadow:var(--shadow);
+/* about soapstone: full-width gold band, mirrored from the contact band so the dark end sits behind the text */
+section.soapstone{
+  background:
+    radial-gradient(24% 40% at 12% 8%, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.28) 22%, rgba(255,255,255,0.08) 42%, rgba(255,255,255,0) 60%),
+    linear-gradient(100deg, var(--gold-light) 0%, var(--gold) 30%, var(--gold-deep) 100%);
+  color:var(--bg-dark);
+  padding:clamp(3.2rem,5.4vw,4.8rem) 0;
 }
-@media (max-width:780px){ .promo-card{ grid-template-columns:1fr; } }
-.promo-media{ min-height:220px; }
-.promo-media img{ width:100%; height:100%; object-fit:cover; }
-.promo-body{
-  padding:clamp(1.8rem,3.5vw,2.6rem); display:flex; flex-direction:column;
-  align-items:flex-start; justify-content:center; gap:0.3rem;
+.soapstone-inner{
+  display:grid; grid-template-columns:minmax(0,0.85fr) minmax(0,1fr);
+  gap:clamp(2rem,4vw,3.4rem); align-items:stretch;
 }
-.promo-body h3{
-  font-family:var(--font-display); font-weight:700; font-size:clamp(1.2rem,2.2vw,1.55rem);
-  letter-spacing:-0.01em; margin:0 0 0.6rem;
+@media (max-width:900px){ .soapstone-inner{ grid-template-columns:1fr; } }
+.soapstone-text{ display:flex; flex-direction:column; align-items:flex-start; justify-content:center; }
+.soapstone-text h2{
+  font-family:var(--font-display); font-weight:700; font-size:clamp(1.8rem,3.2vw,2.5rem);
+  letter-spacing:-0.02em; line-height:1.15; margin:0 0 1.3rem; color:var(--ink-inv);
 }
-.promo-body p{ font-size:0.92rem; color:var(--muted); line-height:1.6; margin:0 0 1.4rem; max-width:38ch; }
+.soapstone-text p{ font-size:0.94rem; color:var(--ink-inv); opacity:0.92; line-height:1.78; margin:0 0 1.1rem; max-width:52ch; }
+.soapstone-text a.inline-link{ color:var(--ink-inv); font-weight:600; }
+.soapstone-text a.inline-link:hover{ opacity:0.8; }
+.soapstone-text .btn{ flex-shrink:0; }
+.soapstone-image{ border-radius:14px; overflow:hidden; box-shadow:0 20px 50px -20px rgba(20,20,20,0.4); min-height:280px; }
+.soapstone-image img{ width:100%; height:100%; object-fit:cover; }
+@media (max-width:900px){ .soapstone-image{ aspect-ratio:16/11; min-height:0; } }
 
 /* categories grid */
 section.categories{ padding:clamp(3.6rem,6vw,4.8rem) 0; }
-.card-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.6rem; }
+.card-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:1.6rem; }
 @media (max-width:900px){ .card-grid{ grid-template-columns:1fr 1fr; } }
-@media (max-width:640px){ .card-grid{ grid-template-columns:1fr; } }
-.categories-cta{ display:flex; justify-content:center; margin-top:2.4rem; }
+@media (max-width:560px){ .card-grid{ grid-template-columns:1fr; } }
+.categories-cta{ display:flex; justify-content:center; align-items:center; gap:1.2rem; flex-wrap:wrap; margin-top:2.4rem; }
 
-/* brochure */
-section.brochure{ background:var(--card); padding:clamp(3.8rem,6vw,5.2rem) 0; }
-.brochure-card{
-  max-width:900px; margin:0 auto; background:var(--card); border:1px solid var(--hairline);
-  border-radius:16px; padding:clamp(2.2rem,4vw,3.2rem); display:flex; align-items:center;
-  justify-content:space-between; gap:2rem; flex-wrap:wrap; box-shadow:var(--shadow);
+/* contacts: full-width gold band, dark end sits behind the text (left) for contrast, shine behind the card (right) */
+section.home-contact{
+  background:
+    radial-gradient(24% 40% at 88% 8%, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.28) 22%, rgba(255,255,255,0.08) 42%, rgba(255,255,255,0) 60%),
+    linear-gradient(100deg, var(--gold-deep) 0%, var(--gold) 55%, var(--gold-light) 100%);
+  color:var(--bg-dark);
+  padding:clamp(3.2rem,5.4vw,4.8rem) 0;
 }
-.brochure-info{ display:flex; align-items:center; gap:1.3rem; }
-.brochure-info .file-ic{
-  width:58px; height:58px; border-radius:12px; background:var(--bg-dark-2); color:var(--gold-light);
-  display:flex; align-items:center; justify-content:center; font-size:1.3rem; flex-shrink:0;
+.home-contact-inner{
+  display:grid; grid-template-columns:minmax(0,1.05fr) minmax(0,0.95fr);
+  gap:clamp(2rem,4vw,3.4rem); align-items:center;
 }
-.brochure-info h3{ font-family:var(--font-display); font-weight:700; font-size:1.2rem; margin:0 0 0.3rem; letter-spacing:-0.01em; }
-.brochure-info p{ font-family:var(--font-mono); font-size:0.78rem; color:var(--faint); margin:0; }
+@media (max-width:860px){ .home-contact-inner{ grid-template-columns:1fr; } }
+.home-contact-copy h2{
+  font-family:var(--font-display); font-weight:700; font-size:clamp(1.8rem,3.2vw,2.5rem);
+  letter-spacing:-0.02em; line-height:1.15; margin:0 0 1.1rem; color:var(--ink-inv);
+}
+.home-contact-copy p{ font-size:0.95rem; color:var(--ink-inv); opacity:0.92; line-height:1.75; margin:0 0 1.5rem; max-width:46ch; }

@@ -1,28 +1,59 @@
-section.product-hero{ padding:clamp(2rem,4vw,2.8rem) 0 clamp(2.6rem,4.5vw,3.6rem); }
-section.product-grid{ padding:0 0 clamp(3.2rem,5vw,4.4rem); }
-section.product-more{ padding:0 0 clamp(3.6rem,6vw,4.8rem); }
+section.product-grid{ padding:clamp(3.2rem,5vw,4.4rem) 0; }
+section.product-more{ padding:0 0 clamp(2.6rem,4.2vw,3.4rem); }
 
-/* breadcrumb */
-.crumbs{
-  display:flex; align-items:center; gap:0.6rem; margin-bottom:clamp(1.8rem,3.5vw,2.6rem);
-  font-family:var(--font-mono); font-size:0.72rem; letter-spacing:0.05em; color:var(--faint);
+/* closing cta — dark banner floating on the light page, the reach-out prompt before the footer */
+section.product-closing-cta{ padding:0 0 clamp(3.6rem,6vw,4.8rem); }
+.closing-cta-card{
+  background:var(--bg-dark-2); color:var(--ink-inv);
+  border-radius:22px; padding:clamp(2rem,3.6vw,2.8rem) clamp(2.2rem,4vw,3.4rem);
+  display:flex; align-items:center; justify-content:space-between; gap:1.8rem; flex-wrap:wrap;
+  box-shadow:var(--shadow-lg);
 }
-.crumbs a{ color:var(--muted); transition:color .15s ease; }
-.crumbs a:hover{ color:var(--ink); }
-.crumbs i{ font-size:0.55rem; }
+.closing-cta-card h3{
+  font-family:var(--font-display); font-weight:700; font-size:1.2rem; letter-spacing:-0.01em;
+  margin:0 0 0.4rem; color:var(--ink-inv);
+}
+.closing-cta-card p{ font-size:0.9rem; color:var(--muted-inv); line-height:1.6; margin:0; max-width:44ch; }
 
-/* hero */
-.ph-grid{ display:grid; grid-template-columns:1fr 0.95fr; gap:clamp(2rem,4.5vw,3.6rem); align-items:center; }
-@media (max-width:900px){ .ph-grid{ grid-template-columns:1fr; } .ph-grid .ph-image{ order:-1; } }
+/* hero — full-bleed category image with overlaid text, same treatment as the site's other page heroes */
+section.product-hero{ padding:0; }
+.pc-hero-media{
+  position:relative; width:100%; overflow:hidden;
+  height:clamp(380px,42vw,560px);
+}
+.pc-hero-media > img{
+  position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+  filter:grayscale(12%) contrast(1.05) brightness(0.82);
+}
+.pc-hero-scrim{
+  position:absolute; inset:0;
+  background:
+    linear-gradient(100deg, rgba(12,12,12,0.92) 0%, rgba(12,12,12,0.82) 35%, rgba(12,12,12,0.5) 58%, rgba(12,12,12,0.12) 78%, rgba(12,12,12,0) 92%),
+    linear-gradient(0deg, rgba(12,12,12,0.3) 0%, rgba(12,12,12,0) 30%, rgba(12,12,12,0) 70%, rgba(12,12,12,0.3) 100%);
+}
+.pc-hero-content{
+  position:relative; z-index:1; height:100%;
+  display:flex; flex-direction:column; justify-content:center;
+  color:var(--ink-inv);
+}
+.pc-hero-content > *{ max-width:min(100%,620px); }
+@media (max-width:640px){
+  .pc-hero-media{ height:clamp(420px,120vw,560px); }
+  .pc-hero-scrim{
+    background:
+      linear-gradient(180deg, rgba(12,12,12,0.5) 0%, rgba(12,12,12,0.25) 30%, rgba(12,12,12,0.65) 62%, rgba(12,12,12,0.92) 100%);
+  }
+  .pc-hero-content{ justify-content:flex-end; padding-bottom:clamp(1.6rem,6vw,2.4rem); }
+}
+
 .product-hero h1{
   font-family:var(--font-display); font-weight:700; letter-spacing:-0.022em;
-  font-size:clamp(2rem,4.2vw,3.1rem); line-height:1.05; margin:0 0 1.1rem;
+  font-size:clamp(2rem,4.2vw,3.1rem); line-height:1.05; margin:0 0 1.1rem; color:var(--ink-inv);
 }
-.product-hero .lede{ font-size:0.98rem; color:var(--muted); line-height:1.75; max-width:52ch; margin:0 0 1.6rem; }
-.ph-image{ border-radius:12px; overflow:hidden; box-shadow:var(--shadow-lg); aspect-ratio:3/2; }
-.ph-image img{
-  width:100%; height:100%; object-fit:cover;
-  filter:grayscale(10%) contrast(1.03) brightness(1.01);
+.product-hero h1 .accent{ color:var(--gold-light); }
+.product-hero .lede{ font-size:0.98rem; color:var(--muted-inv); line-height:1.75; max-width:52ch; margin:0 0 1.6rem; }
+.product-hero .specs li{
+  color:var(--muted-inv); background:rgba(242,242,242,0.12); border-color:rgba(242,242,242,0.22);
 }
 
 /* tiles */
@@ -41,7 +72,7 @@ section.product-more{ padding:0 0 clamp(3.6rem,6vw,4.8rem); }
   background:var(--card); border-radius:10px; overflow:hidden; box-shadow:var(--shadow);
   border:1px solid var(--hairline); transition:transform .25s ease, box-shadow .25s ease;
 }
-.product-tile:hover{ transform:translateY(-4px); box-shadow:0 24px 44px -20px rgba(30,28,22,0.28); }
+.product-tile:hover{ transform:translateY(-4px); box-shadow:0 24px 44px -20px rgba(20,20,20,0.28); }
 .product-tile .img{ aspect-ratio:5/4; overflow:hidden; }
 .product-tile .img img{ width:100%; height:100%; object-fit:cover; transition:transform .5s ease; }
 .product-tile:hover .img img{ transform:scale(1.045); }

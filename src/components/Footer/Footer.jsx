@@ -16,9 +16,9 @@ export default function Footer() {
       <div className="wrap">
         <div className="footer-grid">
           <div>
-            <div className="logo"><span className="mark" />Kivistone</div>
+            <div className="logo"><span className="logo-text">Kivistone</span></div>
             <p className="about-blurb">
-              A collection of beautiful products carved from Finnish soapstone — for interiors, household use, and gifting.
+              A collection of beautiful products carved from Finnish soapstone, for interiors, household use, and gifting.
             </p>
             <div className="social-row">
               {SOCIAL.map((s) => (
@@ -36,14 +36,14 @@ export default function Footer() {
           </div>
 
           <div className="footer-col">
-            <h5>Shop</h5>
+            <h5>Products</h5>
             {categories.map((c) => (
               <Link key={c.slug} to={`/products/${c.slug}`}>{c.title}</Link>
             ))}
           </div>
 
           <div className="footer-col">
-            <h5>Studio</h5>
+            <h5>Company</h5>
             <Link to="/about">About</Link>
             <Link to="/contact">Contact</Link>
             <a href="http://www.kivistone.com/kivistone%20brochure_5.pdf" target="_blank" rel="noopener noreferrer">
@@ -52,7 +52,7 @@ export default function Footer() {
           </div>
 
           <div className="footer-col">
-            <h5>Contact</h5>
+            <h5>Get in touch</h5>
             <a href="mailto:studio@kivistone.fi">studio@kivistone.fi</a>
             <a href="tel:+35894567210">+358 9 4567 210</a>
             <a href="http://www.kivistone.com/" target="_blank" rel="noopener noreferrer">kivistone.com</a>

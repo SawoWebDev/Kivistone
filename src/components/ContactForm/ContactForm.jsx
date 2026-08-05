@@ -43,7 +43,7 @@ export default function ContactForm() {
         <div className="sent-ic"><i className="fa-solid fa-check" aria-hidden="true" /></div>
         <h3>Message sent</h3>
         <p>Thanks for reaching out. Our sales team in Cebu will get back to you within two business days.</p>
-        <Button variant="outline" onClick={() => setStatus('idle')}>Send another message</Button>
+        <Button variant="gold" onClick={() => setStatus('idle')}>Send another message</Button>
       </div>
     );
   }
@@ -89,7 +89,7 @@ export default function ContactForm() {
           <label htmlFor="cf-message">Your message <span className="req">required</span></label>
           <textarea
             id="cf-message" rows={6} value={values.message} onChange={update('message')}
-            placeholder="Product, quantity, destination port — anything that helps us quote accurately."
+            placeholder="Product, quantity, destination port, anything that helps us quote accurately."
             aria-invalid={!!errors.message} aria-describedby={errors.message ? 'cf-message-err' : undefined}
           />
           {errors.message && <span className="err" id="cf-message-err">{errors.message}</span>}
@@ -100,7 +100,6 @@ export default function ContactForm() {
         <Button variant="gold" type="submit" icon="fa-solid fa-paper-plane" disabled={status === 'sending'}>
           {status === 'sending' ? 'Sending…' : 'Send message'}
         </Button>
-        <span className="form-note">We reply within two business days.</span>
       </div>
     </form>
   );

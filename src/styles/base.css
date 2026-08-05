@@ -4,10 +4,22 @@ body{
   margin:0; background:var(--card); color:var(--ink);
   font-family:var(--font-body); -webkit-font-smoothing:antialiased;
 }
-img{ display:block; max-width:100%; filter:grayscale(45%) sepia(6%) contrast(1.04) brightness(0.99); }
+img{ display:block; max-width:100%; filter:grayscale(45%) contrast(1.04) brightness(0.99); }
 a{ text-decoration:none; color:inherit; }
 
 .wrap{ max-width:1240px; margin:0 auto; padding:0 clamp(20px,5vw,56px); }
+
+@keyframes page-fade-from-black{
+  from{ opacity:1; }
+  to{ opacity:0; }
+}
+.page-fade-overlay{
+  position:absolute; inset:0; z-index:1; background:#000;
+  pointer-events:none; animation:page-fade-from-black .22s ease both;
+}
+@media (prefers-reduced-motion:reduce){
+  .page-fade-overlay{ animation:none; opacity:0; }
+}
 
 .section-head{ margin-bottom:2.6rem; max-width:60ch; }
 .section-head h2{ font-family:var(--font-display); font-weight:700; font-size:clamp(1.5rem,2.6vw,2rem); letter-spacing:-0.015em; margin:0 0 0.9rem; }

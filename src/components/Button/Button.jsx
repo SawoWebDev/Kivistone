@@ -2,14 +2,15 @@ import { Link } from 'react-router-dom';
 import './Button.css';
 
 /*
-  Two buttons, site-wide: the gold primary and the glass secondary from the
-  home hero. `secondary-inv` is the same secondary button, just re-tinted for
-  dark sections and photo scrims — not a third design.
+  Gold primary, metallic secondary (from the home hero; `secondary-inv` is
+  the same button re-tinted for dark sections/photo scrims, not a third
+  design), and `dark` for the header nav CTA.
 */
 const VARIANT_CLASS = {
   gold: 'btn-gold',
   secondary: 'btn-secondary',
   'secondary-inv': 'btn-secondary-inv',
+  dark: 'btn-dark',
 };
 
 export default function Button({

@@ -7,39 +7,39 @@
   /* fonts */
   --font-display:'Red Hat Display', sans-serif;
   --font-body:'Onest', sans-serif;
-  --font-mono:'IBM Plex Mono', monospace;
+  --font-mono:'Onest', sans-serif;
 
-  /* light surfaces — the site runs on one white, no separate page-gray tint */
+  /* light surfaces: the site runs on one white, no separate page-gray tint */
   --card:#FFFFFF;
 
   /*
-    Dark surfaces — a warm stone-gray ramp, lightest layer on top.
+    Dark surfaces: a neutral gray ramp, lightest layer on top.
     Change these four and every dark section, card, panel and field
     across the site moves with them.
       bg-dark    footer / deepest band
       bg-dark-2  dark page sections  (section.dark)
       surface    inset panels, detail cards
       card-dark  raised cards (contact form)
-      field-dark form inputs — the topmost, interactive layer
+      field-dark form inputs, the topmost, interactive layer
   */
-  --bg-dark:#141617;
-  --bg-dark-2:#141617;
-  --surface-dark:#3D3A34;
-  --card-dark:#403D36;
-  --field-dark:#4A473F;
-  --field-dark-hover:#524E45;
+  --bg-dark:#141414;
+  --bg-dark-2:#141414;
+  --surface-dark:#333333;
+  --card-dark:#3D3D3D;
+  --field-dark:#333333;
+  --field-dark-hover:#474747;
 
   /* text */
-  --ink:#141617;
-  --ink-secondary:#4C4A43;
-  --muted:#726F65;
-  --faint:#918D80;
-  --ink-inv:#F2F0E9;
-  --muted-inv:#C8C4B8;
-  --faint-inv:#ADA89A;
+  --ink:#141414;
+  --ink-secondary:#4A4A4A;
+  --muted:#737373;
+  --faint:#949494;
+  --ink-inv:#F2F2F2;
+  --muted-inv:#CFCFCF;
+  --faint-inv:#AFAFAF;
 
   /* accent */
-  --accent:#8C8577;
+  --accent:#8C8C8C;
   --gold:#B99B63;
   --gold-light:#D3B888;  /* gold text on dark surfaces */
   --gold-deep:#8A6E37;   /* gold text on light surfaces */
@@ -47,22 +47,18 @@
   --danger-inv:#DA9A8F;  /* error text on dark surfaces */
 
   /* dividers */
-  --divider:#D9D6CC;
-  --hairline:#E5E3DA;
-  --divider-dark:#4F4C43;
-  --divider-dark-strong:#635F54;
+  --divider:#D9D9D9;
+  --hairline:#E6E6E6;
+  --divider-dark:#474747;
 
-  /* buttons */
-  --btn-bg:#141617;
-  --btn-text:#EDECE7;
-  /* filled secondary — a stone fill that reads as a button next to the dark primary */
-  --btn-2-bg:#DFDCD1;
-  --btn-2-bg-hover:#D3CFC1;
+  /* buttons: gold primary + one glass secondary (light/dark tints below) */
+  --btn-2-bg:#DEDEDE;
+  --btn-2-bg-hover:#D1D1D1;
   /* same idea on dark sections / photo scrims */
-  --btn-2-bg-inv:rgba(242,240,233,0.14);
-  --btn-2-bg-inv-hover:rgba(242,240,233,0.24);
+  --btn-2-bg-inv:rgba(242,242,242,0.14);
+  --btn-2-bg-inv-hover:rgba(242,242,242,0.24);
 
   /* shadows */
-  --shadow: 0 1px 2px rgba(30,28,22,0.04), 0 12px 28px -14px rgba(30,28,22,0.18);
-  --shadow-lg: 0 20px 50px -20px rgba(20,18,14,0.35);
+  --shadow: 0 1px 2px rgba(20,20,20,0.04), 0 12px 28px -14px rgba(20,20,20,0.18);
+  --shadow-lg: 0 20px 50px -20px rgba(15,15,15,0.35);
 }

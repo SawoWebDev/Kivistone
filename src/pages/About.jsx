@@ -31,12 +31,12 @@ export default function About() {
           <img src="/assets/home/Kivistone-plate.jpg" alt="Finnish soapstone hand-finished into a sizzling serving plate" />
           <div className="story-scrim" />
           <div className="wrap story-content">
-            <h1>Finnish stone, Finnish standards</h1>
+            <h1><span className="accent">Finnish stone,</span><br />Finnish standards</h1>
             <p>
               The KiviStone brand name is owned and managed by Finns, who also own and manage the worldwide
               known sauna product manufacturer{' '}
               <a className="inline-link" href="http://www.sawo.com/" target="_blank" rel="noopener noreferrer">Sawo Inc.</a>
-              {' '}— one of the biggest manufacturers in the sauna industry.
+              , one of the biggest manufacturers in the sauna industry.
             </p>
             <p>
               That shared ownership is why a gift item and a sauna heater come out of the same discipline: the
@@ -44,10 +44,7 @@ export default function About() {
               every piece we ship.
             </p>
             <div className="actions">
-              <Button variant="outline-inv" href="http://www.kivistone.com/" external icon="fa-solid fa-arrow-up-right-from-square">
-                Visit kivistone.com
-              </Button>
-              <Button variant="secondary-inv" to="/contact" icon="fa-solid fa-envelope">Get in touch</Button>
+              <Button variant="gold" to="/contact" icon="fa-solid fa-envelope">Get in touch</Button>
             </div>
           </div>
         </div>
@@ -77,7 +74,7 @@ export default function About() {
           <div className="about-cta-card">
             <div>
               <h3>See the full range</h3>
-              <p>Soapstone products and gift items — the complete catalog with specifications.</p>
+              <p>Soapstone products and gift items, the complete catalog with specifications.</p>
             </div>
             <div className="about-cta-actions">
               <Button
@@ -88,7 +85,7 @@ export default function About() {
               >
                 Download brochure
               </Button>
-              <Button variant="outline-inv" to="/products" icon="fa-solid fa-arrow-right" iconPosition="right">
+              <Button variant="secondary" to="/products" icon="fa-solid fa-chevron-right" iconPosition="right">
                 Browse products
               </Button>
             </div>
