@@ -10,7 +10,7 @@ export default function Home() {
     <>
       <section className="hero">
         <div className="hero-media">
-          <img src="/assets/home/water-kettle.png" alt="Kivistone soapstone scent warmers styled on a sunlit windowsill" />
+          <img src="/assets/home/water-kettle.webp" alt="Kivistone soapstone scent warmers styled on a sunlit windowsill" />
           <div className="hero-scrim" />
           <div className="wrap hero-content">
             <h1><span className="accent">Carved once.</span><br />Kept forever.</h1>
@@ -23,7 +23,6 @@ export default function Home() {
               <Button variant="gold" to="/products" icon="fa-solid fa-chevron-right" iconPosition="right">
                 View the collection
               </Button>
-              <Button variant="secondary-inv" to="/about">Learn about soapstone</Button>
             </div>
           </div>
         </div>
@@ -49,7 +48,7 @@ export default function Home() {
               </Button>
             </div>
             <div className="about-image">
-              <img src="/assets/home/prod_all1.jpg" alt="A selection of Kivistone soapstone products" />
+              <img src="/assets/home/prod_all1.webp" alt="A selection of Kivistone soapstone products" />
             </div>
           </div>
         </div>
@@ -58,7 +57,7 @@ export default function Home() {
       <section className="soapstone">
         <div className="wrap soapstone-inner">
           <div className="soapstone-image">
-            <img src="/assets/products/stone-coaster.jpg" alt="Detail of hand-finished Kivistone soapstone" />
+            <img src="/assets/products/stone-coaster.webp" alt="Detail of hand-finished Kivistone soapstone" />
           </div>
           <div className="soapstone-text">
             <h2>About Soapstone</h2>

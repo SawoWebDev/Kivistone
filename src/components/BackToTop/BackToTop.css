@@ -1,0 +1,34 @@
+/* frosted glass disc, lifted off the page with a layered 3D shadow */
+.back-to-top{
+  position:fixed; right:1.6rem; bottom:1.6rem; z-index:60;
+  width:46px; height:46px; border-radius:50%; cursor:pointer;
+  display:flex; align-items:center; justify-content:center; font-size:0.95rem;
+  color:var(--ink-inv);
+  background:rgba(10,10,10,0.68);
+  backdrop-filter:blur(14px) saturate(160%);
+  -webkit-backdrop-filter:blur(14px) saturate(160%);
+  border:1px solid rgba(255,255,255,0.22);
+  box-shadow:
+    inset 0 1px 1px rgba(255,255,255,0.3),
+    inset 0 -3px 5px rgba(0,0,0,0.3),
+    0 3px 6px rgba(0,0,0,0.2),
+    0 16px 30px -14px rgba(0,0,0,0.55);
+  opacity:0; visibility:hidden; transform:translateY(12px);
+  transition:opacity .25s ease, transform .2s ease, visibility .25s ease, background .2s ease, box-shadow .2s ease;
+}
+.back-to-top.visible{ opacity:1; visibility:visible; transform:translateY(0); }
+.back-to-top:hover{
+  background:rgba(10,10,10,0.82);
+  transform:translateY(-3px);
+  box-shadow:
+    inset 0 1px 1px rgba(255,255,255,0.35),
+    inset 0 -3px 5px rgba(0,0,0,0.3),
+    0 4px 8px rgba(0,0,0,0.22),
+    0 20px 36px -14px rgba(0,0,0,0.6);
+}
+.back-to-top:active{ transform:translateY(-1px) scale(0.96); }
+.back-to-top:focus-visible{ outline:2px solid var(--gold); outline-offset:2px; }
+
+@media (max-width:640px){
+  .back-to-top{ right:1.1rem; bottom:1.1rem; width:42px; height:42px; font-size:0.85rem; }
+}

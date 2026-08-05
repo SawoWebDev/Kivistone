@@ -7,7 +7,7 @@ const STANDARDS = [
     icon: 'fa-solid fa-certificate',
     label: 'ISO 9001:2000',
     title: 'Quality management',
-    text: 'Sawo Inc. is a certified company, and the same quality management system governs how Kivistone soapstone pieces are produced and inspected.',
+    text: 'SAWO Inc. is a certified company, and the same quality management system governs how Kivistone soapstone pieces are produced and inspected.',
   },
   {
     icon: 'fa-solid fa-leaf',
@@ -19,7 +19,7 @@ const STANDARDS = [
     icon: 'fa-solid fa-scale-balanced',
     label: 'Labour practice',
     title: 'Fair, supervised, verified',
-    text: 'Sawo Inc. strictly follows local and international labour laws and good practices, under the supervision of an independent third party and local officials.',
+    text: 'SAWO Inc. strictly follows local and international labour laws and good practices, under the supervision of an independent third party and local officials.',
   },
 ];
 
@@ -28,14 +28,14 @@ export default function About() {
     <>
       <section className="story">
         <div className="story-media">
-          <img src="/assets/home/Kivistone-plate.jpg" alt="Finnish soapstone hand-finished into a sizzling serving plate" />
+          <img src="/assets/home/Kivistone-plate.webp" alt="Finnish soapstone hand-finished into a sizzling serving plate" />
           <div className="story-scrim" />
           <div className="wrap story-content">
             <h1><span className="accent">Finnish stone,</span><br />Finnish standards</h1>
             <p>
-              The KiviStone brand name is owned and managed by Finns, who also own and manage the worldwide
+              The Kivistone brand name is owned and managed by Finns, who also own and manage the worldwide
               known sauna product manufacturer{' '}
-              <a className="inline-link" href="http://www.sawo.com/" target="_blank" rel="noopener noreferrer">Sawo Inc.</a>
+              <a className="inline-link" href="http://www.sawo.com/" target="_blank" rel="noopener noreferrer">SAWO Inc.</a>
               , one of the biggest manufacturers in the sauna industry.
             </p>
             <p>
@@ -53,8 +53,8 @@ export default function About() {
       <section className="standards light">
         <div className="wrap">
           <SectionHead
-            title="Sawo Incorporated"
-            description="Kivistone is made under the certifications, environmental controls, and labour practices Sawo Inc. is audited against."
+            title="SAWO Incorporated"
+            description="Kivistone is made under the certifications, environmental controls, and labour practices SAWO Inc. is audited against."
           />
           <div className="standard-grid">
             {STANDARDS.map((s) => (
@@ -85,7 +85,7 @@ export default function About() {
               >
                 Download brochure
               </Button>
-              <Button variant="secondary" to="/products" icon="fa-solid fa-chevron-right" iconPosition="right">
+              <Button variant="secondary-inv" to="/products" icon="fa-solid fa-chevron-right" iconPosition="right">
                 Browse products
               </Button>
             </div>

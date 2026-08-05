@@ -62,3 +62,21 @@
   --shadow: 0 1px 2px rgba(20,20,20,0.04), 0 12px 28px -14px rgba(20,20,20,0.18);
   --shadow-lg: 0 20px 50px -20px rgba(15,15,15,0.35);
 }
+
+/*
+  Silver mode: only the gold accent is re-tinted, to a neutral steel gray
+  (not blue-leaning). These three vars double as text/icon accent colors on
+  both light and dark sections across the site (see the "gold text on X
+  surfaces" note above), so they stay mid-tone rather than near-black —
+  pushing them to near-black would make gold-light illegible as accent text
+  on the site's dark sections. The .btn-gold fill itself goes near-black
+  independently, via its own hardcoded stops in Button.css, since a button
+  provides its own background and doesn't have that constraint. Every
+  white/light surface on the site stays exactly as-is — --card, --ink,
+  dividers, dark-section tokens are all untouched.
+*/
+:root[data-theme="silver"]{
+  --gold:#7D8084;
+  --gold-light:#CACDD0;
+  --gold-deep:#55585C;
+}

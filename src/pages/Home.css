@@ -24,9 +24,42 @@
   font-family:var(--font-display); font-weight:700; letter-spacing:-0.022em;
   font-size:clamp(2rem,4.6vw,3.4rem); line-height:1.05; margin:0 0 1.1rem;
 }
+/* metallic accent: brushed gold/silver gradient clipped to the text, follows the theme toggle */
 .hero h1 .accent{ color:var(--gold-light); }
+@supports (background-clip:text) or (-webkit-background-clip:text){
+  .hero h1 .accent{
+    background-image:linear-gradient(115deg,
+      rgba(255,255,255,0.95) 0%,
+      var(--gold-light) 16%,
+      var(--gold) 38%,
+      var(--gold-deep) 54%,
+      var(--gold) 70%,
+      var(--gold-light) 86%,
+      rgba(255,255,255,0.9) 100%);
+    background-size:220% 100%;
+    background-position:30% 0;
+    -webkit-background-clip:text; background-clip:text;
+    -webkit-text-fill-color:transparent; color:transparent;
+    text-shadow:0 1px 1px rgba(0,0,0,0.3);
+  }
+  /* silver mode's gray ramp reads too dark against the hero scrim at the deep gold-deep stop; brighten it */
+  :root[data-theme="silver"] .hero h1 .accent{
+    background-image:linear-gradient(115deg,
+      #FFFFFF 0%,
+      #E3E6E8 16%,
+      #C3C8CC 38%,
+      var(--gold) 54%,
+      #C3C8CC 70%,
+      #E3E6E8 86%,
+      #FFFFFF 100%);
+  }
+}
 .hero .lede{ font-size:1rem; color:var(--muted-inv); line-height:1.72; margin:0 0 1.9rem; }
 .hero-actions{ display:flex; align-items:center; gap:1.4rem; flex-wrap:wrap; }
+@media (max-width:420px){
+  .hero-actions{ flex-direction:column; align-items:stretch; gap:0.9rem; }
+  .hero-actions .btn{ justify-content:center; }
+}
 @media (max-width:640px){
   .hero-media{ height:clamp(460px,120vw,600px); }
   .hero-media > img{ object-position:70% 50%; }
@@ -88,6 +121,10 @@ section.categories{ padding:clamp(3.6rem,6vw,4.8rem) 0; }
 @media (max-width:900px){ .card-grid{ grid-template-columns:1fr 1fr; } }
 @media (max-width:560px){ .card-grid{ grid-template-columns:1fr; } }
 .categories-cta{ display:flex; justify-content:center; align-items:center; gap:1.2rem; flex-wrap:wrap; margin-top:2.4rem; }
+@media (max-width:420px){
+  .categories-cta{ flex-direction:column; align-items:stretch; }
+  .categories-cta .btn{ justify-content:center; }
+}
 
 /* contacts: full-width gold band, dark end sits behind the text (left) for contrast, shine behind the card (right) */
 section.home-contact{

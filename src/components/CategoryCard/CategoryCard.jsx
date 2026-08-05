@@ -14,8 +14,10 @@ export default function CategoryCard({ title, description, imageSrc, imageAlt, t
         <h3>{title}</h3>
         {description && <p>{description}</p>}
         <span className="cat-card-go">
-          {ctaLabel}
-          <i className="fa-solid fa-chevron-right" aria-hidden="true" />
+          <span className="cat-card-go-btn">
+            {ctaLabel}
+            <i className="fa-solid fa-chevron-right" aria-hidden="true" />
+          </span>
         </span>
       </div>
     </Tag>

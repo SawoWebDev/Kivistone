@@ -2,6 +2,7 @@ import { Outlet, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import Header from '../components/Header/Header.jsx';
 import Footer from '../components/Footer/Footer.jsx';
+import BackToTop from '../components/BackToTop/BackToTop.jsx';
 
 export default function MainLayout() {
   const { pathname, hash } = useLocation();
@@ -25,6 +26,7 @@ export default function MainLayout() {
         <div key={pathname} className="page-fade-overlay" aria-hidden="true" />
       </main>
       <Footer />
+      <BackToTop />
     </>
   );
 }

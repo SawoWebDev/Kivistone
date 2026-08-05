@@ -27,7 +27,7 @@ section.story{ padding:0; }
 }
 .story-content h1 .accent{ color:var(--gold-light); }
 .story-content p{ font-size:0.96rem; color:var(--muted-inv); line-height:1.78; margin:0 0 1.3rem; }
-.story-content a.inline-link{ color:var(--gold-light); border-bottom:1px solid var(--gold); font-weight:500; }
+.story-content a.inline-link{ color:var(--gold-light); font-weight:500; }
 .story-content a.inline-link:hover{ color:var(--gold); }
 .story-content .actions{ display:flex; align-items:center; gap:1.4rem; flex-wrap:wrap; margin-top:0.5rem; }
 @media (max-width:640px){

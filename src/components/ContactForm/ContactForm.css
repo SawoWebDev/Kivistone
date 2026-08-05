@@ -70,6 +70,12 @@
   width:56px; height:56px; border-radius:50%; display:flex; align-items:center; justify-content:center;
   background:rgba(185,155,99,0.16); color:var(--gold-light); font-size:1.2rem;
 }
+
+[data-theme="silver"] .field label .req,
+[data-theme="silver"] .form-sent .sent-ic{ background:rgba(125,128,132,0.25); }
+[data-theme="silver"] .field input:focus,
+[data-theme="silver"] .field select:focus,
+[data-theme="silver"] .field textarea:focus{ box-shadow:0 0 0 3px rgba(125,128,132,0.3); }
 .form-sent h3{
   font-family:var(--font-display); font-weight:700; font-size:1.25rem; letter-spacing:-0.01em;
   margin:0; color:var(--ink-inv);

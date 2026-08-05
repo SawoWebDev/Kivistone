@@ -10,7 +10,7 @@ export default function Contact() {
     <>
       <section className="contact-hero">
         <div className="contact-hero-media">
-          <img src="/assets/home/Home-hero.jpg" alt="Kivistone soapstone pieces ready for enquiry" />
+          <img src="/assets/home/Home-hero.webp" alt="Kivistone soapstone pieces ready for enquiry" />
           <div className="contact-hero-scrim" />
           <div className="wrap contact-hero-content">
             <h1><span className="accent">Tell us</span><br />what you&rsquo;re looking for</h1>
@@ -59,17 +59,19 @@ export default function Contact() {
               </div>
             </aside>
           </div>
+        </div>
+      </section>
 
-          <div className="contact-banner">
-            <div className="banner-copy">
-              <h2>Tell us what you&rsquo;re looking for</h2>
-              <p>
-                Questions about a piece, a bulk order, or working with Finnish soapstone in general: our sales
-                team at the SAWO factory in Cebu handles enquiries, samples, and export quotes.
-              </p>
-            </div>
-            <ContactCard />
+      <section className="contact-band">
+        <div className="wrap contact-band-inner">
+          <div className="contact-band-copy">
+            <h2>Tell us what you&rsquo;re looking for</h2>
+            <p>
+              Questions about a piece, a bulk order, or working with Finnish soapstone in general: our sales
+              team at the SAWO factory in Cebu handles enquiries, samples, and export quotes.
+            </p>
           </div>
+          <ContactCard />
         </div>
       </section>
 
@@ -89,7 +91,7 @@ export default function Contact() {
               >
                 Download brochure
               </Button>
-              <Button variant="secondary" to="/products" icon="fa-solid fa-chevron-right" iconPosition="right">
+              <Button variant="secondary-inv" to="/products" icon="fa-solid fa-chevron-right" iconPosition="right">
                 Browse products
               </Button>
             </div>

@@ -6,8 +6,20 @@ import './Header.css';
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileProductsOpen, setMobileProductsOpen] = useState(false);
+  const [hidden, setHidden] = useState(false);
+  const [silver, setSilver] = useState(
+    () => typeof window !== 'undefined' && localStorage.getItem('kivistone-theme') === 'silver'
+  );
   const itemRef = useRef(null);
+  const lastY = useRef(0);
   const { pathname } = useLocation();
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', silver ? 'silver' : 'gold');
+    localStorage.setItem('kivistone-theme', silver ? 'silver' : 'gold');
+  }, [silver]);
 
   useEffect(() => {
     function onClickOutside(e) {
@@ -24,20 +36,46 @@ export default function Header() {
     };
   }, []);
 
-  // close the menu whenever navigation happens, including to the page we're on
-  useEffect(() => setOpen(false), [pathname]);
+  // close the menus whenever navigation happens, including to the page we're on
+  useEffect(() => {
+    setOpen(false);
+    setMobileOpen(false);
+    setMobileProductsOpen(false);
+  }, [pathname]);
+
+  // lock page scroll while the mobile menu is open
+  useEffect(() => {
+    document.body.style.overflow = mobileOpen ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
+  }, [mobileOpen]);
+
+  // hide the header on scroll-down, reveal it again on scroll-up
+  useEffect(() => {
+    lastY.current = window.scrollY;
+    function onScroll() {
+      const y = window.scrollY;
+      const delta = y - lastY.current;
+      if (y < 80) setHidden(false);
+      else if (delta > 4) setHidden(true);
+      else if (delta < -4) setHidden(false);
+      lastY.current = y;
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   const onProducts = pathname.startsWith('/products');
 
   return (
-    <header className="site-header">
+    <header className={`site-header${hidden ? ' hidden' : ''}`}>
       <div className="wrap">
         <NavLink to="/" className="logo">
-          <span className="logo-text">Kivistone</span>
+          <span className="logo-text">Kivistone<span className="logo-dot">.</span></span>
         </NavLink>
 
         <nav className="nav-links">
           <NavLink to="/">Home</NavLink>
+          <NavLink to="/about">About</NavLink>
 
           <div className={`nav-item${open ? ' open' : ''}`} ref={itemRef}>
             <NavLink to="/products" className={onProducts ? 'nav-trigger active' : 'nav-trigger'}>
@@ -69,18 +107,100 @@ export default function Header() {
           </div>
 
           <NavLink to="/contact">Contact</NavLink>
-          <NavLink to="/about">About</NavLink>
         </nav>
 
-        <Button
-          variant="dark"
-          className="nav-cta"
-          to="/products"
-          icon="fa-solid fa-chevron-right"
-          iconPosition="right"
-        >
-          Explore
-        </Button>
+        <div className="header-right">
+          <Button
+            variant="dark"
+            className="nav-cta"
+            to="/products"
+            icon="fa-solid fa-chevron-right"
+            iconPosition="right"
+          >
+            Explore
+          </Button>
+
+          <button
+            type="button"
+            className="theme-toggle"
+            role="switch"
+            aria-checked={silver}
+            aria-label="Toggle silver mode"
+            onClick={() => setSilver((v) => !v)}
+          >
+            <span className={silver ? '' : 'active'}>G</span>
+            <span className={silver ? 'active' : ''}>S</span>
+          </button>
+
+          <button
+            type="button"
+            className={`menu-toggle${mobileOpen ? ' open' : ''}`}
+            aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={mobileOpen}
+            onClick={() => setMobileOpen((v) => !v)}
+          >
+            <span />
+            <span />
+            <span />
+          </button>
+        </div>
+      </div>
+
+      <div className={`mobile-nav${mobileOpen ? ' open' : ''}`}>
+        <nav className="mobile-nav-links">
+          <NavLink to="/">Home</NavLink>
+          <NavLink to="/about">About</NavLink>
+
+          <div className={`mobile-nav-item${mobileProductsOpen ? ' open' : ''}`}>
+            <div className="mobile-nav-row">
+              <NavLink to="/products" className={onProducts ? 'active' : ''}>
+                Products
+              </NavLink>
+              <button
+                type="button"
+                className="mobile-caret"
+                aria-label="Show product ranges"
+                aria-expanded={mobileProductsOpen}
+                onClick={() => setMobileProductsOpen((v) => !v)}
+              >
+                <i className="fa-solid fa-chevron-down" aria-hidden="true" />
+              </button>
+            </div>
+            <div className="mobile-dropdown">
+              {categories.map((c) => (
+                <NavLink key={c.slug} to={`/products/${c.slug}`}>
+                  {c.title}
+                </NavLink>
+              ))}
+            </div>
+          </div>
+
+          <NavLink to="/contact">Contact</NavLink>
+        </nav>
+
+        <div className="mobile-nav-footer">
+          <Button
+            variant="dark"
+            className="nav-cta"
+            to="/products"
+            icon="fa-solid fa-chevron-right"
+            iconPosition="right"
+          >
+            Explore
+          </Button>
+
+          <button
+            type="button"
+            className="theme-toggle"
+            role="switch"
+            aria-checked={silver}
+            aria-label="Toggle silver mode"
+            onClick={() => setSilver((v) => !v)}
+          >
+            <span className={silver ? '' : 'active'}>G</span>
+            <span className={silver ? 'active' : ''}>S</span>
+          </button>
+        </div>
       </div>
     </header>
   );

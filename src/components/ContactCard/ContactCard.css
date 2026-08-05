@@ -23,3 +23,5 @@
 .contact-row span.address{ display:flex; flex-direction:column; font-weight:500; line-height:1.6; }
 .contact-row a{ width:fit-content; transition:color .15s ease; }
 .contact-row a:hover{ color:var(--gold-light); }
+
+[data-theme="silver"] .contact-row .ic{ background:rgba(125,128,132,0.2); }

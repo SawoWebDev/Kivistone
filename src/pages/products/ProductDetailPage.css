@@ -1,0 +1,77 @@
+section.product-detail{ padding:clamp(2.2rem,4vw,3.2rem) 0 clamp(3.6rem,6vw,4.8rem); }
+
+.pd-breadcrumb{
+  display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap;
+  font-family:var(--font-mono); font-size:0.78rem; letter-spacing:0.02em;
+  color:var(--muted); margin-bottom:2rem;
+}
+.pd-breadcrumb a{ color:var(--muted); }
+.pd-breadcrumb a:hover{ color:var(--ink); }
+.pd-breadcrumb i{ font-size:0.62rem; color:var(--faint); }
+.pd-breadcrumb span{ color:var(--ink-secondary); }
+
+.pd-main{
+  display:grid; grid-template-columns:1fr 1fr; gap:clamp(2rem,4vw,3.6rem); align-items:start;
+}
+@media (max-width:800px){ .pd-main{ grid-template-columns:1fr; } }
+
+.pd-media{
+  aspect-ratio:5/4; border-radius:14px; overflow:hidden;
+  background:transparent; border:1px solid var(--hairline);
+  display:flex; align-items:center; justify-content:center; padding:clamp(1.6rem,3vw,2.6rem);
+}
+.pd-media img{ width:100%; height:100%; object-fit:contain; }
+
+.pd-category{
+  font-family:var(--font-mono); font-size:0.75rem; letter-spacing:0.06em; text-transform:uppercase;
+  color:var(--faint);
+}
+.pd-info h1{
+  font-family:var(--font-display); font-weight:700; letter-spacing:-0.02em;
+  font-size:clamp(1.6rem,3vw,2.2rem); margin:0.5rem 0 1.4rem; color:var(--ink);
+}
+
+.pd-specs{ list-style:none; margin:0 0 1.6rem; padding:0; display:flex; flex-direction:column; gap:0.6rem; }
+.pd-specs li{
+  display:flex; align-items:baseline; justify-content:space-between; gap:1rem;
+  padding-bottom:0.6rem; border-bottom:1px solid var(--divider);
+  font-size:0.92rem; color:var(--ink-secondary);
+}
+.pd-specs-label{ font-family:var(--font-mono); font-size:0.75rem; letter-spacing:0.04em; text-transform:uppercase; color:var(--faint); }
+
+.pd-desc{ font-size:0.95rem; line-height:1.75; color:var(--muted); margin:0 0 1.8rem; max-width:46ch; }
+
+.pd-related{ margin-top:clamp(3rem,5vw,4rem); padding-top:clamp(2rem,4vw,2.8rem); border-top:1px solid var(--divider); }
+.pd-related h2{
+  font-family:var(--font-display); font-weight:700; font-size:clamp(1.1rem,2vw,1.35rem);
+  letter-spacing:-0.015em; margin:0 0 1.4rem;
+}
+.pd-related-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:1.2rem; }
+@media (max-width:900px){ .pd-related-grid{ grid-template-columns:1fr 1fr; } }
+
+.pd-related-tile{ display:block; text-decoration:none; color:inherit; }
+.pd-related-tile .img{
+  aspect-ratio:5/4; border-radius:10px; overflow:hidden; border:1px solid var(--hairline);
+  background:transparent; display:flex; align-items:center; justify-content:center;
+  padding:1rem; margin-bottom:0.7rem; transition:transform .25s ease, box-shadow .25s ease;
+}
+.pd-related-tile:hover .img{ transform:translateY(-3px); box-shadow:var(--shadow); }
+.pd-related-tile .img img{ width:100%; height:100%; object-fit:contain; }
+.pd-related-tile span{
+  font-family:var(--font-display); font-weight:600; font-size:0.88rem; color:var(--ink-secondary);
+}
+.pd-related-tile:hover span{ color:var(--ink); }
+
+/* closing cta — dark banner floating on the light page, the reach-out prompt before the footer */
+.pd-closing-cta{ padding:clamp(2.4rem,4.4vw,3.4rem) 0 0; }
+.closing-cta-card{
+  background:var(--bg-dark-2); color:var(--ink-inv);
+  border-radius:22px; padding:clamp(2rem,3.6vw,2.8rem) clamp(2.2rem,4vw,3.4rem);
+  display:flex; align-items:center; justify-content:space-between; gap:1.8rem; flex-wrap:wrap;
+  box-shadow:var(--shadow-lg);
+}
+.closing-cta-card h3{
+  font-family:var(--font-display); font-weight:700; font-size:1.2rem; letter-spacing:-0.01em;
+  margin:0 0 0.4rem; color:var(--ink-inv);
+}
+.closing-cta-card p{ font-size:0.9rem; color:var(--muted-inv); line-height:1.6; margin:0; max-width:44ch; }

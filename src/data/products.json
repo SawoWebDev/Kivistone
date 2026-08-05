@@ -1,0 +1,60 @@
+{
+  "candle-holders": [
+    {
+      "id": "r-95",
+      "name": "R-95 (set, 6pcs)",
+      "sizeMm": "360x60x240",
+      "weightKg": 7.4,
+      "image": "/assets/products/candle-holders/r-95.webp"
+    },
+    {
+      "id": "r-107",
+      "name": "R-107 (set, 3pcs)",
+      "sizeMm": "180x60x240",
+      "weightKg": 4.9,
+      "image": "/assets/products/candle-holders/r-107.webp"
+    },
+    {
+      "id": "r-108",
+      "name": "R-108 (set, 3pcs)",
+      "sizeMm": "180x60x240",
+      "weightKg": 4.9,
+      "image": "/assets/products/candle-holders/r-108.webp"
+    },
+    {
+      "id": "r-180",
+      "name": "R-180 (set, 3pcs)",
+      "sizeMm": "180x60",
+      "weightKg": 4.23,
+      "image": "/assets/products/candle-holders/r-180.webp"
+    },
+    {
+      "id": "r-105",
+      "name": "R-105",
+      "sizeMm": "265x60x30",
+      "weightKg": 1.04,
+      "image": "/assets/products/candle-holders/r-105.webp"
+    },
+    {
+      "id": "r-106",
+      "name": "R-106",
+      "sizeMm": "200x200x30",
+      "weightKg": 3.09,
+      "image": "/assets/products/candle-holders/r-106.webp"
+    },
+    {
+      "id": "r-109",
+      "name": "R-109 (set, 2pcs)",
+      "sizeMm": "110x60x55",
+      "weightKg": 1.2,
+      "image": "/assets/products/candle-holders/r-109.webp"
+    },
+    {
+      "id": "r-115",
+      "name": "R-115 (set, 2pcs)",
+      "sizeMm": "110x60x45",
+      "weightKg": 1.2,
+      "image": "/assets/products/candle-holders/r-115.webp"
+    }
+  ]
+}

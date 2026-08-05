@@ -32,24 +32,27 @@ section.contact-hero{ padding:0; }
   .contact-hero-content{ justify-content:flex-end; padding-bottom:clamp(1.6rem,6vw,2.4rem); }
 }
 
-section.contact-page{ padding:clamp(2.4rem,4vw,3.4rem) 0 clamp(4rem,7vw,6rem); }
+section.contact-page{ padding:clamp(2.4rem,4vw,3.4rem) 0; }
 
-/* Dark banner floating on the light page */
-.contact-banner{
-  background:var(--bg-dark-2); color:var(--ink-inv);
-  border-radius:20px; box-shadow:var(--shadow-lg);
-  padding:clamp(2rem,4vw,3.2rem);
+/* tell us what you're looking for: full-width gold band, same treatment as the Home page's contact band */
+section.contact-band{
+  background:
+    radial-gradient(24% 40% at 88% 8%, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.28) 22%, rgba(255,255,255,0.08) 42%, rgba(255,255,255,0) 60%),
+    linear-gradient(100deg, var(--gold-deep) 0%, var(--gold) 55%, var(--gold-light) 100%);
+  color:var(--bg-dark);
+  padding:clamp(3.2rem,5.4vw,4.8rem) 0;
+}
+.contact-band-inner{
   display:grid; grid-template-columns:minmax(0,1.05fr) minmax(0,0.95fr);
   gap:clamp(2rem,4vw,3.4rem); align-items:center;
-  margin-top:clamp(2.4rem,4vw,3.4rem);
 }
-@media (max-width:860px){ .contact-banner{ grid-template-columns:1fr; } }
+@media (max-width:860px){ .contact-band-inner{ grid-template-columns:1fr; } }
 
-.banner-copy h2{
+.contact-band-copy h2{
   font-family:var(--font-display); font-weight:700; font-size:clamp(1.8rem,3.2vw,2.5rem);
   letter-spacing:-0.02em; line-height:1.15; margin:0 0 1.1rem; color:var(--ink-inv);
 }
-.banner-copy p{ font-size:0.95rem; color:var(--muted-inv); line-height:1.75; margin:0; max-width:46ch; }
+.contact-band-copy p{ font-size:0.95rem; color:var(--ink-inv); opacity:0.92; line-height:1.75; margin:0; max-width:46ch; }
 
 .contact-grid{ display:grid; grid-template-columns:minmax(0,1.35fr) minmax(0,0.65fr); gap:clamp(1.8rem,3vw,2.8rem); align-items:stretch; }
 @media (max-width:960px){ .contact-grid{ grid-template-columns:1fr; } }
@@ -84,7 +87,7 @@ section.contact-page{ padding:clamp(2.4rem,4vw,3.4rem) 0 clamp(4rem,7vw,6rem); }
 .brochure-block p{ font-size:0.88rem; color:var(--muted-inv); line-height:1.65; margin:0 0 1.2rem; }
 
 /* closing cta: dark banner floating on the light page, same treatment as About's closing cta */
-section.contact-cta{ padding:0 0 clamp(4rem,7vw,6rem); }
+section.contact-cta{ padding:clamp(3rem,5vw,4rem) 0 clamp(4rem,7vw,6rem); }
 .contact-cta-card{
   background:var(--bg-dark-2); color:var(--ink-inv);
   border-radius:22px; padding:clamp(2.2rem,4vw,3.4rem); display:flex; align-items:center;

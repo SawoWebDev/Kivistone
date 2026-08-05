@@ -16,7 +16,7 @@ export default function Footer() {
       <div className="wrap">
         <div className="footer-grid">
           <div>
-            <div className="logo"><span className="logo-text">Kivistone</span></div>
+            <div className="logo"><span className="logo-text">Kivistone<span className="logo-dot">.</span></span></div>
             <p className="about-blurb">
               A collection of beautiful products carved from Finnish soapstone, for interiors, household use, and gifting.
             </p>

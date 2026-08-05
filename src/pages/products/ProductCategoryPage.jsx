@@ -1,6 +1,8 @@
 import { Link, Navigate, useParams } from 'react-router-dom';
 import Button from '../../components/Button/Button.jsx';
 import { getCategory, categories } from '../../data/categories.js';
+import { getProductsForCategory } from '../../data/products.js';
+import usePageMeta from '../../hooks/usePageMeta.js';
 import './ProductCategoryPage.css';
 
 const PLACEHOLDER_COUNT = 6;
@@ -8,9 +10,17 @@ const PLACEHOLDER_COUNT = 6;
 export default function ProductCategoryPage() {
   const { slug } = useParams();
   const category = getCategory(slug);
+
+  const items = category ? getProductsForCategory(category.slug) : [];
+  const others = category ? categories.filter((c) => c.slug !== category.slug).slice(0, 4) : [];
+
+  usePageMeta(
+    category ? `${category.title} | Kivistone` : undefined,
+    category ? category.short : undefined
+  );
+
   if (!category) return <Navigate to="/products" replace />;
 
-  const others = categories.filter((c) => c.slug !== category.slug).slice(0, 4);
   const [titleAccent, ...titleRestWords] = category.title.split(' ');
   const titleRest = titleRestWords.join(' ');
 
@@ -43,43 +53,50 @@ export default function ProductCategoryPage() {
           </div>
 
           <div className="product-tiles">
-            {Array.from({ length: PLACEHOLDER_COUNT }, (_, i) => i + 1).map((n) => (
-              <div className="product-tile" key={n}>
-                <div className="img">
-                  <img
-                    src={`https://picsum.photos/seed/${category.seed}-${n}/700/560`}
-                    alt={`${category.title} style ${String(n).padStart(2, '0')}`}
-                    loading="lazy"
-                  />
-                </div>
-                <div className="label">Style {String(n).padStart(2, '0')}</div>
-              </div>
-            ))}
+            {items.length > 0
+              ? items.map((p) => (
+                  <Link
+                    className="product-tile"
+                    key={p.id}
+                    to={`/products/${category.slug}/${p.id}`}
+                  >
+                    <div className="img">
+                      <img src={p.image} alt={p.name} loading="lazy" />
+                    </div>
+                    <div className="label">
+                      <span className="label-name">{p.name}</span>
+                      <span className="label-specs">
+                        Size(mm): {p.sizeMm} · Weight: {p.weightKg}kg
+                      </span>
+                    </div>
+                  </Link>
+                ))
+              : Array.from({ length: PLACEHOLDER_COUNT }, (_, i) => i + 1).map((n) => (
+                  <div className="product-tile" key={n}>
+                    <div className="img">
+                      <img
+                        src={`https://picsum.photos/seed/${category.seed}-${n}/700/560`}
+                        alt={`${category.title} style ${String(n).padStart(2, '0')}`}
+                        loading="lazy"
+                      />
+                    </div>
+                    <div className="label">Style {String(n).padStart(2, '0')}</div>
+                  </div>
+                ))}
           </div>
 
           <div className="product-cta">
-            <Button variant="secondary" to="/contact" icon="fa-solid fa-envelope">
+            <Button variant="gold" to="/contact" icon="fa-solid fa-envelope">
               Enquire about this range
-            </Button>
-            <Button
-              variant="gold"
-              href="http://www.kivistone.com/"
-              external
-              icon="fa-solid fa-arrow-up-right-from-square"
-            >
-              View on kivistone.com
             </Button>
           </div>
         </div>
       </section>
 
-      <section className="product-more light">
+      <section className="product-more">
         <div className="wrap">
           <div className="more-head">
             <h2>Other ranges</h2>
-            <Link className="more-all" to="/products">
-              All products <i className="fa-solid fa-chevron-right" aria-hidden="true" />
-            </Link>
           </div>
           <div className="more-grid">
             {others.map((c) => (
@@ -90,6 +107,11 @@ export default function ProductCategoryPage() {
                 <h3>{c.title}</h3>
               </Link>
             ))}
+          </div>
+          <div className="more-cta">
+            <Button variant="secondary-inv" to="/products" icon="fa-solid fa-chevron-right" iconPosition="right">
+              All products
+            </Button>
           </div>
         </div>
       </section>
