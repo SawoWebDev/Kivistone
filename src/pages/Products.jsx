@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import Button from '../components/Button/Button.jsx';
 import { categories, featuredCategories, standardCategories } from '../data/categories.js';
+import usePageMeta from '../hooks/usePageMeta.js';
 import './Products.css';
 
 function ProductCard({ category, index, variant = 'standard' }) {
@@ -25,11 +26,23 @@ function ProductCard({ category, index, variant = 'standard' }) {
 }
 
 export default function Products() {
+  usePageMeta({
+    title: 'Shop Kivistone — Candle Holders, Dish Plates, Coolers & More',
+    description:
+      'Browse the full Kivistone collection: candle holders, dish plates, cups and coolers, scent warmers, and miscellaneous gift items, all cut and hand-finished from genuine Finnish soapstone.',
+    image: '/assets/home/Home-hero.webp',
+    path: '/products',
+  });
+
   return (
     <>
       <section className="products-hero">
         <div className="ph-media">
-          <img src="/assets/home/Home-hero.webp" alt="A curated arrangement of Kivistone soapstone products" />
+          <img
+            src="/assets/home/Home-hero.webp"
+            alt="A curated arrangement of Kivistone soapstone products"
+            fetchpriority="high"
+          />
           <div className="ph-scrim" />
           <div className="wrap ph-content">
             <h1><span className="accent">The full</span><br />Kivistone collection</h1>

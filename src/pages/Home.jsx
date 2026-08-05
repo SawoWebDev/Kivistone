@@ -3,14 +3,53 @@ import SectionHead from '../components/SectionHead/SectionHead.jsx';
 import CategoryCard from '../components/CategoryCard/CategoryCard.jsx';
 import ContactCard from '../components/ContactCard/ContactCard.jsx';
 import { categories } from '../data/categories.js';
+import usePageMeta from '../hooks/usePageMeta.js';
 import './Home.css';
 
+const ORGANIZATION_JSON_LD = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Kivistone',
+  url: 'https://www.kivistone.com',
+  logo: 'https://www.kivistone.com/favicon.svg',
+  description: 'Kivistone carves candle holders, dish plates, cups and coolers, scent warmers, and gift items from genuine Finnish soapstone.',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Mactan Export Processing Zone 2',
+    addressLocality: 'Cebu',
+    postalCode: '6015',
+    addressCountry: 'PH',
+  },
+  email: 'sales@kivistone.com',
+  telephone: '+63-32-341-2233',
+  sameAs: [
+    'http://facebook.com/SAWOsaunaworld',
+    'https://www.instagram.com/sawosauna/',
+    'https://ph.linkedin.com/company/sawo-inc',
+    'https://www.youtube.com/@SAWOsauna',
+    'https://www.tiktok.com/@sawosauna',
+  ],
+};
+
 export default function Home() {
+  usePageMeta({
+    title: 'Kivistone — Finnish Soapstone Candle Holders, Dish Plates & Gifts',
+    description:
+      'Kivistone carves candle holders, dish plates, cups, coolers, scent warmers, and gift items from genuine Finnish soapstone, hand-finished for interiors, everyday use, and corporate gifting.',
+    image: '/assets/home/homehero.webp',
+    path: '/',
+    jsonLd: ORGANIZATION_JSON_LD,
+  });
+
   return (
     <>
       <section className="hero">
         <div className="hero-media">
-          <img src="/assets/home/homehero.webp" alt="Kivistone soapstone scent warmers styled on a sunlit windowsill" />
+          <img
+            src="/assets/home/homehero.webp"
+            alt="Kivistone soapstone scent warmers styled on a sunlit windowsill"
+            fetchpriority="high"
+          />
           <div className="hero-scrim" />
           <div className="wrap hero-content">
             <h1><span className="accent">Carved once.</span><br />Kept forever.</h1>

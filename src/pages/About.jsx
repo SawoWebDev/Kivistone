@@ -1,5 +1,6 @@
 import Button from '../components/Button/Button.jsx';
 import SectionHead from '../components/SectionHead/SectionHead.jsx';
+import usePageMeta from '../hooks/usePageMeta.js';
 import './About.css';
 
 const STANDARDS = [
@@ -24,11 +25,23 @@ const STANDARDS = [
 ];
 
 export default function About() {
+  usePageMeta({
+    title: 'About Kivistone — Finnish Soapstone, Made by SAWO Inc.',
+    description:
+      'Kivistone is owned and managed by the Finnish team behind SAWO Inc., a leading sauna product manufacturer. Every piece shares the same soapstone sourcing, production standards, and ISO certifications.',
+    image: '/assets/home/a4.webp',
+    path: '/about',
+  });
+
   return (
     <>
       <section className="story">
         <div className="story-media">
-          <img src="/assets/home/a4.webp" alt="Finnish soapstone hand-finished into a sizzling serving plate" />
+          <img
+            src="/assets/home/a4.webp"
+            alt="Finnish soapstone hand-finished into a sizzling serving plate"
+            fetchpriority="high"
+          />
           <div className="story-scrim" />
           <div className="wrap story-content">
             <h1><span className="accent">Finnish stone,</span><br />Finnish standards</h1>

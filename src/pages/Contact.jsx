@@ -3,14 +3,46 @@ import ContactCard from '../components/ContactCard/ContactCard.jsx';
 import ContactForm from '../components/ContactForm/ContactForm.jsx';
 import Button from '../components/Button/Button.jsx';
 import { categories } from '../data/categories.js';
+import usePageMeta from '../hooks/usePageMeta.js';
 import './Contact.css';
 
+const LOCAL_BUSINESS_JSON_LD = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'Kivistone (SAWO Inc.)',
+  image: 'https://www.kivistone.com/assets/home/water-kettle.webp',
+  email: 'sales@kivistone.com',
+  telephone: '+63-32-341-2233',
+  faxNumber: '+63-32-341-2255',
+  url: 'https://www.kivistone.com',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Mactan Export Processing Zone 2',
+    addressLocality: 'Cebu',
+    postalCode: '6015',
+    addressCountry: 'PH',
+  },
+};
+
 export default function Contact() {
+  usePageMeta({
+    title: 'Contact Kivistone — Enquiries, Samples & Bulk Quotes',
+    description:
+      'Get in touch with Kivistone for product enquiries, samples, and export quotes on Finnish soapstone candle holders, dish plates, coolers, and gifts. Our sales team at the SAWO factory in Cebu is ready to help.',
+    image: '/assets/home/water-kettle.webp',
+    path: '/contact',
+    jsonLd: LOCAL_BUSINESS_JSON_LD,
+  });
+
   return (
     <>
       <section className="contact-hero">
         <div className="contact-hero-media">
-          <img src="/assets/home/water-kettle.webp" alt="Kivistone soapstone pieces ready for enquiry" />
+          <img
+            src="/assets/home/water-kettle.webp"
+            alt="Kivistone soapstone pieces ready for enquiry"
+            fetchpriority="high"
+          />
           <div className="contact-hero-scrim" />
           <div className="wrap contact-hero-content">
             <h1><span className="accent">Tell us</span><br />what you&rsquo;re looking for</h1>

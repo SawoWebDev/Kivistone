@@ -25,8 +25,23 @@ export default function ProductCategoryPage() {
   useEffect(() => setQuery(''), [slug]);
 
   usePageMeta(
-    category ? `${category.title} | Kivistone` : undefined,
-    category ? category.short : undefined
+    category
+      ? {
+          title: `${category.title} | Kivistone`,
+          description: category.short,
+          image: category.image,
+          path: `/products/${category.slug}`,
+          jsonLd: {
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.kivistone.com/' },
+              { '@type': 'ListItem', position: 2, name: 'Products', item: 'https://www.kivistone.com/products' },
+              { '@type': 'ListItem', position: 3, name: category.title, item: `https://www.kivistone.com/products/${category.slug}` },
+            ],
+          },
+        }
+      : undefined
   );
 
   if (!category) return <Navigate to="/products" replace />;
@@ -38,7 +53,7 @@ export default function ProductCategoryPage() {
     <>
       <section className="product-hero">
         <div className="pc-hero-media">
-          <img src={category.image} alt={category.title} />
+          <img src={category.image} alt={`${category.title} range of Kivistone soapstone products`} fetchpriority="high" />
           <div className="pc-hero-scrim" />
           <div className="wrap pc-hero-content">
             <h1>
@@ -92,7 +107,11 @@ export default function ProductCategoryPage() {
                     to={`/products/${category.slug}/${p.id}`}
                   >
                     <div className="img">
-                      <img src={p.image} alt={p.name} loading="lazy" />
+                      <img
+                        src={p.image}
+                        alt={`${p.name} — ${category.title.toLowerCase()} in Kivistone soapstone`}
+                        loading="lazy"
+                      />
                     </div>
                     <div className="label">
                       <span className="label-name">{p.name}</span>

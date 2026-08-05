@@ -15,9 +15,39 @@ export default function ProductDetailPage() {
     : [];
 
   usePageMeta(
-    product ? `${product.name} — ${category.title} | Kivistone` : undefined,
     product
-      ? `${product.name}: ${category.title.toLowerCase()} in natural soapstone.${product.sizeMm ? ` Size(mm): ${product.sizeMm},` : ''} Weight: ${product.weightLabel || `${product.weightKg}kg`}.`
+      ? {
+          title: `${product.name} — ${category.title} | Kivistone`,
+          description: `${product.name}: ${category.title.toLowerCase()} in natural soapstone.${product.sizeMm ? ` Size(mm): ${product.sizeMm},` : ''} Weight: ${product.weightLabel || `${product.weightKg}kg`}.`,
+          image: product.image,
+          path: `/products/${category.slug}/${product.id}`,
+          jsonLd: [
+            {
+              '@context': 'https://schema.org',
+              '@type': 'Product',
+              name: product.name,
+              sku: product.id,
+              image: `https://www.kivistone.com${product.image}`,
+              description: `${product.name}, part of the Kivistone ${category.title} range, hand-finished from natural Finnish soapstone.`,
+              material: 'Soapstone',
+              brand: { '@type': 'Brand', name: 'Kivistone' },
+              additionalProperty: [
+                product.sizeMm && { '@type': 'PropertyValue', name: 'Size (mm)', value: product.sizeMm },
+                { '@type': 'PropertyValue', name: 'Weight', value: product.weightLabel || `${product.weightKg}kg` },
+              ].filter(Boolean),
+            },
+            {
+              '@context': 'https://schema.org',
+              '@type': 'BreadcrumbList',
+              itemListElement: [
+                { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.kivistone.com/' },
+                { '@type': 'ListItem', position: 2, name: 'Products', item: 'https://www.kivistone.com/products' },
+                { '@type': 'ListItem', position: 3, name: category.title, item: `https://www.kivistone.com/products/${category.slug}` },
+                { '@type': 'ListItem', position: 4, name: product.name, item: `https://www.kivistone.com/products/${category.slug}/${product.id}` },
+              ],
+            },
+          ],
+        }
       : undefined
   );
 
@@ -36,7 +66,11 @@ export default function ProductDetailPage() {
 
         <div className="pd-main">
           <div className="pd-media">
-            <img src={product.image} alt={product.name} />
+            <img
+              src={product.image}
+              alt={`${product.name} — ${category.title.toLowerCase()} in Kivistone soapstone`}
+              fetchpriority="high"
+            />
           </div>
 
           <div className="pd-info">
