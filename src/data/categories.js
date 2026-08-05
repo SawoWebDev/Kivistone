@@ -11,7 +11,7 @@ export const categories = [
     feature: true,
     description:
       'Fire and stone, two of nature’s fundamental elements put together into a harmonious yet impressive blend. Whether the occasion is official or festive, Kivistone candle holders won’t be left unnoticed.',
-    short: 'Two of nature’s fundamental elements, put together into a harmonious yet impressive blend.',
+    short: 'Fire and stone have always been an intriguing mix, one that draws us back to the Stone Age. Brought together in a Kivistone candle holder, these two natural elements create a harmonious, hand-carved piece from genuine Finnish soapstone. Whether the occasion is formal or festive, a Kivistone candle holder stands out, filling its surroundings with a warm and cozy glow.',
     specs: ['Tealight & taper', 'Flame safe', 'Hand-finished'],
   },
   {
@@ -22,7 +22,7 @@ export const categories = [
     feature: true,
     description:
       'Soapstone is a good conductor of heat and withstands high temperature without any damage. As a natural material it emits no harmful chemicals and does not change the taste of the food heated above it, perfect for sizzling plates and hot dishes.',
-    short: 'Holds high heat without damage, and never taints the taste of what you serve on it.',
+    short: 'Soapstone is a natural conductor of heat, so it withstands high temperatures without cracking or warping. As a completely natural material, it emits no harmful chemicals and never changes the taste of the food heated above it, making Kivistone dish plates perfect for sizzling plates and serving hot dishes straight from the oven or grill.',
     specs: ['Oven & grill safe', 'Holds heat', 'Food-safe stone'],
   },
   {
@@ -31,8 +31,8 @@ export const categories = [
     seed: 'kivistone-cups',
     image: '/assets/products/cups-and-coolers.webp',
     description:
-      'Put a Kivistone cooler in the freezer for a few moments. Take it out and place your drinks or wine on it to keep them cool for hours: no ice, no dilution, no condensation rings.',
-    short: 'A few minutes in the freezer keeps drinks and wine cool for hours, no ice, no dilution.',
+      'Soapstone material is a good non-porous example. It can preserve and contain liquids neatly. Aside from that, soapstone is a good temperature conductor. When the soapstone Cooler is kept in the fridge, it holds the cold temperature and amazingly cools the liquid bottle placed on it, keeping it cold for long. Kivistone cups and coolers are good for wines, bottled and canned liquids.',
+    short: 'Soapstone is naturally non-porous, so it holds and preserves liquids cleanly without absorbing odors or flavors. It’s also an excellent temperature conductor: chill a Kivistone cooler in the fridge and it holds the cold, amazingly keeping any bottle or can placed on it refreshingly cool for hours. Kivistone cups and coolers are ideal for wine, bottled drinks, and canned beverages alike.',
     specs: ['Freezer ready', 'Wine & spirits', 'No dilution'],
   },
   {
@@ -42,48 +42,18 @@ export const categories = [
     image: '/assets/products/scent-warmer.webp',
     description:
       'Enjoy the relaxing and vitalizing effect of aromatic oils. Light a candle, pour scented oil into the basin and loosen up: the stone spreads the heat gently, so the fragrance releases slowly rather than burning off.',
-    short: 'Light a candle, pour oil into the basin, and let the stone release the fragrance slowly.',
+    short: 'Enjoy the relaxing, vitalizing effect of aromatic oils with a Kivistone scent warmer. The tranquility begins the moment the scent is released through the heated aroma oil, drifting gently around the room for a refreshing feeling. Place an aroma cup on the sauna heater’s stones for happy sauna spirits, or set a table warmer over a tealight, a candle holder with a cap where scented oils evaporate slowly. Aroma oils are also available on request as a separate order.',
     specs: ['Tealight powered', 'Deep oil basin', 'Even diffusion'],
   },
   {
-    slug: 'soap-holders',
-    title: 'Soap Holders',
-    seed: 'kivistone-soap',
-    image: '/assets/products/soap-holder.webp',
-    description:
-      'A personal touch for the basin, done in solid soapstone. The holder is beveled in the middle with linear holes that drain excess water, keeping the soap clean and dry after every use, and it stands on legs so air can move underneath.',
-    short: 'Beveled and drained, with legs that let air move underneath so soap dries between uses.',
-    specs: ['Drainage channels', 'Raised legs', 'Solid soapstone'],
-  },
-  {
-    slug: 'picture-frames',
-    title: 'Picture Frames',
-    seed: 'kivistone-frame',
+    slug: 'miscellaneous',
+    title: 'Miscellaneous',
+    seed: 'kivistone-misc',
     image: '/assets/products/picture-frame.webp',
     description:
-      'Save your memories in the stone. Place photos of your loved ones and the moments worth keeping into timeless, everlasting frames that will outlast the paper inside them.',
-    short: 'Photos of the people and moments worth keeping, set into a frame that outlasts them.',
-    specs: ['Portrait & round', 'Freestanding', 'Gift boxed'],
-  },
-  {
-    slug: 'stone-coasters',
-    title: 'Stone Coasters',
-    seed: 'kivistone-coaster',
-    image: '/assets/products/stone-coaster.webp',
-    description:
-      'The first absorbent stone coasters, car coasters and trivets. CoasterStone offers the widest selection of art available in the marketplace, with over 2,000 designs to choose from, there’s something for any style or preference.',
-    short: 'Absorbent stone coasters, car coasters and trivets, with over 2,000 designs to choose from.',
-    specs: ['2,000+ designs', 'Absorbent', 'Sets & trivets'],
-  },
-  {
-    slug: 'aroma-spirit-cups',
-    title: 'Aroma Spirit Cups',
-    seed: 'kivistone-aroma',
-    image: '/assets/products/aroma.webp',
-    description:
-      'Carved for fragrant, grape-based pomace brandy of Italian origin, the kind that carries 35–60% alcohol by volume (70 to 120 US proof). The stone holds the chill and opens up the aroma as you drink.',
-    short: 'Carved for fragrant, grape-based pomace brandy, the stone holds the chill and opens the aroma.',
-    specs: ['Chill or warm', 'Sold in pairs', 'Carved detail'],
+      'The rest of the Kivistone range: soap holders, picture frames, stone coasters, and aroma spirit cups. Different shapes and uses, all cut and hand-finished from the same Finnish soapstone.',
+    short: 'Kivistone soapstone designs are limitless, ashtrays, coasters, soap holders, and picture frames are just where the range begins. Every piece is cut and hand-finished from the same Finnish soapstone as the rest of the collection. Have a design in mind that isn’t listed here? Send us your request and we’ll gladly take on the challenge of making it.',
+    specs: ['Assorted styles', 'Hand-finished', 'Gift ready'],
   },
 ];
 

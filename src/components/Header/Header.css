@@ -16,7 +16,14 @@
   display:flex; align-items:center; gap:0.65rem;
 }
 .logo-text{ text-transform:uppercase; }
-.logo-dot{ color:var(--gold); }
+.logo-stone{ color:var(--gold); transition:color .2s ease; }
+/* drawn as a circle rather than relying on the "." glyph, so size/position are exact
+   instead of drifting with font metrics */
+.logo-dot{
+  display:inline-block; width:5px; height:5px; margin-left:2px; border-radius:50%;
+  background:var(--gold); vertical-align:middle; transform:translateY(3px); font-size:0;
+  transition:background-color .2s ease;
+}
 
 .nav-links{ display:flex; align-items:center; gap:2.1rem; }
 .nav-links a, .nav-links .nav-caret{

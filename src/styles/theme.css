@@ -40,11 +40,24 @@
 
   /* accent */
   --accent:#8C8C8C;
-  --gold:#B99B63;
-  --gold-light:#D3B888;  /* gold text on dark surfaces */
-  --gold-deep:#8A6E37;   /* gold text on light surfaces */
+  --gold:#b08e4e;
+  --gold-light:#EACB86;  /* gold text on dark surfaces */
+  --gold-deep:#a08348;   /* gold text on light surfaces */
   --danger:#9C4E40;
   --danger-inv:#DA9A8F;  /* error text on dark surfaces */
+
+  /*
+    Hero accent — the metallic gradient clipped to the highlighted word in
+    every page's dark hero heading (Home, About, Contact, Products,
+    ProductCategoryPage). Split off from --gold/--gold-light/--gold-deep on
+    purpose: those three also drive buttons, icons and borders sitewide, so
+    tuning the hero's brightness/saturation here can't accidentally relight
+    anything else. Same three-stop shape (light / mid / deep) as the shared
+    gold ramp, just its own independent values.
+  */
+  --hero-accent-light:#ffe2a5;
+  --hero-accent:#e1c259;
+  --hero-accent-deep:#e4cf8e;
 
   /* dividers */
   --divider:#D9D9D9;
@@ -76,7 +89,14 @@
   dividers, dark-section tokens are all untouched.
 */
 :root[data-theme="silver"]{
-  --gold:#7D8084;
-  --gold-light:#CACDD0;
+  --gold:#737679;
+  --gold-light:#c7c7c7;
   --gold-deep:#55585C;
+
+  /* hero accent's own silver ramp — mirrors the brightness/contrast of the
+     tuned gold ramp above (light > deep > mid), just re-tinted neutral gray
+     instead of warm gold; tune independently of the shared gold vars */
+  --hero-accent-light:#ffffff;
+  --hero-accent:#e0e3e6;
+  --hero-accent-deep:#fdfeff;
 }

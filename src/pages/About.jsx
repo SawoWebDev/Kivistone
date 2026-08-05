@@ -28,7 +28,7 @@ export default function About() {
     <>
       <section className="story">
         <div className="story-media">
-          <img src="/assets/home/Kivistone-plate.webp" alt="Finnish soapstone hand-finished into a sizzling serving plate" />
+          <img src="/assets/home/a4.webp" alt="Finnish soapstone hand-finished into a sizzling serving plate" />
           <div className="story-scrim" />
           <div className="wrap story-content">
             <h1><span className="accent">Finnish stone,</span><br />Finnish standards</h1>

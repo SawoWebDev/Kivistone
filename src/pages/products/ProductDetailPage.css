@@ -3,11 +3,11 @@ section.product-detail{ padding:clamp(2.2rem,4vw,3.2rem) 0 clamp(3.6rem,6vw,4.8r
 .pd-breadcrumb{
   display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap;
   font-family:var(--font-mono); font-size:0.78rem; letter-spacing:0.02em;
-  color:var(--muted); margin-bottom:2rem;
+  color:var(--ink-secondary); margin-bottom:2rem;
 }
-.pd-breadcrumb a{ color:var(--muted); }
+.pd-breadcrumb a{ color:var(--ink-secondary); }
 .pd-breadcrumb a:hover{ color:var(--ink); }
-.pd-breadcrumb i{ font-size:0.62rem; color:var(--faint); }
+.pd-breadcrumb i{ font-size:0.62rem; color:var(--muted); }
 .pd-breadcrumb span{ color:var(--ink-secondary); }
 
 .pd-main{
@@ -24,7 +24,7 @@ section.product-detail{ padding:clamp(2.2rem,4vw,3.2rem) 0 clamp(3.6rem,6vw,4.8r
 
 .pd-category{
   font-family:var(--font-mono); font-size:0.75rem; letter-spacing:0.06em; text-transform:uppercase;
-  color:var(--faint);
+  color:var(--ink-secondary);
 }
 .pd-info h1{
   font-family:var(--font-display); font-weight:700; letter-spacing:-0.02em;
@@ -37,9 +37,9 @@ section.product-detail{ padding:clamp(2.2rem,4vw,3.2rem) 0 clamp(3.6rem,6vw,4.8r
   padding-bottom:0.6rem; border-bottom:1px solid var(--divider);
   font-size:0.92rem; color:var(--ink-secondary);
 }
-.pd-specs-label{ font-family:var(--font-mono); font-size:0.75rem; letter-spacing:0.04em; text-transform:uppercase; color:var(--faint); }
+.pd-specs-label{ font-family:var(--font-mono); font-size:0.75rem; letter-spacing:0.04em; text-transform:uppercase; color:var(--ink-secondary); }
 
-.pd-desc{ font-size:0.95rem; line-height:1.75; color:var(--muted); margin:0 0 1.8rem; max-width:46ch; }
+.pd-desc{ font-size:0.95rem; line-height:1.75; color:var(--ink-secondary); margin:0 0 1.8rem; max-width:46ch; }
 
 .pd-related{ margin-top:clamp(3rem,5vw,4rem); padding-top:clamp(2rem,4vw,2.8rem); border-top:1px solid var(--divider); }
 .pd-related h2{

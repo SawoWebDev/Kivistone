@@ -56,5 +56,200 @@
       "weightKg": 1.2,
       "image": "/assets/products/candle-holders/r-115.webp"
     }
+  ],
+  "dish-plates": [
+    {
+      "id": "r-151",
+      "name": "R-151",
+      "sizeMm": "240x170x25",
+      "weightKg": 2.64,
+      "image": "/assets/products/dish-plates/r-151.webp"
+    },
+    {
+      "id": "r-152",
+      "name": "R-152",
+      "sizeMm": "240x170x25",
+      "weightKg": 2.60,
+      "image": "/assets/products/dish-plates/r-152.webp"
+    },
+    {
+      "id": "r-153-d",
+      "name": "R-153 D",
+      "sizeMm": "plate 305x200x15, tray 400x250x20",
+      "weightKg": 2.60,
+      "image": "/assets/products/dish-plates/r-153-d.webp"
+    },
+    {
+      "id": "r-153-a",
+      "name": "R-153 A",
+      "sizeMm": "plate 305x200x15, tray 400x250x20",
+      "weightKg": 2.60,
+      "image": "/assets/products/dish-plates/r-153-a.webp"
+    }
+  ],
+  "cups-and-coolers": [
+    {
+      "id": "r-100",
+      "name": "R-100",
+      "sizeMm": "50x60",
+      "weightKg": 0.27,
+      "image": "/assets/products/cups-and-coolers/r-100.webp"
+    },
+    {
+      "id": "r-110",
+      "name": "R-110",
+      "sizeMm": "50x60",
+      "weightKg": 0.18,
+      "image": "/assets/products/cups-and-coolers/r-110.webp"
+    },
+    {
+      "id": "r-111",
+      "name": "R-111",
+      "sizeMm": "70x60",
+      "weightKg": 0.36,
+      "image": "/assets/products/cups-and-coolers/r-111.webp"
+    },
+    {
+      "id": "r-112",
+      "name": "R-112",
+      "sizeMm": "75x120",
+      "weightKg": 1.0,
+      "image": "/assets/products/cups-and-coolers/r-112.webp"
+    },
+    {
+      "id": "r-200",
+      "name": "R-200",
+      "sizeMm": "35x70",
+      "weightKg": 0.11,
+      "image": "/assets/products/cups-and-coolers/r-200.webp"
+    },
+    {
+      "id": "r-90",
+      "name": "R-90",
+      "sizeMm": "185x185x60",
+      "weightKg": 4.11,
+      "image": "/assets/products/cups-and-coolers/r-90.webp"
+    },
+    {
+      "id": "r-92",
+      "name": "R-92",
+      "sizeMm": "185x100x60",
+      "weightKg": 2.319,
+      "image": "/assets/products/cups-and-coolers/r-92.webp"
+    },
+    {
+      "id": "r-93",
+      "name": "R-93",
+      "sizeMm": "235x60x140",
+      "weightKg": 3.23,
+      "image": "/assets/products/cups-and-coolers/r-93.webp"
+    },
+    {
+      "id": "r-141",
+      "name": "R-141",
+      "sizeMm": "100x100x60",
+      "weightKg": 1.32,
+      "image": "/assets/products/cups-and-coolers/r-141.webp"
+    },
+    {
+      "id": "r-204",
+      "name": "R-204 (shot glass not included)",
+      "sizeMm": "140x100x60",
+      "weightKg": 1.79,
+      "image": "/assets/products/cups-and-coolers/r-204.webp"
+    },
+    {
+      "id": "r-206",
+      "name": "R-206 (shot glass not included)",
+      "sizeMm": "190x120x60",
+      "weightKg": 2.86,
+      "image": "/assets/products/cups-and-coolers/r-206.webp"
+    },
+    {
+      "id": "r-203",
+      "name": "R-203 (shot glass not included)",
+      "sizeMm": "235x60x30",
+      "weightKg": 1.0,
+      "image": "/assets/products/cups-and-coolers/r-203.webp"
+    },
+    {
+      "id": "r-301",
+      "name": "R-301 (shot glass not included)",
+      "sizeMm": "280x60x30",
+      "weightKg": 1.2,
+      "image": "/assets/products/cups-and-coolers/r-301.webp"
+    }
+  ],
+  "scent-warmers": [
+    {
+      "id": "r-501",
+      "name": "R-501",
+      "sizeMm": "120x75",
+      "weightKg": 1.2,
+      "image": "/assets/products/scent-warmers/r-501.webp"
+    },
+    {
+      "id": "r-502",
+      "name": "R-502",
+      "sizeMm": "120x75",
+      "weightKg": 1.2,
+      "image": "/assets/products/scent-warmers/r-502.webp"
+    },
+    {
+      "id": "r-503",
+      "name": "R-503",
+      "sizeMm": "120x75",
+      "weightKg": 1.2,
+      "image": "/assets/products/scent-warmers/r-503.webp"
+    },
+    {
+      "id": "r-504",
+      "name": "R-504",
+      "sizeMm": "120x75",
+      "weightKg": 1.2,
+      "image": "/assets/products/scent-warmers/r-504.webp"
+    },
+    {
+      "id": "r-120",
+      "name": "R-120",
+      "sizeMm": "108x60",
+      "weightKg": 1.324,
+      "image": "/assets/products/scent-warmers/r-120.webp"
+    },
+    {
+      "id": "r-122",
+      "name": "R-122",
+      "sizeMm": "90x75x90",
+      "weightKg": 1.2,
+      "image": "/assets/products/scent-warmers/r-122.webp"
+    },
+    {
+      "id": "r-123",
+      "name": "R-123",
+      "sizeMm": "75x80",
+      "weightKg": 0.7,
+      "image": "/assets/products/scent-warmers/r-123.webp"
+    },
+    {
+      "id": "r-160",
+      "name": "R-160",
+      "sizeMm": "50x50",
+      "weightKg": 0.15,
+      "image": "/assets/products/scent-warmers/r-160.webp"
+    },
+    {
+      "id": "aro-euca10",
+      "name": "Aro-EUCA10 (Eucalyptus)",
+      "sizeMm": null,
+      "weightLabel": "10mL",
+      "image": "/assets/products/scent-warmers/aro-euca10.webp"
+    },
+    {
+      "id": "aro-ff10",
+      "name": "Aro-FF10 (Forest Fresh)",
+      "sizeMm": null,
+      "weightLabel": "10mL",
+      "image": "/assets/products/scent-warmers/aro-euca10.webp"
+    }
   ]
 }

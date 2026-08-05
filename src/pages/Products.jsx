@@ -29,7 +29,7 @@ export default function Products() {
     <>
       <section className="products-hero">
         <div className="ph-media">
-          <img src="/assets/home/prod_all1.webp" alt="A curated arrangement of Kivistone soapstone products" />
+          <img src="/assets/home/Home-hero.webp" alt="A curated arrangement of Kivistone soapstone products" />
           <div className="ph-scrim" />
           <div className="wrap ph-content">
             <h1><span className="accent">The full</span><br />Kivistone collection</h1>

@@ -17,7 +17,7 @@ export default function ProductDetailPage() {
   usePageMeta(
     product ? `${product.name} — ${category.title} | Kivistone` : undefined,
     product
-      ? `${product.name}: ${category.title.toLowerCase()} in natural soapstone. Size(mm): ${product.sizeMm}, Weight: ${product.weightKg}kg.`
+      ? `${product.name}: ${category.title.toLowerCase()} in natural soapstone.${product.sizeMm ? ` Size(mm): ${product.sizeMm},` : ''} Weight: ${product.weightLabel || `${product.weightKg}kg`}.`
       : undefined
   );
 
@@ -43,13 +43,15 @@ export default function ProductDetailPage() {
             <span className="pd-category">{category.title}</span>
             <h1>{product.name}</h1>
             <ul className="pd-specs">
-              <li>
-                <span className="pd-specs-label">Size (mm)</span>
-                <span>{product.sizeMm}</span>
-              </li>
+              {product.sizeMm && (
+                <li>
+                  <span className="pd-specs-label">Size (mm)</span>
+                  <span>{product.sizeMm}</span>
+                </li>
+              )}
               <li>
                 <span className="pd-specs-label">Weight</span>
-                <span>{product.weightKg}kg</span>
+                <span>{product.weightLabel || `${product.weightKg}kg`}</span>
               </li>
               <li>
                 <span className="pd-specs-label">Material</span>

@@ -10,7 +10,7 @@ export default function Contact() {
     <>
       <section className="contact-hero">
         <div className="contact-hero-media">
-          <img src="/assets/home/Home-hero.webp" alt="Kivistone soapstone pieces ready for enquiry" />
+          <img src="/assets/home/water-kettle.webp" alt="Kivistone soapstone pieces ready for enquiry" />
           <div className="contact-hero-scrim" />
           <div className="wrap contact-hero-content">
             <h1><span className="accent">Tell us</span><br />what you&rsquo;re looking for</h1>

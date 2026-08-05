@@ -1,3 +1,4 @@
+import { useEffect, useMemo, useState } from 'react';
 import { Link, Navigate, useParams } from 'react-router-dom';
 import Button from '../../components/Button/Button.jsx';
 import { getCategory, categories } from '../../data/categories.js';
@@ -10,9 +11,18 @@ const PLACEHOLDER_COUNT = 6;
 export default function ProductCategoryPage() {
   const { slug } = useParams();
   const category = getCategory(slug);
+  const [query, setQuery] = useState('');
 
   const items = category ? getProductsForCategory(category.slug) : [];
   const others = category ? categories.filter((c) => c.slug !== category.slug).slice(0, 4) : [];
+
+  const filteredItems = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    if (!q) return items;
+    return items.filter((p) => p.name.toLowerCase().includes(q));
+  }, [items, query]);
+
+  useEffect(() => setQuery(''), [slug]);
 
   usePageMeta(
     category ? `${category.title} | Kivistone` : undefined,
@@ -36,11 +46,15 @@ export default function ProductCategoryPage() {
               {titleRest && <><br />{titleRest}</>}
             </h1>
             <p className="lede">{category.description}</p>
-            <ul className="specs">
-              {category.specs.map((s) => (
-                <li key={s}>{s}</li>
-              ))}
-            </ul>
+            <Button
+              variant="secondary-inv"
+              href="http://www.kivistone.com/kivistone%20brochure_5.pdf"
+              external
+              icon="fa-solid fa-file-pdf"
+              className="pc-hero-brochure"
+            >
+              Brochure
+            </Button>
           </div>
         </div>
       </section>
@@ -48,13 +62,30 @@ export default function ProductCategoryPage() {
       <section className="product-grid light">
         <div className="wrap">
           <div className="pg-head">
-            <h2>Styles in this range</h2>
-            <p>Every piece is cut and hand-finished individually, so no two are exactly alike.</p>
+            <div>
+              <h2>Styles in this range</h2>
+              <p>Every piece is cut and hand-finished individually, so no two are exactly alike.</p>
+            </div>
+            {items.length > 0 && (
+              <div className="pg-search">
+                <i className="fa-solid fa-magnifying-glass" aria-hidden="true" />
+                <input
+                  type="search"
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                  placeholder={`Search ${category.title.toLowerCase()}…`}
+                  aria-label={`Search ${category.title}`}
+                />
+              </div>
+            )}
           </div>
 
+          {items.length > 0 && filteredItems.length === 0 ? (
+            <p className="pg-empty">No styles match &ldquo;{query}&rdquo;.</p>
+          ) : (
           <div className="product-tiles">
             {items.length > 0
-              ? items.map((p) => (
+              ? filteredItems.map((p) => (
                   <Link
                     className="product-tile"
                     key={p.id}
@@ -66,7 +97,8 @@ export default function ProductCategoryPage() {
                     <div className="label">
                       <span className="label-name">{p.name}</span>
                       <span className="label-specs">
-                        Size(mm): {p.sizeMm} · Weight: {p.weightKg}kg
+                        {p.sizeMm && <>Size(mm): {p.sizeMm}<br /></>}
+                        Weight: {p.weightLabel || `${p.weightKg}kg`}
                       </span>
                     </div>
                   </Link>
@@ -84,6 +116,7 @@ export default function ProductCategoryPage() {
                   </div>
                 ))}
           </div>
+          )}
 
           <div className="product-cta">
             <Button variant="gold" to="/contact" icon="fa-solid fa-envelope">

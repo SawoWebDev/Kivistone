@@ -70,7 +70,7 @@ export default function Header() {
     <header className={`site-header${hidden ? ' hidden' : ''}`}>
       <div className="wrap">
         <NavLink to="/" className="logo">
-          <span className="logo-text">Kivistone<span className="logo-dot">.</span></span>
+          <span className="logo-text">Kivi<span className="logo-stone">stone</span><span className="logo-dot">.</span></span>
         </NavLink>
 
         <nav className="nav-links">

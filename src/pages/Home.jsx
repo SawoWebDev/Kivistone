@@ -10,7 +10,7 @@ export default function Home() {
     <>
       <section className="hero">
         <div className="hero-media">
-          <img src="/assets/home/water-kettle.webp" alt="Kivistone soapstone scent warmers styled on a sunlit windowsill" />
+          <img src="/assets/home/homehero.webp" alt="Kivistone soapstone scent warmers styled on a sunlit windowsill" />
           <div className="hero-scrim" />
           <div className="wrap hero-content">
             <h1><span className="accent">Carved once.</span><br />Kept forever.</h1>
@@ -91,11 +91,11 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="categories dark">
+      <section className="categories">
         <div className="wrap">
           <SectionHead
-            title="View the categories of Kivistone soapstone products"
-            description="Browse the full range by category, each collection is hand-finished from the same Finnish soapstone."
+            title="Shop by Category"
+            description="From candle holders and dish plates to cups, coolers, and scent warmers, explore the full Kivistone range. Every piece is cut and hand-finished from the same Finnish soapstone, a stone prized for centuries for its heat resistance, durability, and natural beauty, so whichever category you choose, you're getting the same craftsmanship throughout."
           />
           <div className="card-grid">
             {categories.map((c) => (
@@ -114,7 +114,7 @@ export default function Home() {
             <Button variant="gold" to="/products" icon="fa-solid fa-chevron-right" iconPosition="right">
               See all product ranges
             </Button>
-            <Button variant="secondary-inv" to="/contact" icon="fa-solid fa-percent">
+            <Button variant="secondary" to="/contact" icon="fa-solid fa-percent">
               Save 20% on bulk orders
             </Button>
           </div>
