@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
 const SITE_NAME = 'Kivistone';
-const SITE_ORIGIN = 'https://kivistone.vercel.app';
+const SITE_ORIGIN = 'https://www.kivistone.com';
 
 function setMetaTag(attr, key, content) {
   let tag = document.querySelector(`meta[${attr}="${key}"]`);

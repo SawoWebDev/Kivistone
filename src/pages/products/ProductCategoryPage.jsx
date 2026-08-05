@@ -36,9 +36,9 @@ export default function ProductCategoryPage() {
             '@context': 'https://schema.org',
             '@type': 'BreadcrumbList',
             itemListElement: [
-              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://kivistone.vercel.app/' },
-              { '@type': 'ListItem', position: 2, name: 'Products', item: 'https://kivistone.vercel.app/products' },
-              { '@type': 'ListItem', position: 3, name: category.title, item: `https://kivistone.vercel.app/products/${category.slug}` },
+              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.kivistone.com/' },
+              { '@type': 'ListItem', position: 2, name: 'Products', item: 'https://www.kivistone.com/products' },
+              { '@type': 'ListItem', position: 3, name: category.title, item: `https://www.kivistone.com/products/${category.slug}` },
             ],
           },
         }

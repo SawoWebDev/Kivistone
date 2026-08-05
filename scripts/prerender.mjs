@@ -118,8 +118,22 @@ async function main() {
         { timeout: 5000 },
       );
 
-      const html = await page.content();
+      let html = await page.content();
       await page.close();
+
+      /* The icon font CSS is dynamically imported by src/main.jsx (see the
+         comment there) so it never blocks first paint during a real SPA
+         run. But page.content() snapshots the DOM *after* that runtime
+         insertion already ran, freezing it into the static HTML as an
+         ordinary render-blocking <link>. Rewrite it back to the
+         non-blocking preload/onload-swap pattern so served-as-static pages
+         get the same non-blocking behavior a live client-side load does. */
+      html = html.replace(
+        /<link rel="stylesheet" crossorigin(?:="")? href="([^"]*\/assets\/all-[^"]*\.css)">/,
+        '<link rel="preload" as="style" href="$1">' +
+          '<link rel="stylesheet" href="$1" media="print" onload="this.media=\'all\'">' +
+          '<noscript><link rel="stylesheet" href="$1"></noscript>',
+      );
 
       const outDir = route === '/' ? distDir : path.join(distDir, route);
       mkdirSync(outDir, { recursive: true });

@@ -10,11 +10,11 @@ const LOCAL_BUSINESS_JSON_LD = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
   name: 'Kivistone (SAWO Inc.)',
-  image: 'https://kivistone.vercel.app/assets/home/water-kettle.webp',
+  image: 'https://www.kivistone.com/assets/home/water-kettle.webp',
   email: 'sales@kivistone.com',
   telephone: '+63-32-341-2233',
   faxNumber: '+63-32-341-2255',
-  url: 'https://kivistone.vercel.app',
+  url: 'https://www.kivistone.com',
   address: {
     '@type': 'PostalAddress',
     streetAddress: 'Mactan Export Processing Zone 2',

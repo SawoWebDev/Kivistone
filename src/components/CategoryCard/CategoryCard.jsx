@@ -8,7 +8,7 @@ export default function CategoryCard({ title, description, imageSrc, imageAlt, t
   return (
     <Tag className={`cat-card${dark ? ' dark' : ''}`} {...linkProps}>
       <div className="img">
-        <img src={imageSrc} alt={imageAlt || title} />
+        <img src={imageSrc} alt={imageAlt || title} loading="lazy" decoding="async" />
       </div>
       <div className="body">
         <h3>{title}</h3>

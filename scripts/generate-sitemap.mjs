@@ -7,7 +7,7 @@ import { categories } from '../src/data/categories.js';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(__dirname, '..');
 
-const BASE_URL = 'https://kivistone.vercel.app';
+const BASE_URL = 'https://www.kivistone.com';
 
 const productsPath = path.join(rootDir, 'src/data/products.json');
 const products = JSON.parse(readFileSync(productsPath, 'utf-8'));
