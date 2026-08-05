@@ -251,5 +251,63 @@
       "weightLabel": "10mL",
       "image": "/assets/products/scent-warmers/aro-euca10.webp"
     }
+  ],
+  "miscellaneous": [
+    {
+      "id": "r-404",
+      "name": "R-404 (Ashtray)",
+      "sizeMm": "110x10",
+      "weightKg": 0.5,
+      "image": "/assets/products/miscellaneous/r-404.webp"
+    },
+    {
+      "id": "r-405",
+      "name": "R-405 (Ashtray)",
+      "sizeMm": "110x10",
+      "weightKg": 0.5,
+      "image": "/assets/products/miscellaneous/r-405.webp"
+    },
+    {
+      "id": "r-406",
+      "name": "R-406 (Ashtray)",
+      "sizeMm": "110x10",
+      "weightKg": 0.5,
+      "image": "/assets/products/miscellaneous/r-406.webp"
+    },
+    {
+      "id": "r-407",
+      "name": "R-407 (Ashtray)",
+      "sizeMm": "60x50x60",
+      "weightKg": 0.7,
+      "image": "/assets/products/miscellaneous/r-407.webp"
+    },
+    {
+      "id": "r-116",
+      "name": "R-116 (Soap Holder)",
+      "sizeMm": "180x110x20",
+      "weightKg": 0.90,
+      "image": "/assets/products/miscellaneous/r-116.webp"
+    },
+    {
+      "id": "r-170",
+      "name": "R-170 (Picture Frame)",
+      "sizeMm": "250x160x15",
+      "weightKg": 1.33,
+      "image": "/assets/products/miscellaneous/r-170.webp"
+    },
+    {
+      "id": "r-165",
+      "name": "R-165 (Picture Frame)",
+      "sizeMm": "250x120x15",
+      "weightKg": 0.91,
+      "image": "/assets/products/miscellaneous/r-165.webp"
+    },
+    {
+      "id": "r-403",
+      "name": "R-403 (Stone Coaster)",
+      "sizeMm": "90x40x60",
+      "weightKg": 0.9,
+      "image": "/assets/products/miscellaneous/r-403.webp"
+    }
   ]
 }

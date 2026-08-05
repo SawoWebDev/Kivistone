@@ -10,7 +10,7 @@
   --font-mono:'Onest', sans-serif;
 
   /* light surfaces: the site runs on one white, no separate page-gray tint */
-  --card:#FFFFFF;
+  --card:#fcfbf3;
 
   /*
     Dark surfaces: a neutral gray ramp, lightest layer on top.
