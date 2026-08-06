@@ -18,9 +18,31 @@ import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import http from 'node:http';
 
-import puppeteer from 'puppeteer';
-
 import { categories } from '../src/data/categories.js';
+
+/* Vercel's and Cloudflare Pages' build images are both missing the shared
+   libraries (libnspr4.so, libatk-1.0.so.0, etc.) that the full `puppeteer`
+   package's bundled Chrome needs, so that build fails with "error while
+   loading shared libraries" every time. On either host we instead launch
+   @sparticuz/chromium — a Chromium build packaged specifically for
+   serverless/CI containers — via puppeteer-core. Locally (Windows/Mac/Linux
+   dev machines), the full `puppeteer` package's own Chrome keeps working
+   exactly as before. */
+async function launchBrowser() {
+  if (process.env.VERCEL || process.env.CF_PAGES) {
+    const [{ default: chromium }, { default: puppeteerCore }] = await Promise.all([
+      import('@sparticuz/chromium'),
+      import('puppeteer-core'),
+    ]);
+    return puppeteerCore.launch({
+      args: chromium.args,
+      executablePath: await chromium.executablePath(),
+      headless: true,
+    });
+  }
+  const { default: puppeteer } = await import('puppeteer');
+  return puppeteer.launch({ headless: true });
+}
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(__dirname, '..');
@@ -101,7 +123,7 @@ async function main() {
   const port = await listen(server);
   const baseUrl = `http://127.0.0.1:${port}`;
 
-  const browser = await puppeteer.launch({ headless: true });
+  const browser = await launchBrowser();
 
   console.log(`Prerendering ${routes.length} routes...`);
 
