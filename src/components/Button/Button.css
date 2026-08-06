@@ -27,88 +27,28 @@
 }
 .btn:disabled:hover, .btn[aria-disabled="true"]:hover{ transform:none; }
 
-/*
-  One footprint: font size and padding are shared across every filled
-  variant so any pair sits level, wherever they're used.
-*/
-.btn-gold, .btn-secondary, .btn-secondary-inv, .btn-dark{
-  font-size:0.92rem; padding:1.05rem 2.1rem;
-}
-@media (max-width:480px){
-  .btn-gold, .btn-secondary, .btn-secondary-inv, .btn-dark{
-    font-size:0.86rem; padding:0.9rem 1.5rem;
-  }
-}
-
-/* brushed-metal gold fill: diagonal sheen + a beveled top highlight, same treatment as the secondary metal */
+/* brushed-metal fill: one smooth near-black gunmetal sweep. Hardcoded rather
+   than built from --gold/--gold-light/--gold-deep, since those stay mid-tone
+   for text legibility elsewhere (see theme.css) — a button provides its own
+   background, so it can go darker. The one filled style for every button on
+   the site, light section or dark card alike. */
 .btn-gold{
+  font-size:0.92rem; padding:1.05rem 2.1rem;
   font-weight:700;
-  background-image:linear-gradient(135deg, #E9D4A6 0%, var(--gold-light) 22%, var(--gold) 50%, #9C7F49 78%, var(--gold-light) 100%);
+  background-image:linear-gradient(135deg, #4A4A4C 0%, #2A2A2C 50%, #101010 100%);
   background-size:130% 100%;
   background-position:0% 0%;
-  color:var(--bg-dark);
-  border-color:rgba(138,110,55,0.35);
-  box-shadow:inset 0 1px 0 rgba(255,255,255,0.55), 0 1px 2px rgba(20,20,20,0.15);
-  transition:transform .18s ease, box-shadow .18s ease, border-color .15s ease, background-position .3s ease, opacity .15s ease;
-}
-.btn-gold:hover{
-  background-position:14% 0%;
-  border-color:rgba(138,110,55,0.5);
-  transform:translateY(-2px);
-  box-shadow:inset 0 1px 0 rgba(255,255,255,0.65), 0 8px 16px -8px rgba(20,20,20,0.3);
-}
-
-/* silver mode: one smooth near-black gunmetal sweep, not the gold's light/dark
-   alternation. Hardcoded rather than built from --gold/--gold-light/--gold-deep,
-   since those stay mid-tone for text legibility elsewhere (see theme.css) —
-   a button provides its own background, so it can go darker. */
-[data-theme="silver"] .btn-gold{
-  background-image:linear-gradient(135deg, #4A4A4C 0%, #2A2A2C 50%, #101010 100%);
   color:var(--ink-inv);
   border-color:rgba(255,255,255,0.12);
   box-shadow:inset 0 1px 0 rgba(255,255,255,0.18), 0 1px 2px rgba(0,0,0,0.35);
+  transition:transform .18s ease, box-shadow .18s ease, border-color .15s ease, background-position .3s ease, opacity .15s ease;
 }
-[data-theme="silver"] .btn-gold:hover{
+@media (max-width:480px){
+  .btn-gold{ font-size:0.86rem; padding:0.9rem 1.5rem; }
+}
+.btn-gold:hover{
+  background-position:14% 0%;
   border-color:rgba(255,255,255,0.2);
+  transform:translateY(-2px);
   box-shadow:inset 0 1px 0 rgba(255,255,255,0.24), 0 8px 16px -8px rgba(0,0,0,0.5);
-}
-
-/* brushed-metal fill: diagonal sheen + a beveled top highlight, for light sections */
-.btn-secondary{
-  background:linear-gradient(135deg, #F5F3ED 0%, var(--btn-2-bg) 48%, #CDC8B9 100%);
-  color:var(--ink);
-  border-color:transparent;
-  box-shadow:inset 0 1px 0 rgba(255,255,255,0.75), 0 1px 2px rgba(20,20,20,0.06);
-}
-.btn-secondary:hover{
-  background:linear-gradient(135deg, #FBFAF7 0%, var(--btn-2-bg-hover) 48%, #C2BCAC 100%);
-  transform:translateY(-2px);
-  box-shadow:inset 0 1px 0 rgba(255,255,255,0.85), 0 14px 26px -16px rgba(20,20,20,0.45);
-}
-
-/* same idea re-tinted for dark sections and photo scrims: a gunmetal sheen over the frosted glass */
-.btn-secondary-inv{
-  background:linear-gradient(135deg, rgba(255,255,255,0.24) 0%, rgba(242,242,242,0.10) 48%, rgba(242,242,242,0.20) 100%);
-  color:var(--ink-inv);
-  border-color:transparent;
-  box-shadow:inset 0 1px 0 rgba(255,255,255,0.22);
-  backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px);
-}
-.btn-secondary-inv:hover{
-  background:linear-gradient(135deg, rgba(255,255,255,0.34) 0%, rgba(242,242,242,0.16) 48%, rgba(242,242,242,0.28) 100%);
-  transform:translateY(-2px);
-  box-shadow:inset 0 1px 0 rgba(255,255,255,0.3);
-}
-
-/* brushed-metal black: gunmetal sheen + a beveled top highlight, header nav CTA and dark banners */
-.btn-dark{
-  background:linear-gradient(135deg, #38383B 0%, var(--bg-dark-2) 45%, #000 100%);
-  color:var(--ink-inv);
-  border-color:rgba(255,255,255,0.08);
-  box-shadow:inset 0 1px 0 rgba(255,255,255,0.14), 0 1px 2px rgba(0,0,0,0.3);
-}
-.btn-dark:hover{
-  background:linear-gradient(135deg, #454548 0%, #1C1C1E 45%, #000 100%);
-  transform:translateY(-2px);
-  box-shadow:inset 0 1px 0 rgba(255,255,255,0.2), 0 14px 26px -14px rgba(20,20,20,0.55);
 }

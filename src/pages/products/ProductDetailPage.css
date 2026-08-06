@@ -65,7 +65,8 @@ section.product-detail{ padding:clamp(2.2rem,4vw,3.2rem) 0 clamp(3.6rem,6vw,4.8r
 /* closing cta — dark banner floating on the light page, the reach-out prompt before the footer */
 .pd-closing-cta{ padding:clamp(2.4rem,4.4vw,3.4rem) 0 0; }
 .closing-cta-card{
-  background:var(--bg-dark-2); color:var(--ink-inv);
+  background:radial-gradient(55% 45% at 20% -10%, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0) 65%), var(--bg-dark-2);
+  color:var(--ink-inv);
   border-radius:22px; padding:clamp(2rem,3.6vw,2.8rem) clamp(2.2rem,4vw,3.4rem);
   display:flex; align-items:center; justify-content:space-between; gap:1.8rem; flex-wrap:wrap;
   box-shadow:var(--shadow-lg);

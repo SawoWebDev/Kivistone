@@ -57,7 +57,7 @@ export default function ProductCategoryPage() {
           <img src={category.image} alt={`${category.title} range of Kivistone soapstone products`} fetchpriority="high" />
           <div className="pc-hero-scrim" />
           <div className="wrap pc-hero-content">
-            <h1>
+            <h1 className="hero-heading">
               <span className="accent">{titleAccent}</span>
               {titleRest && <><br />{titleRest}</>}
             </h1>

@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Button from '../Button/Button.jsx';
 import { countries } from '../../data/countries.js';
 import './ContactForm.css';
 
 const EMPTY = { name: '', email: '', country: '', subject: '', message: '' };
+const WEB3FORMS_ACCESS_KEY = 'c54f3c4a-b154-401e-8979-d6456a1448ff';
 
 function validate(values) {
   const errors = {};
@@ -17,7 +18,14 @@ function validate(values) {
 export default function ContactForm() {
   const [values, setValues] = useState(EMPTY);
   const [errors, setErrors] = useState({});
-  const [status, setStatus] = useState('idle'); // idle | sending | sent
+  const [attempted, setAttempted] = useState(false);
+  const [status, setStatus] = useState('idle'); // idle | sending | sent | error
+
+  useEffect(() => {
+    if (status !== 'sent') return;
+    const timer = setTimeout(() => setStatus('idle'), 5000);
+    return () => clearTimeout(timer);
+  }, [status]);
 
   const update = (field) => (e) => {
     setValues((v) => ({ ...v, [field]: e.target.value }));
@@ -26,15 +34,30 @@ export default function ContactForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setAttempted(true);
     const found = validate(values);
     setErrors(found);
     if (Object.keys(found).length) return;
 
     setStatus('sending');
-    // TODO: point this at the real enquiry endpoint (e.g. POST /api/enquiries).
-    await new Promise((resolve) => setTimeout(resolve, 700));
-    setStatus('sent');
-    setValues(EMPTY);
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          ...values,
+          access_key: WEB3FORMS_ACCESS_KEY,
+          subject: values.subject ? `Kivistone enquiry: ${values.subject}` : 'Kivistone enquiry',
+          from_name: 'Kivistone website',
+        }),
+      });
+      const data = await response.json();
+      if (!data.success) throw new Error(data.message || 'Submission failed');
+      setStatus('sent');
+      setValues(EMPTY);
+    } catch {
+      setStatus('error');
+    }
   };
 
   if (status === 'sent') {
@@ -52,7 +75,7 @@ export default function ContactForm() {
     <form className="form-card" onSubmit={handleSubmit} noValidate>
       <div className="field-grid">
         <div className="field">
-          <label htmlFor="cf-name">Your name <span className="req">required</span></label>
+          <label htmlFor="cf-name">Your name {attempted && !values.name.trim() && <span className="req">required</span>}</label>
           <input
             id="cf-name" type="text" autoComplete="name" value={values.name} onChange={update('name')}
             aria-invalid={!!errors.name} aria-describedby={errors.name ? 'cf-name-err' : undefined}
@@ -61,7 +84,7 @@ export default function ContactForm() {
         </div>
 
         <div className="field">
-          <label htmlFor="cf-email">Your email <span className="req">required</span></label>
+          <label htmlFor="cf-email">Your email {attempted && !values.email.trim() && <span className="req">required</span>}</label>
           <input
             id="cf-email" type="email" autoComplete="email" value={values.email} onChange={update('email')}
             aria-invalid={!!errors.email} aria-describedby={errors.email ? 'cf-email-err' : undefined}
@@ -86,7 +109,7 @@ export default function ContactForm() {
         </div>
 
         <div className="field field-full">
-          <label htmlFor="cf-message">Your message <span className="req">required</span></label>
+          <label htmlFor="cf-message">Your message {attempted && !values.message.trim() && <span className="req">required</span>}</label>
           <textarea
             id="cf-message" rows={6} value={values.message} onChange={update('message')}
             placeholder="Product, quantity, destination port, anything that helps us quote accurately."
@@ -100,6 +123,9 @@ export default function ContactForm() {
         <Button variant="gold" type="submit" icon="fa-solid fa-paper-plane" disabled={status === 'sending'}>
           {status === 'sending' ? 'Sending…' : 'Send message'}
         </Button>
+        {status === 'error' && (
+          <span className="err" role="alert">Something went wrong sending your message. Please try again.</span>
+        )}
       </div>
     </form>
   );

@@ -52,7 +52,7 @@ export default function Home() {
           />
           <div className="hero-scrim" />
           <div className="wrap hero-content">
-            <h1><span className="accent">Carved once.</span><br />Kept forever.</h1>
+            <h1 className="hero-heading"><span className="accent">Carved once.</span><br />Kept forever.</h1>
             <p className="lede">
               Kivistone is a collection of beautiful pieces carved from Finnish soapstone, each one designed
               for house interiors, everyday use, or as a personal or corporate gift. Explore a wide selection
@@ -163,7 +163,7 @@ export default function Home() {
       <section className="home-contact">
         <div className="wrap home-contact-inner">
           <div className="home-contact-copy">
-            <h2>Tell us what you&rsquo;re looking for</h2>
+            <h2>Have a question?</h2>
             <p>
               Questions about a piece, a bulk order, or working with Finnish soapstone in general: our sales
               team at the SAWO factory in Cebu handles enquiries, samples, and export quotes.

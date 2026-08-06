@@ -1,6 +1,7 @@
 /* lives inside dark/gold banners, so it stays inverted */
 .contact-card{
-  background:var(--bg-dark); border:1px solid var(--divider-dark); border-radius:14px;
+  background:radial-gradient(55% 45% at 20% -10%, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0) 65%), var(--bg-dark);
+  border:1px solid var(--divider-dark); border-radius:14px;
   padding:1.8rem; display:flex; flex-direction:column;
   box-shadow:var(--shadow-lg);
 }
@@ -9,7 +10,8 @@
 .contact-row:first-child{ padding-top:0; }
 .contact-row:last-child{ padding-bottom:0; }
 .contact-row .ic{
-  width:38px; height:38px; border-radius:50%; background:rgba(185,155,99,0.12); color:var(--gold-light);
+  width:38px; height:38px; border-radius:50%; color:var(--ink-inv);
+  background-image:linear-gradient(135deg, #4A4A4C 0%, #2A2A2C 50%, #101010 100%);
   display:flex; align-items:center; justify-content:center; font-size:0.9rem; flex-shrink:0;
   box-shadow:inset 0 1px 1px rgba(255,255,255,0.18), inset 0 -2px 3px rgba(0,0,0,0.35), 0 2px 4px rgba(0,0,0,0.2);
 }
@@ -23,5 +25,3 @@
 .contact-row span.address{ display:flex; flex-direction:column; font-weight:500; line-height:1.6; }
 .contact-row a{ width:fit-content; transition:color .15s ease; }
 .contact-row a:hover{ color:var(--gold-light); }
-
-[data-theme="silver"] .contact-row .ic{ background:rgba(125,128,132,0.2); }

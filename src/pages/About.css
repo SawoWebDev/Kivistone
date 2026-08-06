@@ -21,29 +21,7 @@ section.story{ padding:0; }
   color:var(--ink-inv);
 }
 .story-content > *{ max-width:min(100%,640px); }
-.story-content h1{
-  font-family:var(--font-display); font-weight:700; font-size:clamp(1.9rem,3.4vw,2.7rem);
-  letter-spacing:-0.02em; line-height:1.08; margin:0 0 1.3rem; color:var(--ink-inv);
-}
-/* metallic accent: same brushed gold/silver gradient as the home hero, see Home.css */
-.story-content h1 .accent{ color:var(--hero-accent-light); }
-@supports (background-clip:text) or (-webkit-background-clip:text){
-  .story-content h1 .accent{
-    background-image:linear-gradient(115deg,
-      rgba(255,255,255,0.95) 0%,
-      var(--hero-accent-light) 16%,
-      var(--hero-accent) 38%,
-      var(--hero-accent-deep) 54%,
-      var(--hero-accent) 70%,
-      var(--hero-accent-light) 86%,
-      rgba(255,255,255,0.9) 100%);
-    background-size:220% 100%;
-    background-position:30% 0;
-    -webkit-background-clip:text; background-clip:text;
-    -webkit-text-fill-color:transparent; color:transparent;
-    text-shadow:0 1px 1px rgba(0,0,0,0.3);
-  }
-}
+/* heading styling (size, accent gradient) is shared — see .hero-heading in base.css */
 .story-content p{ font-size:0.96rem; color:var(--muted-inv); line-height:1.78; margin:0 0 1.3rem; }
 .story-content a.inline-link{ color:var(--gold-light); font-weight:500; }
 .story-content a.inline-link:hover{ color:var(--gold); }
@@ -54,7 +32,8 @@ section.story{ padding:0; }
     background:
       linear-gradient(180deg, rgba(12,12,12,0.5) 0%, rgba(12,12,12,0.25) 30%, rgba(12,12,12,0.65) 62%, rgba(12,12,12,0.92) 100%);
   }
-  .story-content{ justify-content:flex-end; padding-bottom:clamp(1.6rem,6vw,2.4rem); }
+  .story-content{ justify-content:center; padding-top:clamp(1.6rem,6vw,2.4rem); padding-bottom:clamp(1.6rem,6vw,2.4rem); }
+  .story-content p{ font-size:0.88rem; line-height:1.6; }
 }
 
 /* standards */
@@ -62,11 +41,13 @@ section.standards{ padding:clamp(3.6rem,6vw,4.8rem) 0; }
 .standard-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.6rem; }
 @media (max-width:900px){ .standard-grid{ grid-template-columns:1fr; } }
 .standard-card{
-  background:var(--bg-dark-2); border:1px solid var(--divider-dark); border-radius:12px;
+  background:radial-gradient(55% 45% at 20% -10%, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0) 65%), var(--bg-dark-2);
+  border:1px solid var(--divider-dark); border-radius:12px;
   padding:clamp(1.6rem,2.6vw,2rem); box-shadow:var(--shadow-lg);
 }
 .standard-ic{
-  width:46px; height:46px; border-radius:10px; background:var(--card-dark); color:var(--gold-light);
+  width:46px; height:46px; border-radius:10px; color:var(--ink-inv);
+  background-image:linear-gradient(135deg, #4A4A4C 0%, #2A2A2C 50%, #101010 100%);
   display:flex; align-items:center; justify-content:center; font-size:1.05rem; margin-bottom:1.2rem;
   box-shadow:inset 0 1px 1px rgba(255,255,255,0.22), inset 0 -2px 3px rgba(0,0,0,0.4), 0 3px 6px rgba(0,0,0,0.25);
 }
@@ -80,12 +61,13 @@ section.standards{ padding:clamp(3.6rem,6vw,4.8rem) 0; }
 }
 .standard-card p{ font-size:0.92rem; color:var(--muted-inv); line-height:1.72; margin:0; }
 
-/* closing cta: dark banner floating on the light page, same treatment as the Contact hero banner */
-section.about-cta{ padding:clamp(3rem,5vw,4rem) 0 clamp(3.6rem,6vw,4.8rem); }
+/* closing cta: dark banner inset at the bottom of the standards section, same treatment as the Contact hero banner */
 .about-cta-card{
-  background:var(--bg-dark-2); color:var(--ink-inv);
+  background:radial-gradient(55% 45% at 20% -10%, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0) 65%), var(--bg-dark-2);
+  color:var(--ink-inv);
   border-radius:22px; padding:clamp(2.2rem,4vw,3.4rem); display:flex; align-items:center;
   justify-content:space-between; gap:2rem; flex-wrap:wrap; box-shadow:var(--shadow-lg);
+  margin-top:clamp(2rem,3.4vw,2.8rem);
 }
 .about-cta-card h3{
   font-family:var(--font-display); font-weight:700; font-size:1.2rem; letter-spacing:-0.01em;

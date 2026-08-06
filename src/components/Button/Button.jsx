@@ -1,20 +1,8 @@
 import { Link } from 'react-router-dom';
 import './Button.css';
 
-/*
-  Gold primary, metallic secondary (from the home hero; `secondary-inv` is
-  the same button re-tinted for dark sections/photo scrims, not a third
-  design), and `dark` for the header nav CTA.
-*/
-const VARIANT_CLASS = {
-  gold: 'btn-gold',
-  secondary: 'btn-secondary',
-  'secondary-inv': 'btn-secondary-inv',
-  dark: 'btn-dark',
-};
-
 export default function Button({
-  variant = 'gold',
+  variant, // eslint-disable-line no-unused-vars -- kept out of ...rest so it never leaks onto the DOM node; every button shares the one btn-gold style now
   to,
   href,
   external = false,
@@ -24,7 +12,7 @@ export default function Button({
   className = '',
   ...rest
 }) {
-  const classes = `btn ${VARIANT_CLASS[variant] || VARIANT_CLASS.gold} ${className}`.trim();
+  const classes = `btn btn-gold ${className}`.trim();
   const iconEl = icon ? <i className={icon} aria-hidden="true" /> : null;
   const content = (
     <>

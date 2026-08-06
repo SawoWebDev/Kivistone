@@ -26,7 +26,7 @@ export default function Footer() {
                   <i className={s.icon} aria-hidden="true" />
                 </a>
               ))}
-              <a href="mailto:help@sawo.com" aria-label="Email Kivistone support">
+              <a href="mailto:sales@kivistone.com" aria-label="Email Kivistone support">
                 <i className="fas fa-envelope" aria-hidden="true" />
               </a>
               <a href="tel:+63323412233" aria-label="Call Kivistone">
@@ -53,8 +53,8 @@ export default function Footer() {
 
           <div className="footer-col">
             <p className="footer-heading">Get in touch</p>
-            <a href="mailto:studio@kivistone.fi">studio@kivistone.fi</a>
-            <a href="tel:+35894567210">+358 9 4567 210</a>
+            <a href="mailto:sales@kivistone.com">sales@kivistone.com</a>
+            <a href="tel:+63323412233">+63-32-341 2233</a>
             <a href="https://www.kivistone.com/" target="_blank" rel="noopener noreferrer">kivistone.com</a>
           </div>
         </div>

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
-import Button from '../Button/Button.jsx';
+import SearchBar from '../SearchBar/SearchBar.jsx';
 import { categories } from '../../data/categories.js';
 import './Header.css';
 
@@ -9,17 +9,11 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileProductsOpen, setMobileProductsOpen] = useState(false);
   const [hidden, setHidden] = useState(false);
-  const [silver, setSilver] = useState(
-    () => typeof window !== 'undefined' && localStorage.getItem('kivistone-theme') === 'silver'
-  );
   const itemRef = useRef(null);
+  const mobileNavRef = useRef(null);
+  const menuToggleRef = useRef(null);
   const lastY = useRef(0);
   const { pathname } = useLocation();
-
-  useEffect(() => {
-    document.documentElement.setAttribute('data-theme', silver ? 'silver' : 'gold');
-    localStorage.setItem('kivistone-theme', silver ? 'silver' : 'gold');
-  }, [silver]);
 
   useEffect(() => {
     function onClickOutside(e) {
@@ -47,6 +41,29 @@ export default function Header() {
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? 'hidden' : '';
     return () => { document.body.style.overflow = ''; };
+  }, [mobileOpen]);
+
+  // mobile nav floats over the page rather than pushing it down, so close
+  // it the same way any floating panel closes: click outside, or scroll
+  useEffect(() => {
+    if (!mobileOpen) return undefined;
+    function onClickOutside(e) {
+      if (
+        mobileNavRef.current && !mobileNavRef.current.contains(e.target) &&
+        menuToggleRef.current && !menuToggleRef.current.contains(e.target)
+      ) {
+        setMobileOpen(false);
+      }
+    }
+    function onScroll() {
+      setMobileOpen(false);
+    }
+    document.addEventListener('mousedown', onClickOutside);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => {
+      document.removeEventListener('mousedown', onClickOutside);
+      window.removeEventListener('scroll', onScroll);
+    };
   }, [mobileOpen]);
 
   // hide the header on scroll-down, reveal it again on scroll-up
@@ -107,33 +124,18 @@ export default function Header() {
           </div>
 
           <NavLink to="/contact">Contact</NavLink>
+
+          <SearchBar />
         </nav>
 
         <div className="header-right">
-          <Button
-            variant="dark"
-            className="nav-cta"
-            to="/products"
-            icon="fa-solid fa-chevron-right"
-            iconPosition="right"
-          >
-            Explore
-          </Button>
+          {/* nav-links (with its own copy of SearchBar) is hidden below 860px,
+              so this copy is what mobile actually uses */}
+          <SearchBar />
 
           <button
             type="button"
-            className="theme-toggle"
-            role="switch"
-            aria-checked={silver}
-            aria-label="Toggle silver mode"
-            onClick={() => setSilver((v) => !v)}
-          >
-            <span className={silver ? '' : 'active'} aria-hidden="true">G</span>
-            <span className={silver ? 'active' : ''} aria-hidden="true">S</span>
-          </button>
-
-          <button
-            type="button"
+            ref={menuToggleRef}
             className={`menu-toggle${mobileOpen ? ' open' : ''}`}
             aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={mobileOpen}
@@ -146,7 +148,7 @@ export default function Header() {
         </div>
       </div>
 
-      <div className={`mobile-nav${mobileOpen ? ' open' : ''}`}>
+      <div className={`mobile-nav${mobileOpen ? ' open' : ''}`} ref={mobileNavRef}>
         <nav className="mobile-nav-links">
           <NavLink to="/">Home</NavLink>
           <NavLink to="/about">About</NavLink>
@@ -177,30 +179,6 @@ export default function Header() {
 
           <NavLink to="/contact">Contact</NavLink>
         </nav>
-
-        <div className="mobile-nav-footer">
-          <Button
-            variant="dark"
-            className="nav-cta"
-            to="/products"
-            icon="fa-solid fa-chevron-right"
-            iconPosition="right"
-          >
-            Explore
-          </Button>
-
-          <button
-            type="button"
-            className="theme-toggle"
-            role="switch"
-            aria-checked={silver}
-            aria-label="Toggle silver mode"
-            onClick={() => setSilver((v) => !v)}
-          >
-            <span className={silver ? '' : 'active'} aria-hidden="true">G</span>
-            <span className={silver ? 'active' : ''} aria-hidden="true">S</span>
-          </button>
-        </div>
       </div>
     </header>
   );

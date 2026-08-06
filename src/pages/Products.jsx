@@ -45,7 +45,7 @@ export default function Products() {
           />
           <div className="ph-scrim" />
           <div className="wrap ph-content">
-            <h1><span className="accent">The full</span><br />Kivistone collection</h1>
+            <h1 className="hero-heading"><span className="accent">The full</span><br />Kivistone collection</h1>
             <p className="lede">
               The Kivistone is an impenetrable product, its beauty will last a lifetime. Have a timeless
               Kivistone for yourself, or for the people you'd like to keep something for. We also make
@@ -66,18 +66,6 @@ export default function Products() {
               </Button>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section className="products-index light">
-        <div className="wrap">
-          <nav className="chip-nav" aria-label="Product ranges">
-            {categories.map((c) => (
-              <Link key={c.slug} to={`/products/${c.slug}`}>
-                {c.title}
-              </Link>
-            ))}
-          </nav>
         </div>
       </section>
 

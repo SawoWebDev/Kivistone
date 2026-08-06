@@ -44,7 +44,7 @@ export default function About() {
           />
           <div className="story-scrim" />
           <div className="wrap story-content">
-            <h1><span className="accent">Finnish stone,</span><br />Finnish standards</h1>
+            <h1 className="hero-heading"><span className="accent">Finnish stone,</span><br />Finnish standards</h1>
             <p>
               The Kivistone brand name is owned and managed by Finns, who also own and manage the worldwide
               known sauna product manufacturer{' '}
@@ -79,11 +79,7 @@ export default function About() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
 
-      <section className="about-cta">
-        <div className="wrap">
           <div className="about-cta-card">
             <div>
               <h3>See the full range</h3>

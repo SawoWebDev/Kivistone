@@ -21,29 +21,7 @@ section.products-hero{ padding:0; }
   color:var(--ink-inv);
 }
 .ph-content > *{ max-width:min(100%,640px); }
-.products-hero h1{
-  font-family:var(--font-display); font-weight:700; letter-spacing:-0.022em;
-  font-size:clamp(2.4rem,5.2vw,4rem); line-height:1.02; margin:0 0 1.2rem; color:var(--ink-inv);
-}
-/* metallic accent: same brushed gold/silver gradient as the home hero, see Home.css */
-.products-hero h1 .accent{ color:var(--hero-accent-light); }
-@supports (background-clip:text) or (-webkit-background-clip:text){
-  .products-hero h1 .accent{
-    background-image:linear-gradient(115deg,
-      rgba(255,255,255,0.95) 0%,
-      var(--hero-accent-light) 16%,
-      var(--hero-accent) 38%,
-      var(--hero-accent-deep) 54%,
-      var(--hero-accent) 70%,
-      var(--hero-accent-light) 86%,
-      rgba(255,255,255,0.9) 100%);
-    background-size:220% 100%;
-    background-position:30% 0;
-    -webkit-background-clip:text; background-clip:text;
-    -webkit-text-fill-color:transparent; color:transparent;
-    text-shadow:0 1px 1px rgba(0,0,0,0.3);
-  }
-}
+/* heading styling (size, accent gradient) is shared — see .hero-heading in base.css */
 .products-hero .lede{
   font-size:1.02rem; color:var(--muted-inv); line-height:1.75; max-width:58ch; margin:0 0 2.1rem;
 }
@@ -54,24 +32,12 @@ section.products-hero{ padding:0; }
     background:
       linear-gradient(180deg, rgba(12,12,12,0.5) 0%, rgba(12,12,12,0.25) 30%, rgba(12,12,12,0.65) 62%, rgba(12,12,12,0.92) 100%);
   }
-  .ph-content{ justify-content:flex-end; padding-bottom:clamp(1.6rem,6vw,2.4rem); }
+  .ph-content{ justify-content:center; padding-top:clamp(1.6rem,6vw,2.4rem); padding-bottom:clamp(1.6rem,6vw,2.4rem); }
+  .products-hero .lede{ font-size:0.92rem; line-height:1.6; }
 }
-
-/* ---------- chip nav ---------- */
-section.products-index{ padding:clamp(2.4rem,4vw,3.2rem) 0 clamp(2.2rem,4vw,3rem); }
-.chip-nav{
-  display:flex; gap:0.55rem; flex-wrap:wrap;
-}
-.chip-nav a{
-  font-family:var(--font-mono); font-size:0.73rem; letter-spacing:0.03em;
-  padding:0.5rem 0.95rem; border-radius:99px; border:1px solid transparent;
-  background:var(--card-dark); color:var(--ink-inv); white-space:nowrap;
-  transition:transform .15s ease, box-shadow .15s ease;
-}
-.chip-nav a:hover{ transform:translateY(-1px); box-shadow:0 14px 26px -14px rgba(20,22,23,0.55); }
 
 /* ---------- grid ---------- */
-section.products-grid{ padding:0 0 clamp(3.6rem,6vw,5rem); }
+section.products-grid{ padding:clamp(2.8rem,4.6vw,3.8rem) 0 clamp(3.6rem,6vw,5rem); }
 .feature-row{ display:grid; grid-template-columns:1fr 1fr; gap:1.6rem; margin-bottom:1.6rem; }
 .standard-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.6rem; }
 @media (max-width:980px){
@@ -81,7 +47,8 @@ section.products-grid{ padding:0 0 clamp(3.6rem,6vw,5rem); }
 @media (max-width:620px){ .standard-grid{ grid-template-columns:1fr; } }
 
 .prod-card{
-  background:var(--card-dark); border-radius:12px; overflow:hidden;
+  background:radial-gradient(55% 45% at 20% -10%, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0) 65%), var(--card-dark);
+  border-radius:12px; overflow:hidden;
   box-shadow:var(--shadow-lg); display:flex; flex-direction:column;
   transition:transform .28s ease, box-shadow .28s ease;
 }
@@ -127,19 +94,20 @@ section.products-grid{ padding:0 0 clamp(3.6rem,6vw,5rem); }
 }
 
 .prod-card .go{ margin-top:auto; padding-top:1.05rem; }
+/* same brushed gunmetal fill as the site's btn-gold, just at this card control's own compact size */
 .go-btn{
   display:inline-flex; align-items:center; gap:0.6rem;
   font-family:var(--font-display); font-weight:600; font-size:0.82rem; color:var(--ink-inv);
-  padding:0.7rem 1.3rem; border-radius:99px; border:1.5px solid transparent;
-  background:linear-gradient(135deg, rgba(255,255,255,0.24) 0%, rgba(242,242,242,0.10) 48%, rgba(242,242,242,0.20) 100%);
-  box-shadow:inset 0 1px 0 rgba(255,255,255,0.22);
-  backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px);
-  transition:background .2s ease, transform .22s ease, box-shadow .2s ease;
+  padding:0.7rem 1.3rem; border-radius:99px; border:1.5px solid rgba(255,255,255,0.12);
+  background-image:linear-gradient(135deg, #4A4A4C 0%, #2A2A2C 50%, #101010 100%);
+  background-size:130% 100%; background-position:0% 0%;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.18), 0 1px 2px rgba(0,0,0,0.35);
+  transition:background-position .3s ease, transform .22s ease, box-shadow .2s ease;
 }
 .go-btn i{ font-size:0.72rem; transition:transform .22s ease; }
 .prod-card:hover .go-btn{
-  background:linear-gradient(135deg, rgba(255,255,255,0.34) 0%, rgba(242,242,242,0.16) 48%, rgba(242,242,242,0.28) 100%);
-  box-shadow:inset 0 1px 0 rgba(255,255,255,0.3);
+  background-position:14% 0%;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.24), 0 8px 16px -8px rgba(0,0,0,0.5);
   transform:translateY(-2px);
 }
 .prod-card:hover .go-btn i{ transform:translateX(4px); }
@@ -148,7 +116,8 @@ section.products-grid{ padding:0 0 clamp(3.6rem,6vw,5rem); }
 section.custom-band{ padding:clamp(2.4rem,4vw,3.4rem) 0 clamp(3.6rem,6vw,5.2rem); }
 .cb-card{
   display:grid; grid-template-columns:1fr 0.85fr; gap:clamp(2.4rem,5vw,4.2rem); align-items:center;
-  background:var(--bg-dark-2); color:var(--ink-inv);
+  background:radial-gradient(55% 45% at 20% -10%, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0) 65%), var(--bg-dark-2);
+  color:var(--ink-inv);
   border-radius:22px; padding:clamp(2.2rem,4vw,3.4rem);
   box-shadow:var(--shadow-lg);
 }
@@ -167,7 +136,8 @@ section.custom-band{ padding:clamp(2.4rem,4vw,3.4rem) 0 clamp(3.6rem,6vw,5.2rem)
   background:var(--card-dark); border:1px solid var(--divider-dark);
 }
 .cb-step-ic{
-  width:40px; height:40px; border-radius:10px; background:var(--card-dark); color:var(--gold-light);
+  width:40px; height:40px; border-radius:10px; color:var(--ink-inv);
+  background-image:linear-gradient(135deg, #4A4A4C 0%, #2A2A2C 50%, #101010 100%);
   display:flex; align-items:center; justify-content:center; font-size:1rem; flex-shrink:0;
 }
 .cb-steps h4{

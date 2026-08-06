@@ -38,11 +38,14 @@
   --muted-inv:#CFCFCF;
   --faint-inv:#AFAFAF;
 
-  /* accent */
+  /* accent: neutral steel-gray ramp (not blue-leaning). These three double as
+     text/icon accent colors on both light and dark sections across the site,
+     so they stay mid-tone rather than near-black — near-black would make
+     --gold-light illegible as accent text on the site's dark sections. */
   --accent:#8C8C8C;
-  --gold:#b08e4e;
-  --gold-light:#EACB86;  /* gold text on dark surfaces */
-  --gold-deep:#8a6f3d;   /* gold text on light surfaces (WCAG AA, 4.5:1 on --card) */
+  --gold:#737679;
+  --gold-light:#c7c7c7;
+  --gold-deep:#55585C;
   --danger:#9C4E40;
   --danger-inv:#DA9A8F;  /* error text on dark surfaces */
 
@@ -53,50 +56,18 @@
     purpose: those three also drive buttons, icons and borders sitewide, so
     tuning the hero's brightness/saturation here can't accidentally relight
     anything else. Same three-stop shape (light / mid / deep) as the shared
-    gold ramp, just its own independent values.
+    accent ramp, just its own independent values.
   */
-  --hero-accent-light:#ffe2a5;
-  --hero-accent:#e1c259;
-  --hero-accent-deep:#e4cf8e;
+  --hero-accent-light:#ffffff;
+  --hero-accent:#e0e3e6;
+  --hero-accent-deep:#fdfeff;
 
   /* dividers */
   --divider:#D9D9D9;
   --hairline:#E6E6E6;
   --divider-dark:#474747;
 
-  /* buttons: gold primary + one glass secondary (light/dark tints below) */
-  --btn-2-bg:#DEDEDE;
-  --btn-2-bg-hover:#D1D1D1;
-  /* same idea on dark sections / photo scrims */
-  --btn-2-bg-inv:rgba(242,242,242,0.14);
-  --btn-2-bg-inv-hover:rgba(242,242,242,0.24);
-
   /* shadows */
   --shadow: 0 1px 2px rgba(20,20,20,0.04), 0 12px 28px -14px rgba(20,20,20,0.18);
   --shadow-lg: 0 20px 50px -20px rgba(15,15,15,0.35);
-}
-
-/*
-  Silver mode: only the gold accent is re-tinted, to a neutral steel gray
-  (not blue-leaning). These three vars double as text/icon accent colors on
-  both light and dark sections across the site (see the "gold text on X
-  surfaces" note above), so they stay mid-tone rather than near-black —
-  pushing them to near-black would make gold-light illegible as accent text
-  on the site's dark sections. The .btn-gold fill itself goes near-black
-  independently, via its own hardcoded stops in Button.css, since a button
-  provides its own background and doesn't have that constraint. Every
-  white/light surface on the site stays exactly as-is — --card, --ink,
-  dividers, dark-section tokens are all untouched.
-*/
-:root[data-theme="silver"]{
-  --gold:#737679;
-  --gold-light:#c7c7c7;
-  --gold-deep:#55585C;
-
-  /* hero accent's own silver ramp — mirrors the brightness/contrast of the
-     tuned gold ramp above (light > deep > mid), just re-tinted neutral gray
-     instead of warm gold; tune independently of the shared gold vars */
-  --hero-accent-light:#ffffff;
-  --hero-accent:#e0e3e6;
-  --hero-accent-deep:#fdfeff;
 }

@@ -21,43 +21,22 @@ section.contact-hero{ padding:0; }
   color:var(--ink-inv);
 }
 .contact-hero-content > *{ max-width:min(100%,620px); }
-.contact-hero-content h1{
-  font-family:var(--font-display); font-weight:700; font-size:clamp(1.9rem,3.4vw,2.7rem);
-  letter-spacing:-0.02em; line-height:1.08; margin:0 0 1.1rem; color:var(--ink-inv);
-}
-/* metallic accent: same brushed gold/silver gradient as the home hero, see Home.css */
-.contact-hero-content h1 .accent{ color:var(--hero-accent-light); }
-@supports (background-clip:text) or (-webkit-background-clip:text){
-  .contact-hero-content h1 .accent{
-    background-image:linear-gradient(115deg,
-      rgba(255,255,255,0.95) 0%,
-      var(--hero-accent-light) 16%,
-      var(--hero-accent) 38%,
-      var(--hero-accent-deep) 54%,
-      var(--hero-accent) 70%,
-      var(--hero-accent-light) 86%,
-      rgba(255,255,255,0.9) 100%);
-    background-size:220% 100%;
-    background-position:30% 0;
-    -webkit-background-clip:text; background-clip:text;
-    -webkit-text-fill-color:transparent; color:transparent;
-    text-shadow:0 1px 1px rgba(0,0,0,0.3);
-  }
-}
+/* heading styling (size, accent gradient) is shared — see .hero-heading in base.css */
 .contact-hero-content p{ font-size:0.96rem; color:var(--muted-inv); line-height:1.78; margin:0; }
 @media (max-width:640px){
   .contact-hero-media{ height:clamp(400px,110vw,520px); }
-  .contact-hero-content{ justify-content:flex-end; padding-bottom:clamp(1.6rem,6vw,2.4rem); }
+  .contact-hero-content{ justify-content:center; padding-top:clamp(1.6rem,6vw,2.4rem); padding-bottom:clamp(1.6rem,6vw,2.4rem); }
+  .contact-hero-content p{ font-size:0.88rem; line-height:1.6; }
 }
 
 section.contact-page{ padding:clamp(2.4rem,4vw,3.4rem) 0; }
 
-/* tell us what you're looking for: full-width gold band, same treatment as the Home page's contact band */
+/* tell us what you're looking for: full-width dark metal band, same treatment as the Home page's contact band */
 section.contact-band{
   background:
     radial-gradient(24% 40% at 88% 8%, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.28) 22%, rgba(255,255,255,0.08) 42%, rgba(255,255,255,0) 60%),
-    linear-gradient(100deg, var(--gold-deep) 0%, var(--gold) 55%, var(--gold-light) 100%);
-  color:var(--bg-dark);
+    linear-gradient(100deg, #101010 0%, #2A2A2C 55%, #4A4A4C 100%);
+  color:var(--ink-inv);
   padding:clamp(3.2rem,5.4vw,4.8rem) 0;
 }
 .contact-band-inner{
@@ -85,7 +64,8 @@ section.contact-band{
 .contact-side{ display:flex; flex-direction:column; gap:1.4rem; }
 
 .side-block{
-  background:var(--bg-dark-2); border:1px solid var(--divider-dark); border-radius:14px;
+  background:radial-gradient(55% 45% at 20% -10%, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0) 65%), var(--bg-dark-2);
+  border:1px solid var(--divider-dark); border-radius:14px;
   padding:1.6rem 1.8rem; box-shadow:var(--shadow-lg);
 }
 .side-block h2{
@@ -107,7 +87,8 @@ section.contact-band{
 /* closing cta: dark banner floating on the light page, same treatment as About's closing cta */
 section.contact-cta{ padding:clamp(3rem,5vw,4rem) 0 clamp(4rem,7vw,6rem); }
 .contact-cta-card{
-  background:var(--bg-dark-2); color:var(--ink-inv);
+  background:radial-gradient(55% 45% at 20% -10%, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0) 65%), var(--bg-dark-2);
+  color:var(--ink-inv);
   border-radius:22px; padding:clamp(2.2rem,4vw,3.4rem); display:flex; align-items:center;
   justify-content:space-between; gap:2rem; flex-wrap:wrap; box-shadow:var(--shadow-lg);
 }

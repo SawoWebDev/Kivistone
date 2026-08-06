@@ -10,7 +10,8 @@ section.product-more{
 /* closing cta — dark banner floating on the light page, the reach-out prompt before the footer */
 section.product-closing-cta{ padding:clamp(2.4rem,4vw,3.2rem) 0; }
 .closing-cta-card{
-  background:var(--bg-dark-2); color:var(--ink-inv);
+  background:radial-gradient(55% 45% at 20% -10%, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0) 65%), var(--bg-dark-2);
+  color:var(--ink-inv);
   border-radius:22px; padding:clamp(2rem,3.6vw,2.8rem) clamp(2.2rem,4vw,3.4rem);
   display:flex; align-items:center; justify-content:space-between; gap:1.8rem; flex-wrap:wrap;
   box-shadow:var(--shadow-lg);
@@ -49,32 +50,11 @@ section.product-hero{ padding:0; }
     background:
       linear-gradient(180deg, rgba(12,12,12,0.5) 0%, rgba(12,12,12,0.25) 30%, rgba(12,12,12,0.65) 62%, rgba(12,12,12,0.92) 100%);
   }
-  .pc-hero-content{ justify-content:flex-end; padding-bottom:clamp(1.6rem,6vw,2.4rem); }
+  .pc-hero-content{ justify-content:center; padding-top:clamp(1.6rem,6vw,2.4rem); padding-bottom:clamp(1.6rem,6vw,2.4rem); }
+  .product-hero .lede{ font-size:0.88rem; line-height:1.6; }
 }
 
-.product-hero h1{
-  font-family:var(--font-display); font-weight:700; letter-spacing:-0.022em;
-  font-size:clamp(2rem,4.2vw,3.1rem); line-height:1.05; margin:0 0 1.1rem; color:var(--ink-inv);
-}
-/* metallic accent: same brushed gold/silver gradient as the home hero, see Home.css */
-.product-hero h1 .accent{ color:var(--hero-accent-light); }
-@supports (background-clip:text) or (-webkit-background-clip:text){
-  .product-hero h1 .accent{
-    background-image:linear-gradient(115deg,
-      rgba(255,255,255,0.95) 0%,
-      var(--hero-accent-light) 16%,
-      var(--hero-accent) 38%,
-      var(--hero-accent-deep) 54%,
-      var(--hero-accent) 70%,
-      var(--hero-accent-light) 86%,
-      rgba(255,255,255,0.9) 100%);
-    background-size:220% 100%;
-    background-position:30% 0;
-    -webkit-background-clip:text; background-clip:text;
-    -webkit-text-fill-color:transparent; color:transparent;
-    text-shadow:0 1px 1px rgba(0,0,0,0.3);
-  }
-}
+/* heading styling (size, accent gradient) is shared — see .hero-heading in base.css */
 .product-hero .lede{ font-size:0.98rem; color:var(--muted-inv); line-height:1.75; max-width:52ch; margin:0 0 0.7rem; }
 .product-hero .specs li{
   color:var(--muted-inv); background:rgba(242,242,242,0.12); border-color:rgba(242,242,242,0.22);
@@ -108,10 +88,9 @@ section.product-hero{ padding:0; }
 }
 .pg-search input::placeholder{ color:var(--muted); }
 .pg-search input:focus{
-  outline:none; border-color:var(--gold-deep); box-shadow:0 0 0 3px rgba(185,155,99,0.16);
+  outline:none; border-color:var(--gold-deep); box-shadow:0 0 0 3px rgba(125,128,132,0.2);
 }
 .pg-search input::-webkit-search-cancel-button{ cursor:pointer; }
-[data-theme="silver"] .pg-search input:focus{ box-shadow:0 0 0 3px rgba(125,128,132,0.2); }
 
 .pg-empty{
   font-size:0.92rem; color:var(--ink-secondary); text-align:center;

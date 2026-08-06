@@ -20,35 +20,11 @@
   color:var(--ink-inv);
 }
 .hero-content > *{ max-width:min(100%,640px); }
-.hero h1{
-  font-family:var(--font-display); font-weight:700; letter-spacing:-0.022em;
-  font-size:clamp(2rem,4.6vw,3.4rem); line-height:1.05; margin:0 0 1.1rem;
-}
-/* metallic accent: brushed gold/silver gradient clipped to the text, follows the theme toggle.
-   Uses the dedicated --hero-accent-* vars (theme.css) so tuning it never touches buttons/icons. */
-.hero h1 .accent{ color:var(--hero-accent-light); }
-@supports (background-clip:text) or (-webkit-background-clip:text){
-  .hero h1 .accent{
-    background-image:linear-gradient(115deg,
-      rgba(255,255,255,0.95) 0%,
-      var(--hero-accent-light) 16%,
-      var(--hero-accent) 38%,
-      var(--hero-accent-deep) 54%,
-      var(--hero-accent) 70%,
-      var(--hero-accent-light) 86%,
-      rgba(255,255,255,0.9) 100%);
-    background-size:220% 100%;
-    background-position:30% 0;
-    -webkit-background-clip:text; background-clip:text;
-    -webkit-text-fill-color:transparent; color:transparent;
-    text-shadow:0 1px 1px rgba(0,0,0,0.3);
-  }
-}
+/* heading styling (size, accent gradient) is shared — see .hero-heading in base.css */
 .hero .lede{ font-size:1rem; color:var(--muted-inv); line-height:1.72; margin:0 0 1.9rem; }
 .hero-actions{ display:flex; align-items:center; gap:1.4rem; flex-wrap:wrap; }
 @media (max-width:420px){
-  .hero-actions{ flex-direction:column; align-items:stretch; gap:0.9rem; }
-  .hero-actions .btn{ justify-content:center; }
+  .hero-actions{ flex-direction:column; align-items:flex-start; gap:0.9rem; }
 }
 @media (max-width:640px){
   .hero-media{ height:clamp(460px,120vw,600px); }
@@ -57,14 +33,16 @@
     background:
       linear-gradient(180deg, rgba(12,12,12,0.5) 0%, rgba(12,12,12,0.25) 30%, rgba(12,12,12,0.65) 62%, rgba(12,12,12,0.92) 100%);
   }
-  .hero-content{ justify-content:flex-end; padding-bottom:clamp(1.6rem,6vw,2.4rem); }
+  .hero-content{ justify-content:center; padding-top:clamp(1.6rem,6vw,2.4rem); padding-bottom:clamp(1.6rem,6vw,2.4rem); }
+  .hero .lede{ font-size:0.9rem; line-height:1.65; }
 }
 
 /* about us: dark card inset on the page's light background, like the Contact banner */
 section.about{ padding:clamp(2.4rem,4vw,3.4rem) 0; }
 .about-card{
   display:grid; grid-template-columns:0.85fr 1fr; gap:3.4rem; align-items:center;
-  background:var(--bg-dark-2); color:var(--ink-inv);
+  background:radial-gradient(55% 45% at 20% -10%, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0) 65%), var(--bg-dark-2);
+  color:var(--ink-inv);
   border-radius:22px; padding:clamp(2.2rem,4vw,3.4rem);
   box-shadow:var(--shadow-lg);
 }
@@ -79,12 +57,12 @@ section.about{ padding:clamp(2.4rem,4vw,3.4rem) 0; }
 .about-text a.inline-link{ color:var(--gold-light); font-weight:500; }
 .about-text a.inline-link:hover{ color:var(--gold); }
 
-/* about soapstone: full-width gold band, mirrored from the contact band so the dark end sits behind the text */
+/* about soapstone: full-width dark metal band, mirrored from the contact band so the dark end sits behind the text */
 section.soapstone{
   background:
     radial-gradient(24% 40% at 12% 8%, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.28) 22%, rgba(255,255,255,0.08) 42%, rgba(255,255,255,0) 60%),
-    linear-gradient(100deg, var(--gold-light) 0%, var(--gold) 30%, var(--gold-deep) 100%);
-  color:var(--bg-dark);
+    linear-gradient(100deg, #4A4A4C 0%, #2A2A2C 30%, #101010 100%);
+  color:var(--ink-inv);
   padding:clamp(3.2rem,5.4vw,4.8rem) 0;
 }
 .soapstone-inner{
@@ -119,12 +97,12 @@ section.categories .section-head p{ font-size:1rem; line-height:1.75; }
   .categories-cta .btn{ justify-content:center; }
 }
 
-/* contacts: full-width gold band, dark end sits behind the text (left) for contrast, shine behind the card (right) */
+/* contacts: full-width dark metal band, dark end sits behind the text (left) for contrast, shine behind the card (right) */
 section.home-contact{
   background:
     radial-gradient(24% 40% at 88% 8%, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.28) 22%, rgba(255,255,255,0.08) 42%, rgba(255,255,255,0) 60%),
-    linear-gradient(100deg, var(--gold-deep) 0%, var(--gold) 55%, var(--gold-light) 100%);
-  color:var(--bg-dark);
+    linear-gradient(100deg, #101010 0%, #2A2A2C 55%, #4A4A4C 100%);
+  color:var(--ink-inv);
   padding:clamp(3.2rem,5.4vw,4.8rem) 0;
 }
 .home-contact-inner{

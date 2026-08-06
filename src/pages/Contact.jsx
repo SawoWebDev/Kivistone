@@ -45,7 +45,7 @@ export default function Contact() {
           />
           <div className="contact-hero-scrim" />
           <div className="wrap contact-hero-content">
-            <h1><span className="accent">Tell us</span><br />what you&rsquo;re looking for</h1>
+            <h1 className="hero-heading"><span className="accent">Tell us</span><br />what you&rsquo;re looking for</h1>
             <p>
               From a single gift piece to an export order, our team is ready to help you find the right
               soapstone product and quote it accurately.
@@ -97,7 +97,7 @@ export default function Contact() {
       <section className="contact-band">
         <div className="wrap contact-band-inner">
           <div className="contact-band-copy">
-            <h2>Tell us what you&rsquo;re looking for</h2>
+            <h2>Have a question?</h2>
             <p>
               Questions about a piece, a bulk order, or working with Finnish soapstone in general: our sales
               team at the SAWO factory in Cebu handles enquiries, samples, and export quotes.

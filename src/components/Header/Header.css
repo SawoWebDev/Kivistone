@@ -7,7 +7,7 @@
 }
 .site-header.hidden{ transform:translateY(-100%); }
 .site-header .wrap{
-  display:flex; align-items:center; justify-content:space-between;
+  display:flex; align-items:center;
   padding-top:1.05rem; padding-bottom:1.05rem;
 }
 
@@ -26,7 +26,11 @@
   transition:background-color .2s ease;
 }
 
-.nav-links{ display:flex; align-items:center; gap:2.1rem; }
+/* right-aligned, leaving the free space between it and the logo — so an
+   expanding search box pushes the nav items left instead of overlapping
+   them. SearchBar is the last item here, so it shares this same gap
+   with Home/About/Products/Contact instead of getting its own spacing. */
+.nav-links{ display:flex; align-items:center; gap:2.1rem; margin-left:auto; }
 .nav-links a, .nav-links .nav-caret{
   font-family:var(--font-body); font-size:0.85rem; color:var(--ink-secondary); font-weight:500;
   transition:color .15s ease; background:none; border:none; cursor:pointer; padding:0;
@@ -96,60 +100,49 @@
 
 .dd-list{ display:grid; grid-template-columns:1fr 1fr; gap:0.1rem; }
 
-.nav-cta.btn-dark{
-  font-size:0.79rem; padding:0.6rem 1.15rem; gap:0.45rem;
-}
-.nav-cta.btn-dark i{ font-size:0.68rem; transition:transform .18s ease; }
-.nav-cta.btn-dark:hover i{ transform:translateX(3px); }
-
 .header-right{ display:flex; align-items:center; gap:1rem; }
+/* the nav-links copy of SearchBar covers desktop; this one is mobile-only */
+@media (min-width:861px){ .header-right > .site-search{ display:none; } }
 
-/* silver-mode switch: a plain small G/S toggle, kept deliberately simple */
-.theme-toggle{
-  display:inline-flex; align-items:center; gap:2px;
-  background:var(--card); border:1px solid var(--hairline); border-radius:7px;
-  padding:2px; cursor:pointer; appearance:none; -webkit-appearance:none;
-  flex-shrink:0;
+@media (max-width:860px){
+  /* nav-links (which normally carries the margin-left:auto that pushes
+     everything right) is hidden here, so header-right takes over */
+  .header-right{ margin-left:auto; }
 }
-.theme-toggle span{
-  display:inline-flex; align-items:center; justify-content:center;
-  width:20px; height:20px; border-radius:5px;
-  font-family:var(--font-mono); font-size:0.68rem; font-weight:700;
-  color:var(--faint); transition:background .18s ease, color .18s ease;
-}
-.theme-toggle span.active{ background:var(--ink); color:var(--card); }
-.theme-toggle:focus-visible{ outline:2px solid var(--gold-deep); outline-offset:2px; }
 
-@media (max-width:860px){ .header-right > .theme-toggle{ display:none; } }
-
-/* hamburger toggle: hidden on desktop, shown once nav-links collapse */
+/* hamburger toggle: hidden on desktop, shown once nav-links collapse.
+   Same 38x38 footprint as the other header icon buttons (search, theme)
+   so it reads as one consistent square unit, with bolder bars than the
+   old thin 2px lines. */
 .menu-toggle{
-  display:none; flex-direction:column; justify-content:center; align-items:flex-end;
-  gap:5px; width:32px; height:32px; padding:0; margin-left:0.2rem;
+  display:none; flex-direction:column; justify-content:center; align-items:center;
+  gap:4px; width:38px; height:38px; padding:0;
   background:none; border:none; cursor:pointer; flex-shrink:0;
 }
 .menu-toggle span{
-  display:block; width:100%; height:2px; background:var(--ink); border-radius:2px;
+  display:block; width:20px; height:3px; background:var(--ink); border-radius:2px;
   transition:transform .22s ease, opacity .22s ease, width .22s ease;
 }
-.menu-toggle.open span:nth-child(1){ transform:translateY(7px) rotate(45deg); width:100%; }
+.menu-toggle.open span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
 .menu-toggle.open span:nth-child(2){ opacity:0; }
-.menu-toggle.open span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); width:100%; }
+.menu-toggle.open span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
 
 @media (max-width:860px){
   .menu-toggle{ display:flex; }
-  .header-right .nav-cta{ display:none; }
 }
 
-/* off-canvas mobile nav: slides down below the header bar */
+/* floats over the page below the header bar, instead of pushing page
+   content down — closed via outside-click/scroll in Header.jsx */
 .mobile-nav{
   display:none;
 }
 @media (max-width:860px){
   .mobile-nav{
     display:block;
+    position:absolute; top:100%; left:0; right:0; z-index:40;
     max-height:0; overflow:hidden;
     background:var(--card); border-bottom:1px solid var(--hairline);
+    box-shadow:var(--shadow-lg);
     transition:max-height .28s ease;
   }
   .mobile-nav.open{ max-height:80vh; overflow-y:auto; }
@@ -185,8 +178,3 @@
   font-size:0.88rem; color:var(--ink-secondary);
 }
 .mobile-dropdown a:hover{ background:rgba(20,22,23,0.045); color:var(--ink); }
-
-.mobile-nav-footer{
-  display:flex; align-items:center; justify-content:space-between; gap:1rem;
-  padding:1rem clamp(20px,5vw,56px) 1.4rem; border-top:1px solid var(--hairline);
-}

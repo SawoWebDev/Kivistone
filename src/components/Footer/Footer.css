@@ -1,4 +1,8 @@
-footer{ background:var(--bg-dark); color:var(--ink-inv); padding:clamp(3.2rem,5vw,4rem) 0 2.2rem; }
+/* solid black, with a faint top glare so it reads as brushed metal rather than a flat fill */
+footer{
+  background:radial-gradient(50% 40% at 50% -10%, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 60%), #000;
+  color:var(--ink-inv); padding:clamp(3.2rem,5vw,4rem) 0 2.2rem;
+}
 footer .logo{ color:var(--ink-inv); margin-bottom:0.9rem; }
 
 .footer-grid{
@@ -17,9 +21,9 @@ footer .logo{ color:var(--ink-inv); margin-bottom:0.9rem; }
 .footer-col a{ display:block; font-size:0.86rem; color:var(--muted-inv); margin-bottom:0.75rem; transition:color .15s ease; }
 .footer-col a:hover{ color:var(--ink-inv); }
 
-.social-row{ display:flex; flex-wrap:wrap; gap:0.4rem; margin-top:1.6rem; }
+.social-row{ display:flex; flex-wrap:wrap; gap:0; margin-top:1.6rem; }
 .social-row a{
-  width:36px; height:36px;
+  width:28px; height:28px;
   display:inline-flex; align-items:center; justify-content:center; font-size:0.92rem;
   color:var(--muted-inv); transition:color .2s ease;
 }
