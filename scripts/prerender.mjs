@@ -20,16 +20,25 @@ import http from 'node:http';
 
 import { categories } from '../src/data/categories.js';
 
-/* Vercel's and Cloudflare Pages' build images are both missing the shared
-   libraries (libnspr4.so, libatk-1.0.so.0, etc.) that the full `puppeteer`
-   package's bundled Chrome needs, so that build fails with "error while
-   loading shared libraries" every time. On either host we instead launch
+/* Managed CI build images (Vercel, Cloudflare Workers Builds/Pages, and
+   others) are commonly missing the shared libraries (libnspr4.so,
+   libatk-1.0.so.0, etc.) that the full `puppeteer` package's bundled Chrome
+   needs, so launching it throws "error while loading shared libraries".
+   There's no single env var that reliably identifies every such host (Vercel
+   sets VERCEL, but Cloudflare's newer Workers Builds pipeline sets neither
+   CF_PAGES nor anything else Workers-specific), so instead of guessing the
+   platform we just try the full browser first and fall back to
    @sparticuz/chromium — a Chromium build packaged specifically for
-   serverless/CI containers — via puppeteer-core. Locally (Windows/Mac/Linux
-   dev machines), the full `puppeteer` package's own Chrome keeps working
-   exactly as before. */
+   serverless/CI containers, driven via puppeteer-core — if that launch
+   fails. Locally (Windows/Mac/Linux dev machines) the full `puppeteer`
+   package's own Chrome always succeeds, so the fallback never triggers
+   there. */
 async function launchBrowser() {
-  if (process.env.VERCEL || process.env.CF_PAGES) {
+  const { default: puppeteer } = await import('puppeteer');
+  try {
+    return await puppeteer.launch({ headless: true });
+  } catch (err) {
+    console.warn('Full puppeteer Chrome failed to launch, falling back to @sparticuz/chromium:', err.message);
     const [{ default: chromium }, { default: puppeteerCore }] = await Promise.all([
       import('@sparticuz/chromium'),
       import('puppeteer-core'),
@@ -40,8 +49,6 @@ async function launchBrowser() {
       headless: true,
     });
   }
-  const { default: puppeteer } = await import('puppeteer');
-  return puppeteer.launch({ headless: true });
 }
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
