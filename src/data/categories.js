@@ -39,7 +39,7 @@ export const categories = [
     slug: 'scent-warmers',
     title: 'Scent Warmers',
     seed: 'kivistone-scent',
-    image: '/assets/products/scent-warmer.webp',
+    image: '/assets/home/r501-scene.webp',
     description:
       'Enjoy the relaxing and vitalizing effect of aromatic oils. Light a candle, pour scented oil into the basin and loosen up: the stone spreads the heat gently, so the fragrance releases slowly rather than burning off.',
     short: 'Enjoy the relaxing, vitalizing effect of aromatic oils with a Kivistone scent warmer. The tranquility begins the moment the scent is released through the heated aroma oil, drifting gently around the room for a refreshing feeling. Place an aroma cup on the sauna heater’s stones for happy sauna spirits, or set a table warmer over a tealight, a candle holder with a cap where scented oils evaporate slowly. Aroma oils are also available on request as a separate order.',

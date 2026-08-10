@@ -36,7 +36,7 @@ export default function Home() {
     title: 'Kivistone — Finnish Soapstone Candle Holders, Dish Plates & Gifts',
     description:
       'Kivistone carves candle holders, dish plates, cups, coolers, scent warmers, and gift items from genuine Finnish soapstone, hand-finished for interiors, everyday use, and corporate gifting.',
-    image: '/assets/home/homehero.webp',
+    image: '/assets/home/hero1.jpg',
     path: '/',
     jsonLd: ORGANIZATION_JSON_LD,
   });
@@ -46,7 +46,7 @@ export default function Home() {
       <section className="hero">
         <div className="hero-media">
           <img
-            src="/assets/home/homehero.webp"
+            src="/assets/home/hero1.jpg"
             alt="Kivistone soapstone scent warmers styled on a sunlit windowsill"
             fetchpriority="high"
           />
