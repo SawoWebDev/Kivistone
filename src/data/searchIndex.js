@@ -10,7 +10,7 @@ const PAGES = [
     title: 'Home',
     subtitle: 'Page',
     path: '/',
-    keywords: 'home kivistone finnish soapstone candle holders dish plates cups coolers scent warmers gifts corporate gifting',
+    keywords: 'home kivistone finnish soapstone candle holders dish plates cups coolers aroma cups bathroom essentials gifts corporate gifting',
   },
   {
     type: 'page',
@@ -24,7 +24,7 @@ const PAGES = [
     title: 'Products',
     subtitle: 'Page',
     path: '/products',
-    keywords: 'products shop kivistone candle holders dish plates cups coolers scent warmers miscellaneous',
+    keywords: 'products shop kivistone candle holders dish plates cups coolers aroma cups bathroom essentials',
   },
   {
     type: 'page',

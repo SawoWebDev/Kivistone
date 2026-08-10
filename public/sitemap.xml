@@ -15,55 +15,61 @@
   <url>
     <loc>https://www.kivistone.com/products/candle-holders</loc>
     <image:image>
-      <image:loc>https://www.kivistone.com/assets/products/candle-holders.webp</image:loc>
+      <image:loc>https://www.kivistone.com/assets/products/candle-holders/r-125.webp</image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://www.kivistone.com/products/dish-plates</loc>
     <image:image>
-      <image:loc>https://www.kivistone.com/assets/products/plate.webp</image:loc>
+      <image:loc>https://www.kivistone.com/assets/products/dish-plates/r-153-stone.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.kivistone.com/products/cups-and-coolers</loc>
+    <loc>https://www.kivistone.com/products/cups</loc>
     <image:image>
-      <image:loc>https://www.kivistone.com/assets/products/cups-and-coolers.webp</image:loc>
+      <image:loc>https://www.kivistone.com/assets/products/cups/r-112.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.kivistone.com/products/scent-warmers</loc>
+    <loc>https://www.kivistone.com/products/coolers</loc>
     <image:image>
-      <image:loc>https://www.kivistone.com/assets/products/scent-warmer.webp</image:loc>
+      <image:loc>https://www.kivistone.com/assets/products/coolers/r-92.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.kivistone.com/products/miscellaneous</loc>
+    <loc>https://www.kivistone.com/products/aroma-cups</loc>
     <image:image>
-      <image:loc>https://www.kivistone.com/assets/products/picture-frame.webp</image:loc>
+      <image:loc>https://www.kivistone.com/assets/products/aroma-cups/r-160.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.kivistone.com/products/candle-holders/r-95</loc>
+    <loc>https://www.kivistone.com/products/bathroom-essentials</loc>
     <image:image>
-      <image:loc>https://www.kivistone.com/assets/products/candle-holders/r-95.webp</image:loc>
+      <image:loc>https://www.kivistone.com/assets/products/bathroom-essentials/r-116.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.kivistone.com/products/candle-holders/r-107</loc>
+    <loc>https://www.kivistone.com/products/candle-holders/r-131</loc>
     <image:image>
-      <image:loc>https://www.kivistone.com/assets/products/candle-holders/r-107.webp</image:loc>
+      <image:loc>https://www.kivistone.com/assets/products/candle-holders/r-131.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.kivistone.com/products/candle-holders/r-108</loc>
+    <loc>https://www.kivistone.com/products/candle-holders/r-132</loc>
     <image:image>
-      <image:loc>https://www.kivistone.com/assets/products/candle-holders/r-108.webp</image:loc>
+      <image:loc>https://www.kivistone.com/assets/products/candle-holders/r-132.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.kivistone.com/products/candle-holders/r-180</loc>
+    <loc>https://www.kivistone.com/products/candle-holders/r-133</loc>
     <image:image>
-      <image:loc>https://www.kivistone.com/assets/products/candle-holders/r-180.webp</image:loc>
+      <image:loc>https://www.kivistone.com/assets/products/candle-holders/r-133.webp</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.kivistone.com/products/candle-holders/r-125</loc>
+    <image:image>
+      <image:loc>https://www.kivistone.com/assets/products/candle-holders/r-125.webp</image:loc>
     </image:image>
   </url>
   <url>
@@ -73,33 +79,15 @@
     </image:image>
   </url>
   <url>
-    <loc>https://www.kivistone.com/products/candle-holders/r-106</loc>
-    <image:image>
-      <image:loc>https://www.kivistone.com/assets/products/candle-holders/r-106.webp</image:loc>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.kivistone.com/products/candle-holders/r-109</loc>
-    <image:image>
-      <image:loc>https://www.kivistone.com/assets/products/candle-holders/r-109.webp</image:loc>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.kivistone.com/products/candle-holders/r-115</loc>
-    <image:image>
-      <image:loc>https://www.kivistone.com/assets/products/candle-holders/r-115.webp</image:loc>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.kivistone.com/products/dish-plates/r-151</loc>
-    <image:image>
-      <image:loc>https://www.kivistone.com/assets/products/dish-plates/r-151.webp</image:loc>
-    </image:image>
-  </url>
-  <url>
     <loc>https://www.kivistone.com/products/dish-plates/r-152</loc>
     <image:image>
       <image:loc>https://www.kivistone.com/assets/products/dish-plates/r-152.webp</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.kivistone.com/products/dish-plates/r-153-stone</loc>
+    <image:image>
+      <image:loc>https://www.kivistone.com/assets/products/dish-plates/r-153-stone.webp</image:loc>
     </image:image>
   </url>
   <url>
@@ -115,189 +103,93 @@
     </image:image>
   </url>
   <url>
-    <loc>https://www.kivistone.com/products/cups-and-coolers/r-100</loc>
+    <loc>https://www.kivistone.com/products/dish-plates/r-153-h</loc>
     <image:image>
-      <image:loc>https://www.kivistone.com/assets/products/cups-and-coolers/r-100.webp</image:loc>
+      <image:loc>https://www.kivistone.com/assets/products/dish-plates/r-153-h.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.kivistone.com/products/cups-and-coolers/r-110</loc>
+    <loc>https://www.kivistone.com/products/cups/r-111</loc>
     <image:image>
-      <image:loc>https://www.kivistone.com/assets/products/cups-and-coolers/r-110.webp</image:loc>
+      <image:loc>https://www.kivistone.com/assets/products/cups/r-111.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.kivistone.com/products/cups-and-coolers/r-111</loc>
+    <loc>https://www.kivistone.com/products/cups/r-112</loc>
     <image:image>
-      <image:loc>https://www.kivistone.com/assets/products/cups-and-coolers/r-111.webp</image:loc>
+      <image:loc>https://www.kivistone.com/assets/products/cups/r-112.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.kivistone.com/products/cups-and-coolers/r-112</loc>
+    <loc>https://www.kivistone.com/products/cups/r-200</loc>
     <image:image>
-      <image:loc>https://www.kivistone.com/assets/products/cups-and-coolers/r-112.webp</image:loc>
+      <image:loc>https://www.kivistone.com/assets/products/cups/r-200.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.kivistone.com/products/cups-and-coolers/r-200</loc>
+    <loc>https://www.kivistone.com/products/coolers/r-141</loc>
     <image:image>
-      <image:loc>https://www.kivistone.com/assets/products/cups-and-coolers/r-200.webp</image:loc>
+      <image:loc>https://www.kivistone.com/assets/products/coolers/r-141.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.kivistone.com/products/cups-and-coolers/r-90</loc>
+    <loc>https://www.kivistone.com/products/coolers/r-92</loc>
     <image:image>
-      <image:loc>https://www.kivistone.com/assets/products/cups-and-coolers/r-90.webp</image:loc>
+      <image:loc>https://www.kivistone.com/assets/products/coolers/r-92.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.kivistone.com/products/cups-and-coolers/r-92</loc>
+    <loc>https://www.kivistone.com/products/coolers/r-93-d</loc>
     <image:image>
-      <image:loc>https://www.kivistone.com/assets/products/cups-and-coolers/r-92.webp</image:loc>
+      <image:loc>https://www.kivistone.com/assets/products/coolers/r-93-d.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.kivistone.com/products/cups-and-coolers/r-93</loc>
+    <loc>https://www.kivistone.com/products/coolers/r-205</loc>
     <image:image>
-      <image:loc>https://www.kivistone.com/assets/products/cups-and-coolers/r-93.webp</image:loc>
+      <image:loc>https://www.kivistone.com/assets/products/coolers/r-205.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.kivistone.com/products/cups-and-coolers/r-141</loc>
+    <loc>https://www.kivistone.com/products/coolers/r-206</loc>
     <image:image>
-      <image:loc>https://www.kivistone.com/assets/products/cups-and-coolers/r-141.webp</image:loc>
+      <image:loc>https://www.kivistone.com/assets/products/coolers/r-206.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.kivistone.com/products/cups-and-coolers/r-204</loc>
+    <loc>https://www.kivistone.com/products/aroma-cups/r-160</loc>
     <image:image>
-      <image:loc>https://www.kivistone.com/assets/products/cups-and-coolers/r-204.webp</image:loc>
+      <image:loc>https://www.kivistone.com/assets/products/aroma-cups/r-160.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.kivistone.com/products/cups-and-coolers/r-206</loc>
+    <loc>https://www.kivistone.com/products/aroma-cups/r-100</loc>
     <image:image>
-      <image:loc>https://www.kivistone.com/assets/products/cups-and-coolers/r-206.webp</image:loc>
+      <image:loc>https://www.kivistone.com/assets/products/aroma-cups/r-100.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.kivistone.com/products/cups-and-coolers/r-203</loc>
+    <loc>https://www.kivistone.com/products/aroma-cups/r-501</loc>
     <image:image>
-      <image:loc>https://www.kivistone.com/assets/products/cups-and-coolers/r-203.webp</image:loc>
+      <image:loc>https://www.kivistone.com/assets/products/aroma-cups/r-501.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.kivistone.com/products/cups-and-coolers/r-301</loc>
+    <loc>https://www.kivistone.com/products/aroma-cups/r-123</loc>
     <image:image>
-      <image:loc>https://www.kivistone.com/assets/products/cups-and-coolers/r-301.webp</image:loc>
+      <image:loc>https://www.kivistone.com/assets/products/aroma-cups/r-123.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.kivistone.com/products/scent-warmers/r-501</loc>
+    <loc>https://www.kivistone.com/products/bathroom-essentials/r-500-d</loc>
     <image:image>
-      <image:loc>https://www.kivistone.com/assets/products/scent-warmers/r-501.webp</image:loc>
+      <image:loc>https://www.kivistone.com/assets/products/bathroom-essentials/r-500-d.webp</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://www.kivistone.com/products/scent-warmers/r-502</loc>
+    <loc>https://www.kivistone.com/products/bathroom-essentials/r-116</loc>
     <image:image>
-      <image:loc>https://www.kivistone.com/assets/products/scent-warmers/r-502.webp</image:loc>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.kivistone.com/products/scent-warmers/r-503</loc>
-    <image:image>
-      <image:loc>https://www.kivistone.com/assets/products/scent-warmers/r-503.webp</image:loc>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.kivistone.com/products/scent-warmers/r-504</loc>
-    <image:image>
-      <image:loc>https://www.kivistone.com/assets/products/scent-warmers/r-504.webp</image:loc>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.kivistone.com/products/scent-warmers/r-120</loc>
-    <image:image>
-      <image:loc>https://www.kivistone.com/assets/products/scent-warmers/r-120.webp</image:loc>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.kivistone.com/products/scent-warmers/r-122</loc>
-    <image:image>
-      <image:loc>https://www.kivistone.com/assets/products/scent-warmers/r-122.webp</image:loc>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.kivistone.com/products/scent-warmers/r-123</loc>
-    <image:image>
-      <image:loc>https://www.kivistone.com/assets/products/scent-warmers/r-123.webp</image:loc>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.kivistone.com/products/scent-warmers/r-160</loc>
-    <image:image>
-      <image:loc>https://www.kivistone.com/assets/products/scent-warmers/r-160.webp</image:loc>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.kivistone.com/products/scent-warmers/aro-euca10</loc>
-    <image:image>
-      <image:loc>https://www.kivistone.com/assets/products/scent-warmers/aro-euca10.webp</image:loc>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.kivistone.com/products/scent-warmers/aro-ff10</loc>
-    <image:image>
-      <image:loc>https://www.kivistone.com/assets/products/scent-warmers/aro-euca10.webp</image:loc>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.kivistone.com/products/miscellaneous/r-404</loc>
-    <image:image>
-      <image:loc>https://www.kivistone.com/assets/products/miscellaneous/r-404.webp</image:loc>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.kivistone.com/products/miscellaneous/r-405</loc>
-    <image:image>
-      <image:loc>https://www.kivistone.com/assets/products/miscellaneous/r-405.webp</image:loc>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.kivistone.com/products/miscellaneous/r-406</loc>
-    <image:image>
-      <image:loc>https://www.kivistone.com/assets/products/miscellaneous/r-406.webp</image:loc>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.kivistone.com/products/miscellaneous/r-407</loc>
-    <image:image>
-      <image:loc>https://www.kivistone.com/assets/products/miscellaneous/r-407.webp</image:loc>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.kivistone.com/products/miscellaneous/r-116</loc>
-    <image:image>
-      <image:loc>https://www.kivistone.com/assets/products/miscellaneous/r-116.webp</image:loc>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.kivistone.com/products/miscellaneous/r-170</loc>
-    <image:image>
-      <image:loc>https://www.kivistone.com/assets/products/miscellaneous/r-170.webp</image:loc>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.kivistone.com/products/miscellaneous/r-165</loc>
-    <image:image>
-      <image:loc>https://www.kivistone.com/assets/products/miscellaneous/r-165.webp</image:loc>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.kivistone.com/products/miscellaneous/r-403</loc>
-    <image:image>
-      <image:loc>https://www.kivistone.com/assets/products/miscellaneous/r-403.webp</image:loc>
+      <image:loc>https://www.kivistone.com/assets/products/bathroom-essentials/r-116.webp</image:loc>
     </image:image>
   </url>
 </urlset>

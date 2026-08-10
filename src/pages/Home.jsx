@@ -12,7 +12,7 @@ const ORGANIZATION_JSON_LD = {
   name: 'Kivistone',
   url: 'https://www.kivistone.com',
   logo: 'https://www.kivistone.com/favicon.svg',
-  description: 'Kivistone carves candle holders, dish plates, cups and coolers, scent warmers, and gift items from genuine Finnish soapstone.',
+  description: 'Kivistone carves candle holders, dish plates, cups, coolers, aroma cups, and bathroom essentials from genuine Finnish soapstone.',
   address: {
     '@type': 'PostalAddress',
     streetAddress: 'Mactan Export Processing Zone 2',
@@ -35,7 +35,7 @@ export default function Home() {
   usePageMeta({
     title: 'Kivistone — Finnish Soapstone Candle Holders, Dish Plates & Gifts',
     description:
-      'Kivistone carves candle holders, dish plates, cups, coolers, scent warmers, and gift items from genuine Finnish soapstone, hand-finished for interiors, everyday use, and corporate gifting.',
+      'Kivistone carves candle holders, dish plates, cups, coolers, aroma cups, and bathroom essentials from genuine Finnish soapstone, hand-finished for interiors, everyday use, and corporate gifting.',
     image: '/assets/home/hero1.jpg',
     path: '/',
     jsonLd: ORGANIZATION_JSON_LD,
@@ -47,7 +47,7 @@ export default function Home() {
         <div className="hero-media">
           <img
             src="/assets/home/hero1.jpg"
-            alt="Kivistone soapstone scent warmers styled on a sunlit windowsill"
+            alt="Kivistone soapstone aroma cups styled on a sunlit windowsill"
             fetchpriority="high"
           />
           <div className="hero-scrim" />
@@ -134,7 +134,7 @@ export default function Home() {
         <div className="wrap">
           <SectionHead
             title="Shop by Category"
-            description="From candle holders and dish plates to cups, coolers, and scent warmers, explore the full Kivistone range. Every piece is cut and hand-finished from the same Finnish soapstone, a stone prized for centuries for its heat resistance, durability, and natural beauty, so whichever category you choose, you're getting the same craftsmanship throughout."
+            description="From candle holders and dish plates to cups, coolers, aroma cups, and bathroom essentials, explore the full Kivistone range. Every piece is cut and hand-finished from the same Finnish soapstone, a stone prized for centuries for its heat resistance, durability, and natural beauty, so whichever category you choose, you're getting the same craftsmanship throughout."
           />
           <div className="card-grid">
             {categories.map((c) => (

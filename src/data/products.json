@@ -1,313 +1,182 @@
 {
   "candle-holders": [
     {
-      "id": "r-95",
-      "name": "R-95 (set, 6pcs)",
-      "sizeMm": "360x60x240",
-      "weightKg": 7.4,
-      "image": "/assets/products/candle-holders/r-95.webp"
+      "id": "r-131",
+      "name": "R-131 (Tower 60x60x60)",
+      "sizeMm": "60x60x60",
+      "weightKg": 0.6,
+      "image": "/assets/products/candle-holders/r-131.webp"
     },
     {
-      "id": "r-107",
-      "name": "R-107 (set, 3pcs)",
-      "sizeMm": "180x60x240",
-      "weightKg": 4.9,
-      "image": "/assets/products/candle-holders/r-107.webp"
+      "id": "r-132",
+      "name": "R-132 (Tower 60x60x90)",
+      "sizeMm": "60x60x90",
+      "weightKg": 0.9,
+      "image": "/assets/products/candle-holders/r-132.webp"
     },
     {
-      "id": "r-108",
-      "name": "R-108 (set, 3pcs)",
-      "sizeMm": "180x60x240",
-      "weightKg": 4.9,
-      "image": "/assets/products/candle-holders/r-108.webp"
+      "id": "r-133",
+      "name": "R-133 (Tower 60x60x120)",
+      "sizeMm": "60x60x120",
+      "weightKg": 1.2,
+      "image": "/assets/products/candle-holders/r-133.webp"
     },
     {
-      "id": "r-180",
-      "name": "R-180 (set, 3pcs)",
-      "sizeMm": "180x60",
-      "weightKg": 4.23,
-      "image": "/assets/products/candle-holders/r-180.webp"
+      "id": "r-125",
+      "name": "R-125 (Tower Set, 3pcs)",
+      "sizeMm": "60x180x90",
+      "weightKg": 1.8,
+      "image": "/assets/products/candle-holders/r-125.webp"
     },
     {
       "id": "r-105",
-      "name": "R-105",
-      "sizeMm": "265x60x30",
-      "weightKg": 1.04,
+      "name": "R-105 (Straight)",
+      "sizeMm": "60x265x35",
+      "weightKg": 1.3,
       "image": "/assets/products/candle-holders/r-105.webp"
-    },
-    {
-      "id": "r-106",
-      "name": "R-106",
-      "sizeMm": "200x200x30",
-      "weightKg": 3.09,
-      "image": "/assets/products/candle-holders/r-106.webp"
-    },
-    {
-      "id": "r-109",
-      "name": "R-109 (set, 2pcs)",
-      "sizeMm": "110x60x55",
-      "weightKg": 1.2,
-      "image": "/assets/products/candle-holders/r-109.webp"
-    },
-    {
-      "id": "r-115",
-      "name": "R-115 (set, 2pcs)",
-      "sizeMm": "110x60x45",
-      "weightKg": 1.2,
-      "image": "/assets/products/candle-holders/r-115.webp"
     }
   ],
   "dish-plates": [
     {
-      "id": "r-151",
-      "name": "R-151",
-      "sizeMm": "240x170x25",
-      "weightKg": 2.64,
-      "image": "/assets/products/dish-plates/r-151.webp"
-    },
-    {
       "id": "r-152",
-      "name": "R-152",
-      "sizeMm": "240x170x25",
-      "weightKg": 2.60,
+      "name": "R-152 (Stone Plate Small)",
+      "sizeMm": "150x220x25",
+      "weightKg": 2.8,
       "image": "/assets/products/dish-plates/r-152.webp"
     },
     {
+      "id": "r-153-stone",
+      "name": "R-153 STONE (Stone Plate Large)",
+      "sizeMm": "200x305x15",
+      "weightKg": 2.8,
+      "image": "/assets/products/dish-plates/r-153-stone.webp"
+    },
+    {
       "id": "r-153-d",
-      "name": "R-153 D",
-      "sizeMm": "plate 305x200x15, tray 400x250x20",
-      "weightKg": 2.60,
+      "name": "R-153 D (Cedar Wooden Tray)",
+      "sizeMm": "200x305x15",
+      "weightKg": 3.0,
       "image": "/assets/products/dish-plates/r-153-d.webp"
     },
     {
       "id": "r-153-a",
-      "name": "R-153 A",
-      "sizeMm": "plate 305x200x15, tray 400x250x20",
-      "weightKg": 2.60,
+      "name": "R-153 A (Aspen Wooden Tray)",
+      "sizeMm": "200x305x15",
+      "weightKg": 3.0,
       "image": "/assets/products/dish-plates/r-153-a.webp"
+    },
+    {
+      "id": "r-153-h",
+      "name": "R-153 H (Hemlock Wooden Tray)",
+      "sizeMm": "200x305x15",
+      "weightKg": 3.0,
+      "image": "/assets/products/dish-plates/r-153-h.webp"
     }
   ],
-  "cups-and-coolers": [
-    {
-      "id": "r-100",
-      "name": "R-100",
-      "sizeMm": "50x60",
-      "weightKg": 0.27,
-      "image": "/assets/products/cups-and-coolers/r-100.webp"
-    },
-    {
-      "id": "r-110",
-      "name": "R-110",
-      "sizeMm": "50x60",
-      "weightKg": 0.18,
-      "image": "/assets/products/cups-and-coolers/r-110.webp"
-    },
+  "cups": [
     {
       "id": "r-111",
-      "name": "R-111",
-      "sizeMm": "70x60",
-      "weightKg": 0.36,
-      "image": "/assets/products/cups-and-coolers/r-111.webp"
+      "name": "R-111 (Stone Cup Ø75x60)",
+      "sizeMm": "175x75x60",
+      "weightKg": 0.4,
+      "image": "/assets/products/cups/r-111.webp"
     },
     {
       "id": "r-112",
-      "name": "R-112",
-      "sizeMm": "75x120",
-      "weightKg": 1.0,
-      "image": "/assets/products/cups-and-coolers/r-112.webp"
+      "name": "R-112 (Stone Glass Ø60x85)",
+      "sizeMm": "60x60x85",
+      "weightKg": 2.8,
+      "image": "/assets/products/cups/r-112.webp"
     },
     {
       "id": "r-200",
-      "name": "R-200",
-      "sizeMm": "35x70",
-      "weightKg": 0.11,
-      "image": "/assets/products/cups-and-coolers/r-200.webp"
-    },
+      "name": "R-200 (Stone Shot Glass Ø35x85)",
+      "sizeMm": "35x35x85",
+      "weightKg": 3.0,
+      "image": "/assets/products/cups/r-200.webp"
+    }
+  ],
+  "coolers": [
     {
-      "id": "r-90",
-      "name": "R-90",
-      "sizeMm": "185x185x60",
-      "weightKg": 4.11,
-      "image": "/assets/products/cups-and-coolers/r-90.webp"
+      "id": "r-141",
+      "name": "R-141 (Cooler, 1 hole)",
+      "sizeMm": "100x100x75",
+      "weightKg": 1.3,
+      "image": "/assets/products/coolers/r-141.webp"
     },
     {
       "id": "r-92",
-      "name": "R-92",
-      "sizeMm": "185x100x60",
-      "weightKg": 2.319,
-      "image": "/assets/products/cups-and-coolers/r-92.webp"
+      "name": "R-92 (Cooler, 2 hole)",
+      "sizeMm": "100x185x75",
+      "weightKg": 4.1,
+      "image": "/assets/products/coolers/r-92.webp"
     },
     {
-      "id": "r-93",
-      "name": "R-93",
-      "sizeMm": "235x60x140",
-      "weightKg": 3.23,
-      "image": "/assets/products/cups-and-coolers/r-93.webp"
+      "id": "r-93-d",
+      "name": "R-93 D (Wine Cooler Stone)",
+      "sizeMm": "70x235x142",
+      "weightLabel": "Not listed",
+      "image": "/assets/products/coolers/r-93-d.webp"
     },
     {
-      "id": "r-141",
-      "name": "R-141",
-      "sizeMm": "100x100x60",
-      "weightKg": 1.32,
-      "image": "/assets/products/cups-and-coolers/r-141.webp"
-    },
-    {
-      "id": "r-204",
-      "name": "R-204 (shot glass not included)",
-      "sizeMm": "140x100x60",
-      "weightKg": 1.79,
-      "image": "/assets/products/cups-and-coolers/r-204.webp"
+      "id": "r-205",
+      "name": "R-205 (Saki Cooler Set, 2 shot glasses)",
+      "sizeMm": "110x145x108",
+      "weightKg": 1.9,
+      "image": "/assets/products/coolers/r-205.webp"
     },
     {
       "id": "r-206",
-      "name": "R-206 (shot glass not included)",
-      "sizeMm": "190x120x60",
-      "weightKg": 2.86,
-      "image": "/assets/products/cups-and-coolers/r-206.webp"
-    },
-    {
-      "id": "r-203",
-      "name": "R-203 (shot glass not included)",
-      "sizeMm": "235x60x30",
-      "weightKg": 1.0,
-      "image": "/assets/products/cups-and-coolers/r-203.webp"
-    },
-    {
-      "id": "r-301",
-      "name": "R-301 (shot glass not included)",
-      "sizeMm": "280x60x30",
-      "weightKg": 1.2,
-      "image": "/assets/products/cups-and-coolers/r-301.webp"
+      "name": "R-206 (Vodka Cooler Set, 4 shot glasses)",
+      "sizeMm": "122x191x94",
+      "weightKg": 3.2,
+      "image": "/assets/products/coolers/r-206.webp"
     }
   ],
-  "scent-warmers": [
+  "aroma-cups": [
+    {
+      "id": "r-160",
+      "name": "R-160 (Luxury Aroma Cup)",
+      "sizeMm": "50x50x60",
+      "weightKg": 0.2,
+      "image": "/assets/products/aroma-cups/r-160.webp"
+    },
+    {
+      "id": "r-100",
+      "name": "R-100 (Aroma Cup Ø50)",
+      "sizeMm": "50x50x60",
+      "weightKg": 0.3,
+      "image": "/assets/products/aroma-cups/r-100.webp"
+    },
     {
       "id": "r-501",
-      "name": "R-501",
-      "sizeMm": "120x75",
-      "weightKg": 1.2,
-      "image": "/assets/products/scent-warmers/r-501.webp"
-    },
-    {
-      "id": "r-502",
-      "name": "R-502",
-      "sizeMm": "120x75",
-      "weightKg": 1.2,
-      "image": "/assets/products/scent-warmers/r-502.webp"
-    },
-    {
-      "id": "r-503",
-      "name": "R-503",
-      "sizeMm": "120x75",
-      "weightKg": 1.2,
-      "image": "/assets/products/scent-warmers/r-503.webp"
-    },
-    {
-      "id": "r-504",
-      "name": "R-504",
-      "sizeMm": "120x75",
-      "weightKg": 1.2,
-      "image": "/assets/products/scent-warmers/r-504.webp"
-    },
-    {
-      "id": "r-120",
-      "name": "R-120",
-      "sizeMm": "108x60",
-      "weightKg": 1.324,
-      "image": "/assets/products/scent-warmers/r-120.webp"
-    },
-    {
-      "id": "r-122",
-      "name": "R-122",
-      "sizeMm": "90x75x90",
-      "weightKg": 1.2,
-      "image": "/assets/products/scent-warmers/r-122.webp"
+      "name": "R-501 (Aroma Spirit Cup)",
+      "sizeMm": "75x75x120",
+      "weightKg": 0.8,
+      "image": "/assets/products/aroma-cups/r-501.webp"
     },
     {
       "id": "r-123",
-      "name": "R-123",
-      "sizeMm": "75x80",
-      "weightKg": 0.7,
-      "image": "/assets/products/scent-warmers/r-123.webp"
-    },
-    {
-      "id": "r-160",
-      "name": "R-160",
-      "sizeMm": "50x50",
-      "weightKg": 0.15,
-      "image": "/assets/products/scent-warmers/r-160.webp"
-    },
-    {
-      "id": "aro-euca10",
-      "name": "Aro-EUCA10 (Eucalyptus)",
-      "sizeMm": null,
-      "weightLabel": "10mL",
-      "image": "/assets/products/scent-warmers/aro-euca10.webp"
-    },
-    {
-      "id": "aro-ff10",
-      "name": "Aro-FF10 (Forest Fresh)",
-      "sizeMm": null,
-      "weightLabel": "10mL",
-      "image": "/assets/products/scent-warmers/aro-euca10.webp"
+      "name": "R-123 (Scent Warmer)",
+      "sizeMm": "75x75x85",
+      "weightLabel": "Not listed",
+      "image": "/assets/products/aroma-cups/r-123.webp"
     }
   ],
-  "miscellaneous": [
+  "bathroom-essentials": [
     {
-      "id": "r-404",
-      "name": "R-404 (Ashtray)",
-      "sizeMm": "110x10",
-      "weightKg": 0.5,
-      "image": "/assets/products/miscellaneous/r-404.webp"
-    },
-    {
-      "id": "r-405",
-      "name": "R-405 (Ashtray)",
-      "sizeMm": "110x10",
-      "weightKg": 0.5,
-      "image": "/assets/products/miscellaneous/r-405.webp"
-    },
-    {
-      "id": "r-406",
-      "name": "R-406 (Ashtray)",
-      "sizeMm": "110x10",
-      "weightKg": 0.5,
-      "image": "/assets/products/miscellaneous/r-406.webp"
-    },
-    {
-      "id": "r-407",
-      "name": "R-407 (Ashtray)",
-      "sizeMm": "60x50x60",
-      "weightKg": 0.7,
-      "image": "/assets/products/miscellaneous/r-407.webp"
+      "id": "r-500-d",
+      "name": "R-500 D (Spa Stones Set)",
+      "sizeMm": "75x75x30",
+      "weightLabel": "Not listed",
+      "image": "/assets/products/bathroom-essentials/r-500-d.webp"
     },
     {
       "id": "r-116",
       "name": "R-116 (Soap Holder)",
-      "sizeMm": "180x110x20",
-      "weightKg": 0.90,
-      "image": "/assets/products/miscellaneous/r-116.webp"
-    },
-    {
-      "id": "r-170",
-      "name": "R-170 (Picture Frame)",
-      "sizeMm": "250x160x15",
-      "weightKg": 1.33,
-      "image": "/assets/products/miscellaneous/r-170.webp"
-    },
-    {
-      "id": "r-165",
-      "name": "R-165 (Picture Frame)",
-      "sizeMm": "250x120x15",
-      "weightKg": 0.91,
-      "image": "/assets/products/miscellaneous/r-165.webp"
-    },
-    {
-      "id": "r-403",
-      "name": "R-403 (Stone Coaster)",
-      "sizeMm": "90x40x60",
-      "weightKg": 0.9,
-      "image": "/assets/products/miscellaneous/r-403.webp"
+      "sizeMm": "100x156x30",
+      "weightKg": 1.1,
+      "image": "/assets/products/bathroom-essentials/r-116.webp"
     }
   ]
 }

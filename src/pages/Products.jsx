@@ -29,7 +29,7 @@ export default function Products() {
   usePageMeta({
     title: 'Shop Kivistone — Candle Holders, Dish Plates, Coolers & More',
     description:
-      'Browse the full Kivistone collection: candle holders, dish plates, cups and coolers, scent warmers, and miscellaneous gift items, all cut and hand-finished from genuine Finnish soapstone.',
+      'Browse the full Kivistone collection: candle holders, dish plates, cups, coolers, aroma cups, and bathroom essentials, all cut and hand-finished from genuine Finnish soapstone.',
     image: '/assets/home/Home-hero.webp',
     path: '/products',
   });
