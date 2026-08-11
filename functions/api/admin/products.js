@@ -1,5 +1,6 @@
 // functions/api/admin/products.js
 import { requireSession, logActivity } from "../../_lib/auth.js";
+import { triggerDeploy } from "../../_lib/deploy.js";
 
 const ID_RE = /^[a-z0-9-]+$/;
 
@@ -99,6 +100,8 @@ export async function onRequestPost(context) {
     username: session.username,
     changes: body,
   });
+
+  triggerDeploy(context);
 
   return Response.json(created, { status: 201 });
 }

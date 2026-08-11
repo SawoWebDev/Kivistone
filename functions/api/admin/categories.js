@@ -1,5 +1,6 @@
 // functions/api/admin/categories.js
 import { requireSession, logActivity } from "../../_lib/auth.js";
+import { triggerDeploy } from "../../_lib/deploy.js";
 
 const SLUG_RE = /^[a-z0-9-]+$/;
 
@@ -78,6 +79,8 @@ export async function onRequestPost(context) {
     username: session.username,
     changes: body,
   });
+
+  triggerDeploy(context);
 
   return Response.json(parseSpecs(created), { status: 201 });
 }

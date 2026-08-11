@@ -1,5 +1,6 @@
 // functions/api/admin/products/[id].js
 import { requireSession, logActivity } from "../../../_lib/auth.js";
+import { triggerDeploy } from "../../../_lib/deploy.js";
 
 const ALLOWED_FIELDS = [
   "name",
@@ -77,6 +78,8 @@ export async function onRequestPut(context) {
     changes: changedFields,
   });
 
+  triggerDeploy(context);
+
   return Response.json(updated, { status: 200 });
 }
 
@@ -105,6 +108,8 @@ export async function onRequestDelete(context) {
     username: session.username,
     changes: null,
   });
+
+  triggerDeploy(context);
 
   return new Response(null, { status: 204 });
 }

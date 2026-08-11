@@ -1,5 +1,6 @@
 // functions/api/admin/categories/[slug].js
 import { requireSession, logActivity } from "../../../_lib/auth.js";
+import { triggerDeploy } from "../../../_lib/deploy.js";
 
 const ALLOWED_FIELDS = ["title", "seed", "image", "feature", "description", "short", "specs", "sort_order"];
 
@@ -70,6 +71,8 @@ export async function onRequestPut(context) {
     changes: changedFields,
   });
 
+  triggerDeploy(context);
+
   return Response.json(parseSpecs(updated), { status: 200 });
 }
 
@@ -108,6 +111,8 @@ export async function onRequestDelete(context) {
     username: session.username,
     changes: null,
   });
+
+  triggerDeploy(context);
 
   return new Response(null, { status: 204 });
 }

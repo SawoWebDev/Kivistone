@@ -85,6 +85,8 @@ function ProductForm({ initial, categories, isNew, onCancel, onSave }) {
   };
 
   const idValid = /^[a-z0-9-]+$/.test(form.id);
+  const defaultMetaTitle = form.name ? `${form.name} | Kivistone` : '';
+  const metaTitleValue = form.meta_title || defaultMetaTitle;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -95,7 +97,7 @@ function ProductForm({ initial, categories, isNew, onCancel, onSave }) {
     setSaving(true);
     setError('');
     try {
-      await onSave(form);
+      await onSave({ ...form, meta_title: form.meta_title.trim() || defaultMetaTitle });
     } catch (err) {
       setError(err.message || 'Failed to save product');
     } finally {
@@ -106,6 +108,26 @@ function ProductForm({ initial, categories, isNew, onCancel, onSave }) {
   return (
     <form onSubmit={handleSubmit} className="admin-form">
       {error && <div className="alert alert-error"><i className="fa-solid fa-triangle-exclamation" />{error}</div>}
+
+      <div className="form-group">
+        <label className="form-label">Image</label>
+        <div
+          className="dropzone"
+          onDragOver={(e) => e.preventDefault()}
+          onDrop={(e) => { e.preventDefault(); handleFile(e.dataTransfer.files?.[0]); }}
+          onClick={() => document.getElementById('product-image-input')?.click()}
+        >
+          {form.image ? (
+            <img src={form.image} alt="" className="dropzone-preview" />
+          ) : (
+            <div className="dropzone-placeholder">
+              <i className="fa-solid fa-cloud-arrow-up" />
+              <span>{uploading ? 'Uploading…' : 'Click or drag an image here'}</span>
+            </div>
+          )}
+          <input id="product-image-input" type="file" accept="image/*" style={{ display: 'none' }} onChange={(e) => handleFile(e.target.files?.[0])} />
+        </div>
+      </div>
 
       <div className="form-row">
         <div className="form-group">
@@ -140,47 +162,29 @@ function ProductForm({ initial, categories, isNew, onCancel, onSave }) {
         </div>
         <div className="form-group">
           <label className="form-label">Weight</label>
-          <div className="weight-toggle">
-            <button type="button" className={`weight-toggle-btn${form.weightMode === 'kg' ? ' active' : ''}`} onClick={() => setForm((f) => ({ ...f, weightMode: 'kg' }))}>kg</button>
-            <button type="button" className={`weight-toggle-btn${form.weightMode === 'label' ? ' active' : ''}`} onClick={() => setForm((f) => ({ ...f, weightMode: 'label' }))}>label</button>
-          </div>
-          {form.weightMode === 'kg' ? (
-            <input
-              type="number"
-              step="0.01"
-              className="form-input"
-              value={form.weight_kg}
-              onChange={(e) => setForm((f) => ({ ...f, weight_kg: e.target.value }))}
-              placeholder="e.g. 1.2"
-            />
-          ) : (
-            <input
-              className="form-input"
-              value={form.weight_label}
-              onChange={(e) => setForm((f) => ({ ...f, weight_label: e.target.value }))}
-              placeholder="e.g. Varies by size"
-            />
-          )}
-        </div>
-      </div>
-
-      <div className="form-group">
-        <label className="form-label">Image</label>
-        <div
-          className="dropzone"
-          onDragOver={(e) => e.preventDefault()}
-          onDrop={(e) => { e.preventDefault(); handleFile(e.dataTransfer.files?.[0]); }}
-          onClick={() => document.getElementById('product-image-input')?.click()}
-        >
-          {form.image ? (
-            <img src={form.image} alt="" className="dropzone-preview" />
-          ) : (
-            <div className="dropzone-placeholder">
-              <i className="fa-solid fa-cloud-arrow-up" />
-              <span>{uploading ? 'Uploading…' : 'Click or drag an image here'}</span>
+          <div className="weight-field">
+            <div className="weight-toggle">
+              <button type="button" className={`weight-toggle-btn${form.weightMode === 'kg' ? ' active' : ''}`} onClick={() => setForm((f) => ({ ...f, weightMode: 'kg' }))}>kg</button>
+              <button type="button" className={`weight-toggle-btn${form.weightMode === 'label' ? ' active' : ''}`} onClick={() => setForm((f) => ({ ...f, weightMode: 'label' }))}>label</button>
             </div>
-          )}
-          <input id="product-image-input" type="file" accept="image/*" style={{ display: 'none' }} onChange={(e) => handleFile(e.target.files?.[0])} />
+            {form.weightMode === 'kg' ? (
+              <input
+                type="number"
+                step="0.01"
+                className="form-input"
+                value={form.weight_kg}
+                onChange={(e) => setForm((f) => ({ ...f, weight_kg: e.target.value }))}
+                placeholder="e.g. 1.2"
+              />
+            ) : (
+              <input
+                className="form-input"
+                value={form.weight_label}
+                onChange={(e) => setForm((f) => ({ ...f, weight_label: e.target.value }))}
+                placeholder="e.g. Varies by size"
+              />
+            )}
+          </div>
         </div>
       </div>
 
@@ -204,8 +208,9 @@ function ProductForm({ initial, categories, isNew, onCancel, onSave }) {
       </label>
 
       <div className="form-group">
-        <label className="form-label">Meta title <span className="form-label-optional">(optional)</span></label>
-        <input className="form-input" value={form.meta_title} onChange={(e) => setForm((f) => ({ ...f, meta_title: e.target.value }))} />
+        <label className="form-label">Meta title</label>
+        <input className="form-input" value={metaTitleValue} onChange={(e) => setForm((f) => ({ ...f, meta_title: e.target.value }))} />
+        <p className="form-helper">Defaults to “{form.name || 'Product name'} | Kivistone” until you override it.</p>
       </div>
 
       <div className="form-group">

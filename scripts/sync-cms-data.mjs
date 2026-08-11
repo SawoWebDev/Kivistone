@@ -92,6 +92,8 @@ function buildProductsJson(productRows) {
     if (row.weight_kg != null) product.weightKg = row.weight_kg;
     if (row.weight_label != null) product.weightLabel = row.weight_label;
     if (row.image != null) product.image = row.image;
+    if (row.meta_title != null) product.metaTitle = row.meta_title;
+    if (row.meta_description != null) product.metaDescription = row.meta_description;
 
     if (!out[row.category_slug]) out[row.category_slug] = [];
     out[row.category_slug].push(product);

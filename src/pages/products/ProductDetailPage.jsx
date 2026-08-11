@@ -18,8 +18,8 @@ export default function ProductDetailPage() {
   usePageMeta(
     product
       ? {
-          title: `${product.name} — ${category.title} | Kivistone`,
-          description: `${product.name}: ${category.title.toLowerCase()} in natural soapstone.${product.sizeMm ? ` Size(mm): ${product.sizeMm},` : ''} Weight: ${product.weightLabel || `${product.weightKg}kg`}.`,
+          title: product.metaTitle || `${product.name} — ${category.title} | Kivistone`,
+          description: product.metaDescription || `${product.name}: ${category.title.toLowerCase()} in natural soapstone.${product.sizeMm ? ` Size(mm): ${product.sizeMm},` : ''} Weight: ${product.weightLabel || `${product.weightKg}kg`}.`,
           image: product.image,
           path: `/products/${category.slug}/${product.id}`,
           jsonLd: [

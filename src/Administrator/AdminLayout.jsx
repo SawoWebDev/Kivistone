@@ -1,5 +1,5 @@
 // src/Administrator/AdminLayout.jsx
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import { Link, NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from './AuthContext.jsx';
 import './admin.css';
@@ -88,7 +88,7 @@ export default function AdminLayout() {
             </div>
           </div>
           <button type="button" className="btn btn-ghost sidebar-logout-btn" onClick={handleLogout}>
-            <i className="fa-solid fa-right-from-bracket" />
+            <i className="fa-solid fa-right-from-bracket fa-flip-horizontal" />
             Logout
           </button>
         </div>
@@ -99,7 +99,9 @@ export default function AdminLayout() {
           <h1 className="admin-page-title">{current ? current.label : 'Admin'}</h1>
         </div>
         <div className="admin-main-content">
-          <Outlet />
+          <Suspense fallback={<div className="admin-content-loading"><i className="fa-solid fa-circle-notch fa-spin" /></div>}>
+            <Outlet />
+          </Suspense>
         </div>
       </main>
     </div>
