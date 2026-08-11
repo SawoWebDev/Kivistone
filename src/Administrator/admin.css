@@ -80,7 +80,11 @@
 .admin-sidebar {
   width: 240px;
   flex-shrink: 0;
-  background-image: linear-gradient(165deg, #47474a 0%, #262628 42%, #121212 100%);
+  /* Dark from the top through the nav list (where light text needs to read
+     clearly), with the metallic shine confined to the empty gap between the
+     nav and the footer card — nowhere near text — then dropping back to
+     dark before the footer so the username/logout stay high-contrast too. */
+  background-image: linear-gradient(180deg, #141414 0%, #1c1c1d 38%, #38393c 62%, #48494c 74%, #1a1a1a 92%, #141414 100%);
   border-right: 1px solid var(--a-sidebar-border);
   display: flex;
   flex-direction: column;
@@ -95,7 +99,7 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background-image: linear-gradient(115deg, transparent 25%, rgba(255,255,255,0.05) 45%, transparent 65%);
+  background-image: linear-gradient(200deg, transparent 0%, transparent 48%, rgba(255,255,255,0.1) 66%, transparent 86%);
 }
 
 .sidebar-brand {
@@ -395,12 +399,40 @@
   color: inherit;
 }
 
+/* Same brushed-gunmetal fill as the sidebar/frontend .btn-gold (see
+   Button.css) — every primary CMS action (Save, New Product, New Category,
+   New User...) reads as the same metallic accent as the rest of the shell. */
 .admin-shell .btn-primary {
-  background: var(--a-brand);
+  position: relative;
+  overflow: hidden;
+  background-image: linear-gradient(135deg, #55585c 0%, #35363a 50%, #141414 100%);
   color: var(--ink-inv);
+  border-color: rgba(255,255,255,0.12);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.18), 0 1px 2px rgba(0,0,0,0.3);
 }
 
-.admin-shell .btn-primary:hover { background: var(--a-brand-dark); }
+.admin-shell .btn-primary:hover {
+  background-image: linear-gradient(135deg, #6b6e72 0%, #45464a 50%, #1c1c1c 100%);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.22), 0 6px 14px -8px rgba(0,0,0,0.4);
+}
+
+.admin-shell .btn-primary::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: linear-gradient(115deg, transparent 35%, rgba(255,255,255,0.35) 50%, transparent 65%);
+  transform: translateX(-130%);
+}
+
+.admin-shell .btn-primary:hover::after {
+  transform: translateX(130%);
+  transition: transform 0.7s ease;
+}
+
+.admin-shell .btn-primary:not(:hover)::after {
+  transition: transform 0s;
+}
 
 .admin-shell .btn-ghost {
   background: var(--a-surface);
