@@ -17,7 +17,7 @@
     {
       "binding": "DB",
       "database_name": "kivistone-cms",
-      "database_id": "REPLACE_WITH_REAL_ID"
+      "database_id": "cf61bbcd-3f05-499c-bd4a-a7dccd1de559"
     }
   ],
   "r2_buckets": [

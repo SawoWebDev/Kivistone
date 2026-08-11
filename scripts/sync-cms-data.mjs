@@ -8,7 +8,7 @@
 // API directly, so it reuses whatever wrangler auth is already configured
 // on the machine/CI runner (no separate API token wiring needed here).
 
-import { execFileSync } from 'node:child_process';
+import { execSync } from 'node:child_process';
 import { writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
@@ -19,13 +19,15 @@ const rootDir = path.resolve(__dirname, '..');
 const DB_NAME = 'kivistone-cms';
 
 function runQuery(sql) {
+  // `sql` is always one of the two fixed literal query strings below (never
+  // derived from user input), so building a shell command line by hand here
+  // is safe — it sidesteps a Node/Windows bug where execFileSync fails to
+  // spawn .cmd files (EINVAL) and, separately, doesn't escape array args
+  // when shell:true is used on Windows.
+  const command = `npx wrangler d1 execute ${DB_NAME} --remote --json --command "${sql}"`;
   let stdout;
   try {
-    stdout = execFileSync(
-      'wrangler',
-      ['d1', 'execute', DB_NAME, '--remote', '--json', '--command', sql],
-      { encoding: 'utf-8', maxBuffer: 1024 * 1024 * 64, shell: process.platform === 'win32' }
-    );
+    stdout = execSync(command, { encoding: 'utf-8', maxBuffer: 1024 * 1024 * 64 });
   } catch (err) {
     console.error(`sync-cms-data: "wrangler d1 execute" failed for query:\n  ${sql}\n`);
     console.error(err.stderr ? err.stderr.toString() : err.message);

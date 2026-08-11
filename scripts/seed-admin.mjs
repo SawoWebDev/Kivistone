@@ -33,7 +33,7 @@ function main() {
   )}', '${sqlEscape(passwordHash)}')`;
 
   console.log('\nRun this once your D1 database exists (after `wrangler login`):\n');
-  console.log(`wrangler d1 execute ${DB_NAME} --remote --command "${sql.replace(/"/g, '\\"')}"`);
+  console.log(`npx wrangler d1 execute ${DB_NAME} --remote --command "${sql.replace(/"/g, '\\"')}"`);
   console.log('');
 }
 

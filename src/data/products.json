@@ -1,4 +1,27 @@
 {
+  "cups": [
+    {
+      "id": "r-111",
+      "name": "R-111 (Stone Cup Ø75x60)",
+      "sizeMm": "175x75x60",
+      "weightKg": 0.4,
+      "image": "/assets/products/cups/r-111.webp"
+    },
+    {
+      "id": "r-112",
+      "name": "R-112 (Stone Glass Ø60x85)",
+      "sizeMm": "60x60x85",
+      "weightKg": 2.8,
+      "image": "/assets/products/cups/r-112.webp"
+    },
+    {
+      "id": "r-200",
+      "name": "R-200 (Stone Shot Glass Ø35x85)",
+      "sizeMm": "35x35x85",
+      "weightKg": 3,
+      "image": "/assets/products/cups/r-200.webp"
+    }
+  ],
   "candle-holders": [
     {
       "id": "r-131",
@@ -36,66 +59,6 @@
       "image": "/assets/products/candle-holders/r-105.webp"
     }
   ],
-  "dish-plates": [
-    {
-      "id": "r-152",
-      "name": "R-152 (Stone Plate Small)",
-      "sizeMm": "150x220x25",
-      "weightKg": 2.8,
-      "image": "/assets/products/dish-plates/r-152.webp"
-    },
-    {
-      "id": "r-153-stone",
-      "name": "R-153 STONE (Stone Plate Large)",
-      "sizeMm": "200x305x15",
-      "weightKg": 2.8,
-      "image": "/assets/products/dish-plates/r-153-stone.webp"
-    },
-    {
-      "id": "r-153-d",
-      "name": "R-153 D (Cedar Wooden Tray)",
-      "sizeMm": "200x305x15",
-      "weightKg": 3.0,
-      "image": "/assets/products/dish-plates/r-153-d.webp"
-    },
-    {
-      "id": "r-153-a",
-      "name": "R-153 A (Aspen Wooden Tray)",
-      "sizeMm": "200x305x15",
-      "weightKg": 3.0,
-      "image": "/assets/products/dish-plates/r-153-a.webp"
-    },
-    {
-      "id": "r-153-h",
-      "name": "R-153 H (Hemlock Wooden Tray)",
-      "sizeMm": "200x305x15",
-      "weightKg": 3.0,
-      "image": "/assets/products/dish-plates/r-153-h.webp"
-    }
-  ],
-  "cups": [
-    {
-      "id": "r-111",
-      "name": "R-111 (Stone Cup Ø75x60)",
-      "sizeMm": "175x75x60",
-      "weightKg": 0.4,
-      "image": "/assets/products/cups/r-111.webp"
-    },
-    {
-      "id": "r-112",
-      "name": "R-112 (Stone Glass Ø60x85)",
-      "sizeMm": "60x60x85",
-      "weightKg": 2.8,
-      "image": "/assets/products/cups/r-112.webp"
-    },
-    {
-      "id": "r-200",
-      "name": "R-200 (Stone Shot Glass Ø35x85)",
-      "sizeMm": "35x35x85",
-      "weightKg": 3.0,
-      "image": "/assets/products/cups/r-200.webp"
-    }
-  ],
   "coolers": [
     {
       "id": "r-141",
@@ -131,6 +94,43 @@
       "sizeMm": "122x191x94",
       "weightKg": 3.2,
       "image": "/assets/products/coolers/r-206.webp"
+    }
+  ],
+  "dish-plates": [
+    {
+      "id": "r-152",
+      "name": "R-152 (Stone Plate Small)",
+      "sizeMm": "150x220x25",
+      "weightKg": 2.8,
+      "image": "/assets/products/dish-plates/r-152.webp"
+    },
+    {
+      "id": "r-153-stone",
+      "name": "R-153 STONE (Stone Plate Large)",
+      "sizeMm": "200x305x15",
+      "weightKg": 2.8,
+      "image": "/assets/products/dish-plates/r-153-stone.webp"
+    },
+    {
+      "id": "r-153-d",
+      "name": "R-153 D (Cedar Wooden Tray)",
+      "sizeMm": "200x305x15",
+      "weightKg": 3,
+      "image": "/assets/products/dish-plates/r-153-d.webp"
+    },
+    {
+      "id": "r-153-a",
+      "name": "R-153 A (Aspen Wooden Tray)",
+      "sizeMm": "200x305x15",
+      "weightKg": 3,
+      "image": "/assets/products/dish-plates/r-153-a.webp"
+    },
+    {
+      "id": "r-153-h",
+      "name": "R-153 H (Hemlock Wooden Tray)",
+      "sizeMm": "200x305x15",
+      "weightKg": 3,
+      "image": "/assets/products/dish-plates/r-153-h.webp"
     }
   ],
   "aroma-cups": [
