@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from './AuthContext.jsx';
+import Button from '../components/Button/Button.jsx';
 import './admin.css';
 
 export default function Login() {
@@ -35,12 +36,12 @@ export default function Login() {
     <div className="login-page">
       <div className="login-card">
         <div className="login-header">
-          <div className="login-mark">K</div>
-          <h1 className="login-title">Kivistone CMS</h1>
-          <p className="login-subtitle">Sign in to manage products, categories and site content.</p>
+          <h1 className="login-title">
+            <span className="logo-text">Kivi<span className="logo-stone">stone</span></span>
+          </h1>
         </div>
 
-        <form onSubmit={handleSubmit}>
+        <form className="login-form" onSubmit={handleSubmit}>
           <div className="form-group">
             <label className="form-label" htmlFor="login-username">Username</label>
             <input
@@ -86,9 +87,9 @@ export default function Login() {
             </div>
           )}
 
-          <button type="submit" className="btn btn-primary login-submit" disabled={signingIn}>
+          <Button type="submit" className="login-submit" disabled={signingIn}>
             {signingIn ? 'Signing in…' : 'Login'}
-          </button>
+          </Button>
         </form>
       </div>
     </div>

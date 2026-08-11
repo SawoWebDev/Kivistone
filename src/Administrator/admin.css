@@ -309,7 +309,11 @@
 }
 
 /* ── Buttons ─────────────────────────────────────────────────────────── */
-.btn {
+/* Scoped to .admin-shell (not a bare .btn) so these don't collide with the
+   public site's own .btn/.btn-gold (src/components/Button/Button.css),
+   which the login page renders directly to match kivistone.com's look —
+   .login-page sits outside .admin-shell, so it's untouched by this block. */
+.admin-shell .btn {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -325,31 +329,31 @@
   color: inherit;
 }
 
-.btn-primary {
+.admin-shell .btn-primary {
   background: var(--a-brand);
   color: #fff;
 }
 
-.btn-primary:hover { background: var(--a-brand-dark); }
+.admin-shell .btn-primary:hover { background: var(--a-brand-dark); }
 
-.btn-ghost {
+.admin-shell .btn-ghost {
   background: var(--a-surface);
   border-color: var(--a-border);
   color: var(--a-text);
 }
 
-.btn-ghost:hover { background: var(--a-surface-2); }
+.admin-shell .btn-ghost:hover { background: var(--a-surface-2); }
 
-.btn-danger {
+.admin-shell .btn-danger {
   background: var(--a-danger);
   color: #fff;
 }
 
-.btn-danger:hover { background: #93321f; }
+.admin-shell .btn-danger:hover { background: #93321f; }
 
-.btn-sm { padding: 6px 11px; font-size: 0.78rem; }
+.admin-shell .btn-sm { padding: 6px 11px; font-size: 0.78rem; }
 
-.btn:disabled { opacity: 0.6; cursor: not-allowed; }
+.admin-shell .btn:disabled { opacity: 0.6; cursor: not-allowed; }
 
 .icon-btn {
   width: 30px;
@@ -1074,60 +1078,106 @@
 }
 
 /* ── Login page ──────────────────────────────────────────────────────── */
+/* Reuses the exact treatment of the public site's dark panels (see
+   .contact-band and .form-card in Contact.css/ContactForm.css) instead of
+   the admin dashboard's independent palette above, so the login screen
+   looks like it belongs to kivistone.com, not a generic back-office. Page
+   ground is the same brushed-gunmetal-with-glare fill as .btn-gold and
+   .contact-band, just darker/more black per the black-with-glare brief;
+   the card on top is the site's dark form-card treatment verbatim. */
 .login-page {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--a-sidebar-bg);
   padding: 20px;
+  font-family: var(--font-body);
+  background:
+    radial-gradient(30% 45% at 85% -5%, rgba(255,255,255,0.22) 0%, rgba(255,255,255,0.08) 30%, rgba(255,255,255,0) 60%),
+    radial-gradient(40% 55% at 8% 105%, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0) 60%),
+    linear-gradient(155deg, #050505 0%, #161616 45%, #0a0a0a 100%);
 }
 
 .login-card {
   width: 100%;
   max-width: 380px;
-  background: var(--a-surface);
-  border-radius: 14px;
+  background: radial-gradient(55% 45% at 20% -10%, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0) 65%), var(--bg-dark-2);
+  border: 1px solid var(--divider-dark);
+  border-radius: 16px;
   padding: 34px 30px;
-  box-shadow: 0 30px 60px -20px rgba(0,0,0,0.5);
+  box-shadow: var(--shadow-lg);
 }
 
 .login-header {
   text-align: center;
-  margin-bottom: 24px;
+  margin-bottom: 28px;
 }
 
-.login-mark {
-  width: 48px;
-  height: 48px;
-  margin: 0 auto 14px;
-  border-radius: 12px;
-  background: var(--a-brand);
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Red Hat Display', sans-serif;
-  font-weight: 700;
-  font-size: 1.3rem;
-}
-
+/* Same lockup as the site's .logo (Header.css/Footer.css): uppercase
+   wordmark, "stone" in the gold accent, a drawn gold dot — not a font glyph
+   dot, so its size/position stay exact instead of drifting with metrics. */
 .login-title {
-  margin: 0 0 6px;
-  font-family: 'Red Hat Display', sans-serif;
-  font-size: 1.3rem;
-  font-weight: 700;
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.8rem;
+  letter-spacing: 0.015em;
+  color: var(--ink-inv);
+  display: inline-flex;
+  align-items: center;
+}
+.login-title .logo-text { text-transform: uppercase; }
+.login-title .logo-stone { color: var(--gold); }
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
 }
 
-.login-subtitle {
-  margin: 0;
-  color: var(--a-text-2);
-  font-size: 0.82rem;
+.login-page .form-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted-inv);
+}
+
+.login-page .form-input {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  color: var(--ink-inv);
+  background: var(--field-dark);
+  border: 1px solid var(--divider-dark);
+  border-radius: 10px;
+  padding: 0.85rem 1rem;
+  transition: border-color .15s ease, background .15s ease, box-shadow .15s ease;
+}
+
+.login-page .form-input::placeholder { color: var(--faint-inv); }
+
+.login-page .form-input:hover {
+  border-color: var(--accent);
+  background: var(--field-dark-hover);
+}
+
+.login-page .form-input:focus {
+  outline: none;
+  border-color: var(--gold);
+  background: var(--field-dark-hover);
+  box-shadow: 0 0 0 3px rgba(125,128,132,0.3);
+}
+
+.login-page .input-eye-btn { color: var(--muted-inv); }
+.login-page .input-eye-btn:hover { color: var(--ink-inv); }
+
+.login-page .alert-error {
+  background: rgba(156,78,64,0.16);
+  color: var(--danger-inv);
 }
 
 .login-submit {
   width: 100%;
-  justify-content: center;
   margin-top: 6px;
 }
 
