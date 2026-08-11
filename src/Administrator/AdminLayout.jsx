@@ -60,8 +60,9 @@ export default function AdminLayout() {
       <aside className={`admin-sidebar${sidebarOpen ? ' sidebar-open' : ''}`}>
         <div className="sidebar-brand">
           <Link to="/" target="_blank" rel="noopener noreferrer" className="sidebar-brand-link">
-            <span className="sidebar-brand-mark">K</span>
-            <span className="sidebar-brand-name">Kivistone</span>
+            <span className="sidebar-brand-name">
+              <span className="logo-text">Kivi<span className="logo-stone">stone</span></span>
+            </span>
           </Link>
         </div>
 

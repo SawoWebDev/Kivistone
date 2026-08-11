@@ -1,35 +1,39 @@
 /*
-  Admin CMS stylesheet — dark sidebar + light content area, a clean neutral
-  admin palette independent of the public site's brand tokens (see
-  src/styles/theme.css) and independent of SAWO/REACT_SITE's admin theme.
+  Admin CMS stylesheet. Tokens below (--a-*) are all mapped onto the public
+  site's own design tokens (src/styles/theme.css) rather than an independent
+  admin palette — warm cream surfaces, near-black ink, the neutral
+  steel-gray accent, Red Hat Display/Onest — so the whole back office reads
+  as kivistone.com, not a generic dashboard. Almost every rule below reads
+  through these variables, so retheming happens here rather than per-rule.
 */
 
 .admin-shell,
 .login-page {
-  --a-bg: #f4f5f7;
+  --a-bg: var(--card);
   --a-surface: #ffffff;
-  --a-surface-2: #f0f1f4;
-  --a-border: #e2e4e9;
-  --a-text: #1b1e27;
-  --a-text-2: #565a68;
-  --a-text-3: #8b8fa0;
-  --a-brand: #2f6f5e;
-  --a-brand-dark: #234f43;
-  --a-brand-rgb: 47, 111, 94;
-  --a-danger: #b6432f;
-  --a-danger-bg: #fbeae6;
-  --a-success: #1f7a4d;
-  --a-success-bg: #e6f4ec;
+  --a-surface-2: #F6F4EC;
+  --a-border: var(--hairline);
+  --a-text: var(--ink);
+  --a-text-2: var(--ink-secondary);
+  --a-text-3: var(--muted);
+  --a-brand: var(--gold-deep);
+  --a-brand-dark: var(--ink);
+  --a-brand-rgb: 85, 88, 92;
+  --a-danger: var(--danger);
+  --a-danger-bg: rgba(156,78,64,0.1);
+  --a-success: #4B7A5C;
+  --a-success-bg: rgba(75,122,92,0.12);
   --a-warning: #a5680c;
   --a-info: #2a5fa5;
-  --a-sidebar-bg: #161a17;
-  --a-sidebar-border: #262b27;
-  --a-sidebar-text: #cfd3cf;
-  --a-sidebar-text-dim: #8b9088;
-  --a-radius: 10px;
-  --a-radius-sm: 6px;
-  --a-shadow: 0 1px 2px rgba(20,20,20,0.04), 0 12px 28px -14px rgba(20,20,20,0.18);
-  --a-font: 'Onest', 'Red Hat Display', system-ui, sans-serif;
+  --a-sidebar-bg: var(--bg-dark);
+  --a-sidebar-border: var(--divider-dark);
+  --a-sidebar-text: var(--muted-inv);
+  --a-sidebar-text-dim: var(--faint-inv);
+  --a-radius: 14px;
+  --a-radius-sm: 8px;
+  --a-shadow: var(--shadow);
+  --a-font: var(--font-body);
+  --a-font-display: var(--font-display);
   font-family: var(--a-font);
   color: var(--a-text);
 }
@@ -41,9 +45,9 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  color: #8b8fa0;
-  font-family: 'Onest', system-ui, sans-serif;
-  background: #f4f5f7;
+  color: var(--muted);
+  font-family: var(--font-body);
+  background: var(--card);
 }
 
 /* ── Shell layout ────────────────────────────────────────────────────── */
@@ -83,24 +87,14 @@
   color: var(--a-sidebar-text);
 }
 
-.sidebar-brand-mark {
-  width: 32px;
-  height: 32px;
-  border-radius: 8px;
-  background: var(--a-brand);
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  font-family: 'Red Hat Display', sans-serif;
-}
-
 .sidebar-brand-name {
-  font-weight: 700;
-  font-size: 0.95rem;
-  letter-spacing: 0.02em;
+  font-family: var(--a-font-display);
+  font-weight: 800;
+  font-size: 1.05rem;
+  letter-spacing: 0.015em;
 }
+.sidebar-brand-name .logo-text { text-transform: uppercase; }
+.sidebar-brand-name .logo-stone { color: var(--gold); }
 
 .sidebar-nav {
   flex: 1;
@@ -137,7 +131,7 @@
 
 .sidebar-nav a.active {
   background: var(--a-brand);
-  color: #fff;
+  color: var(--ink-inv);
 }
 
 .sidebar-footer {
@@ -160,7 +154,7 @@
   height: 34px;
   border-radius: 50%;
   background: var(--a-brand-dark);
-  color: #fff;
+  color: var(--ink-inv);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -170,7 +164,7 @@
 }
 
 .sidebar-footer-username {
-  color: #fff;
+  color: var(--ink-inv);
   font-size: 0.85rem;
   font-weight: 600;
 }
@@ -208,7 +202,7 @@
 }
 
 .admin-page-title {
-  font-family: 'Red Hat Display', sans-serif;
+  font-family: var(--a-font-display);
   font-size: 1.4rem;
   font-weight: 700;
   margin: 0;
@@ -294,7 +288,7 @@
   font-size: 1.35rem;
   font-weight: 700;
   line-height: 1.2;
-  font-family: 'Red Hat Display', sans-serif;
+  font-family: var(--a-font-display);
 }
 
 .metric-label {
@@ -331,7 +325,7 @@
 
 .admin-shell .btn-primary {
   background: var(--a-brand);
-  color: #fff;
+  color: var(--ink-inv);
 }
 
 .admin-shell .btn-primary:hover { background: var(--a-brand-dark); }
@@ -346,10 +340,10 @@
 
 .admin-shell .btn-danger {
   background: var(--a-danger);
-  color: #fff;
+  color: var(--ink-inv);
 }
 
-.admin-shell .btn-danger:hover { background: #93321f; }
+.admin-shell .btn-danger:hover { background: #7A3D33; }
 
 .admin-shell .btn-sm { padding: 6px 11px; font-size: 0.78rem; }
 
@@ -540,7 +534,7 @@
 .weight-toggle-btn.active {
   background: var(--a-brand);
   border-color: var(--a-brand);
-  color: #fff;
+  color: var(--ink-inv);
 }
 
 /* ── Dropzone ────────────────────────────────────────────────────────── */
@@ -615,7 +609,7 @@
 .pill-filter.active {
   background: var(--a-brand);
   border-color: var(--a-brand);
-  color: #fff;
+  color: var(--ink-inv);
 }
 
 /* ── Pill input (specs tags) ─────────────────────────────────────────── */
@@ -1196,7 +1190,7 @@
     gap: 12px;
     padding: 12px 16px;
     background: var(--a-sidebar-bg);
-    color: #fff;
+    color: var(--ink-inv);
     position: sticky;
     top: 0;
     z-index: 60;
@@ -1205,7 +1199,7 @@
   .admin-topbar-hamburger {
     background: none;
     border: none;
-    color: #fff;
+    color: var(--ink-inv);
     font-size: 1.1rem;
     cursor: pointer;
   }
