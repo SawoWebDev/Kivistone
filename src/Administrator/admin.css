@@ -73,16 +73,29 @@
 }
 
 /* ── Sidebar ─────────────────────────────────────────────────────────── */
+/* Brushed-gunmetal fill — same three-stop diagonal sweep and glare
+   mechanic as the public site's .btn-gold (see Button.css), just applied
+   to a whole panel instead of a pill, so the admin shell reads as an
+   extension of kivistone.com rather than a generic dashboard. */
 .admin-sidebar {
   width: 240px;
   flex-shrink: 0;
-  background: var(--a-sidebar-bg);
+  background-image: linear-gradient(165deg, #47474a 0%, #262628 42%, #121212 100%);
   border-right: 1px solid var(--a-sidebar-border);
   display: flex;
   flex-direction: column;
   position: sticky;
   top: 0;
   height: 100vh;
+  overflow: hidden;
+}
+
+.admin-sidebar::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: linear-gradient(115deg, transparent 25%, rgba(255,255,255,0.05) 45%, transparent 65%);
 }
 
 .sidebar-brand {
@@ -141,8 +154,32 @@
 }
 
 .sidebar-nav a.active {
-  background: var(--a-brand);
+  position: relative;
+  overflow: hidden;
+  background-image: linear-gradient(135deg, #75787c 0%, #55585c 45%, #302f31 100%);
   color: var(--ink-inv);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.22), 0 1px 3px rgba(0,0,0,0.4);
+}
+
+.sidebar-nav a.active::after,
+.sidebar-logout-btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: linear-gradient(115deg, transparent 35%, rgba(255,255,255,0.35) 50%, transparent 65%);
+  transform: translateX(-130%);
+}
+
+.sidebar-nav a.active:hover::after,
+.sidebar-logout-btn:hover::after {
+  transform: translateX(130%);
+  transition: transform 0.7s ease;
+}
+
+.sidebar-nav a.active:not(:hover)::after,
+.sidebar-logout-btn:not(:hover)::after {
+  transition: transform 0s;
 }
 
 .sidebar-footer {
@@ -171,8 +208,15 @@
   width: 34px;
   height: 34px;
   border-radius: 50%;
-  background: var(--a-brand-dark);
-  color: var(--ink-inv);
+  background-image: radial-gradient(circle at 32% 26%, #ededed 0%, #c7c7c7 24%, #8c8c8c 58%, #4a4c4f 100%);
+  color: #1c1c1c;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.35);
+  border: 1px solid rgba(255,255,255,0.4);
+  box-shadow:
+    inset 0 1px 1px rgba(255,255,255,0.6),
+    inset 0 -2px 3px rgba(0,0,0,0.35),
+    0 0 0 2px rgba(199,199,199,0.3),
+    0 2px 5px rgba(0,0,0,0.45);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -192,15 +236,25 @@
   font-size: 0.72rem;
 }
 
-.sidebar-logout-btn {
+/* Specificity note: .admin-shell .btn-ghost (below) sets its own
+   background/border/color at (0,2,0) and comes later in the cascade, so
+   the logout button — which is also a .btn.btn-ghost — needs a 3-class
+   selector here to reliably win instead of silently falling back to the
+   plain ghost fill. */
+.admin-shell .sidebar-footer .sidebar-logout-btn {
+  position: relative;
+  overflow: hidden;
   width: 100%;
   justify-content: center;
   color: var(--a-sidebar-text);
-  border-color: var(--a-sidebar-border);
+  background-image: linear-gradient(135deg, #55585c 0%, #38393b 50%, #1c1c1d 100%);
+  border-color: rgba(255,255,255,0.14);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.16), 0 1px 2px rgba(0,0,0,0.35);
 }
 
-.sidebar-logout-btn:hover {
-  background: rgba(255,255,255,0.08);
+.admin-shell .sidebar-footer .sidebar-logout-btn:hover {
+  background-image: linear-gradient(135deg, #6b6e72 0%, #454648 50%, #1c1c1d 100%);
+  border-color: rgba(255,255,255,0.24);
 }
 
 .sidebar-overlay {
