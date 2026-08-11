@@ -6,7 +6,7 @@
   the sync-cms-data script from the D1 database (see src/data/products.js
   for the identical pattern already in place for products).
 */
-import categoriesData from './categories.json';
+import categoriesData from './categories.json' with { type: 'json' };
 
 export const categories = categoriesData;
 
