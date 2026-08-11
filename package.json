@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "dev:cms": "wrangler pages dev --proxy 5173 -- npm run dev",
+    "dev:cms": "npx wrangler pages dev --proxy 5173 -- npm run dev",
     "prebuild": "npm run sync-cms && npm run generate-sitemap",
     "build": "vite build",
     "postbuild": "node scripts/prerender.mjs",
