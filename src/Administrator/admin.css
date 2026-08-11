@@ -158,6 +158,13 @@
   align-items: center;
   gap: 10px;
   padding: 6px 4px;
+  border-radius: var(--a-radius-sm);
+  text-decoration: none;
+  transition: background 0.15s;
+}
+
+.sidebar-footer-card:hover {
+  background: rgba(255,255,255,0.06);
 }
 
 .sidebar-footer-avatar {
@@ -375,6 +382,18 @@
 
 .icon-btn.danger { color: var(--a-danger); }
 .icon-btn:hover { background: #fff; }
+
+.table-row-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.table-row-actions .icon-btn {
+  background: var(--a-surface-2);
+  border-color: var(--a-border);
+}
+
+.table-row-actions .icon-btn:hover { background: var(--a-surface); }
 
 .link-btn {
   background: none;

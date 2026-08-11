@@ -21,6 +21,8 @@ const AdminProducts = lazy(() => import('./Administrator/Products.jsx'));
 const AdminTaxonomy = lazy(() => import('./Administrator/Taxonomy.jsx'));
 const AdminAnalytics = lazy(() => import('./Administrator/Analytics.jsx'));
 const AdminLogs = lazy(() => import('./Administrator/Logs.jsx'));
+const AdminUsers = lazy(() => import('./Administrator/Users.jsx'));
+const AdminProfile = lazy(() => import('./Administrator/Profile.jsx'));
 
 export default function App() {
   return (
@@ -51,6 +53,8 @@ export default function App() {
             <Route path="categories" element={<AdminTaxonomy />} />
             <Route path="analytics" element={<AdminAnalytics />} />
             <Route path="logs" element={<AdminLogs />} />
+            <Route path="users" element={<AdminUsers />} />
+            <Route path="profile" element={<AdminProfile />} />
             <Route index element={<Navigate to="dashboard" replace />} />
           </Route>
         </Routes>

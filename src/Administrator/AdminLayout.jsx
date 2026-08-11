@@ -10,10 +10,11 @@ const NAV_ITEMS = [
   { to: '/admin/categories', label: 'Categories', icon: 'fa-solid fa-layer-group' },
   { to: '/admin/analytics', label: 'Analytics', icon: 'fa-solid fa-chart-line' },
   { to: '/admin/logs', label: 'Logs', icon: 'fa-solid fa-file-lines' },
+  { to: '/admin/users', label: 'Users', icon: 'fa-solid fa-users' },
 ];
 
 export default function AdminLayout() {
-  const { username, logout } = useAuth();
+  const { username, displayName, logout } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -35,7 +36,9 @@ export default function AdminLayout() {
   };
 
   const current = NAV_ITEMS.find((item) => location.pathname.startsWith(item.to));
-  const initial = (username || '?').charAt(0).toUpperCase();
+  const pageTitle = current ? current.label : location.pathname.startsWith('/admin/profile') ? 'Profile' : 'Admin';
+  const displayLabel = displayName || username;
+  const initial = (displayLabel || '?').charAt(0).toUpperCase();
 
   return (
     <div className="admin-shell">
@@ -48,7 +51,7 @@ export default function AdminLayout() {
         >
           <i className={sidebarOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars'} />
         </button>
-        <span className="admin-topbar-title">{current ? current.label : 'Admin'}</span>
+        <span className="admin-topbar-title">{pageTitle}</span>
       </header>
 
       <div
@@ -80,13 +83,13 @@ export default function AdminLayout() {
         </nav>
 
         <div className="sidebar-footer">
-          <div className="sidebar-footer-card">
+          <Link to="/admin/profile" className="sidebar-footer-card">
             <div className="sidebar-footer-avatar">{initial}</div>
             <div className="sidebar-footer-user">
-              <div className="sidebar-footer-username">{username}</div>
+              <div className="sidebar-footer-username">{displayLabel}</div>
               <div className="sidebar-footer-role">Administrator</div>
             </div>
-          </div>
+          </Link>
           <button type="button" className="btn btn-ghost sidebar-logout-btn" onClick={handleLogout}>
             <i className="fa-solid fa-right-from-bracket fa-flip-horizontal" />
             Logout
@@ -96,7 +99,7 @@ export default function AdminLayout() {
 
       <main className="admin-main">
         <div className="admin-page-header">
-          <h1 className="admin-page-title">{current ? current.label : 'Admin'}</h1>
+          <h1 className="admin-page-title">{pageTitle}</h1>
         </div>
         <div className="admin-main-content">
           <Suspense fallback={<div className="admin-content-loading"><i className="fa-solid fa-circle-notch fa-spin" /></div>}>

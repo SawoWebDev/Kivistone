@@ -1,10 +1,9 @@
 // src/Administrator/AuthContext.jsx
 //
 // Small session context wrapping /api/auth/me + login/logout, mounted once
-// around the /admin/* route tree. Kivistone has a single admin account (no
-// roles/capabilities), so unlike a bigger CMS this only ever needs to answer
-// "is someone logged in, and as whom" — ProtectedRoute and AdminLayout both
-// read off this.
+// around the /admin/* route tree. All admin accounts have equal access (no
+// roles/capabilities), so this only ever needs to answer "is someone logged
+// in, and as whom" — ProtectedRoute and AdminLayout both read off this.
 import { createContext, useCallback, useContext, useEffect, useState } from 'react';
 import { request } from './api.js';
 
@@ -12,14 +11,17 @@ const AuthContext = createContext(null);
 
 export function AuthProvider({ children }) {
   const [username, setUsername] = useState(null);
+  const [displayName, setDisplayName] = useState(null);
   const [loading, setLoading] = useState(true);
 
   const refresh = useCallback(async () => {
     try {
       const data = await request('/api/auth/me');
       setUsername(data?.username || null);
+      setDisplayName(data?.displayName || null);
     } catch {
       setUsername(null);
+      setDisplayName(null);
     } finally {
       setLoading(false);
     }
@@ -35,6 +37,7 @@ export function AuthProvider({ children }) {
       body: { username: user, password },
     });
     setUsername(data?.username || user);
+    setDisplayName(data?.displayName || null);
     return data;
   }, []);
 
@@ -43,11 +46,12 @@ export function AuthProvider({ children }) {
       await request('/api/auth/logout', { method: 'POST' });
     } finally {
       setUsername(null);
+      setDisplayName(null);
     }
   }, []);
 
   return (
-    <AuthContext.Provider value={{ username, loading, login, logout, refresh }}>
+    <AuthContext.Provider value={{ username, displayName, loading, login, logout, refresh }}>
       {children}
     </AuthContext.Provider>
   );

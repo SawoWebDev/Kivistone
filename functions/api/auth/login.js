@@ -32,7 +32,7 @@ export async function onRequestPost({ request, env }) {
     .bind(token, row.username)
     .run();
 
-  return new Response(JSON.stringify({ username: row.username }), {
+  return new Response(JSON.stringify({ username: row.username, displayName: row.display_name || null }), {
     status: 200,
     headers: {
       "Content-Type": "application/json",
