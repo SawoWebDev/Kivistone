@@ -47,6 +47,22 @@ function rankedCounts(rows, getKey, limit = 10) {
     .map(([key, count]) => ({ key, count }));
 }
 
+// Same ranking/slicing as rankedCounts, but over an already-extracted list of
+// values rather than raw rows — used for session-derived tallies (entry/exit
+// pages), where the thing being counted is "this session's first/last
+// page_path", not a per-row field.
+function rankedValues(values, limit = 10) {
+  const counts = new Map();
+  values.forEach((v) => {
+    const key = v || 'Unknown';
+    counts.set(key, (counts.get(key) || 0) + 1);
+  });
+  return [...counts.entries()]
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, limit)
+    .map(([key, count]) => ({ key, count }));
+}
+
 function todayIso() {
   const d = new Date();
   return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
@@ -76,6 +92,11 @@ export function computeStats(rows, range = {}) {
     if (!sessions.has(r.session_id)) sessions.set(r.session_id, []);
     sessions.get(r.session_id).push(r);
   });
+  // Sort each session's rows chronologically so "first row" / "last row"
+  // below are actually entry/exit, not just insertion order from the API.
+  sessions.forEach((sessionRows) => {
+    sessionRows.sort((a, b) => new Date(a.timestamp) - new Date(b.timestamp));
+  });
 
   const pageViews = list.length;
   const uniqueVisitors = sessions.size;
@@ -100,6 +121,33 @@ export function computeStats(rows, range = {}) {
   const topCountries = rankedCounts(list, (r) => r.country)
     .map(({ key, count }) => ({ country: key, count }));
 
+  // Device/browser/OS breakdowns — same row-level tally as topPages/
+  // topReferrers/topCountries above (one row = one pageview = one vote).
+  const browsers = rankedCounts(list, (r) => r.browser)
+    .map(({ key, count }) => ({ browser: key, count }));
+
+  const os = rankedCounts(list, (r) => r.os)
+    .map(({ key, count }) => ({ os: key, count }));
+
+  const deviceTypes = rankedCounts(list, (r) => r.device_type)
+    .map(({ key, count }) => ({ device: key, count }));
+
+  const regions = rankedCounts(list, (r) => r.region)
+    .map(({ key, count }) => ({ region: key, count }));
+
+  const cities = rankedCounts(list, (r) => r.city)
+    .map(({ key, count }) => ({ city: key, count }));
+
+  // Entry/exit pages — per session (rows sorted above), the first/last
+  // page_path is what that session landed on / left from. Tallying those
+  // (rather than every row) answers "what page do sessions most commonly
+  // start/end on", not just "which page has the most views".
+  const entryPages = rankedValues([...sessions.values()].map((sessionRows) => sessionRows[0]?.page_path))
+    .map(({ key, count }) => ({ path: key, count }));
+
+  const exitPages = rankedValues([...sessions.values()].map((sessionRows) => sessionRows[sessionRows.length - 1]?.page_path))
+    .map(({ key, count }) => ({ path: key, count }));
+
   return {
     pageViews,
     uniqueVisitors,
@@ -109,5 +157,12 @@ export function computeStats(rows, range = {}) {
     topPages,
     topReferrers,
     topCountries,
+    browsers,
+    os,
+    deviceTypes,
+    regions,
+    cities,
+    entryPages,
+    exitPages,
   };
 }
