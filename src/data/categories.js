@@ -7,7 +7,7 @@ export const categories = [
     slug: 'candle-holders',
     title: 'Candle Holders',
     seed: 'kivistone-candle',
-    image: '/assets/products/candle-holders/r-125.webp',
+    image: '/assets/products/covers/candle-holders.webp',
     feature: true,
     description:
       'Fire and stone, two of nature’s fundamental elements put together into a harmonious yet impressive blend. Whether the occasion is official or festive, Kivistone candle holders won’t be left unnoticed.',
@@ -18,7 +18,7 @@ export const categories = [
     slug: 'dish-plates',
     title: 'Dish Plates',
     seed: 'kivistone-plates',
-    image: '/assets/products/dish-plates/r-153-stone.webp',
+    image: '/assets/products/covers/dish-plates.webp',
     feature: true,
     description:
       'Soapstone is a good conductor of heat and withstands high temperature without any damage. As a natural material it emits no harmful chemicals and does not change the taste of the food heated above it, perfect for sizzling plates and hot dishes.',
@@ -29,7 +29,7 @@ export const categories = [
     slug: 'cups',
     title: 'Cups',
     seed: 'kivistone-cups',
-    image: '/assets/products/cups/r-112.webp',
+    image: '/assets/products/covers/cups.webp',
     description:
       'For a cool drink after the sauna. Kivistone stone cups, glasses, and shot glasses are cut from a single block of soapstone and keep a cold drink refreshingly cool for longer than glass or ceramic ever could.',
     short: 'For a cool drink after sauna, Kivistone stone cups, glasses, and shot glasses are cut from a single block of soapstone. The stone’s natural mass holds onto cold far longer than glass or ceramic, so whatever you pour stays refreshingly chilled to the last sip.',
@@ -39,7 +39,7 @@ export const categories = [
     slug: 'coolers',
     title: 'Coolers',
     seed: 'kivistone-coolers',
-    image: '/assets/products/coolers/r-92.webp',
+    image: '/assets/products/covers/coolers.webp',
     description:
       'Soapstone is naturally non-porous, so it preserves and contains liquids cleanly, and it is an excellent conductor of temperature. Chilled in the fridge, a Kivistone cooler holds the cold and keeps a bottle or can resting on it refreshingly cool for hours.',
     short: 'Nordic-style coolers built for strong cold retention, recommended for cooling down after the sauna. Soapstone is naturally non-porous, so it holds and preserves liquids cleanly without absorbing odors or flavors. Chilled in the fridge, a Kivistone cooler holds the cold and keeps a bottle, can, or shot glass resting on it refreshingly cool for hours, ideal for wine, spirits, and canned drinks alike.',
@@ -49,7 +49,7 @@ export const categories = [
     slug: 'aroma-cups',
     title: 'Aroma Cups',
     seed: 'kivistone-aroma',
-    image: '/assets/products/aroma-cups/r-160.webp',
+    image: '/assets/products/covers/aroma-cups.webp',
     description:
       'Designed to add gentle humidity with essential oils, Kivistone aroma cups sit securely between the rocks on top of the sauna heater, or on a tealight as a table warmer, releasing fragrance slowly rather than burning it off.',
     short: 'Enjoy the relaxing, vitalizing effect of aromatic oils with a Kivistone aroma cup or scent warmer. Place an aroma cup on the sauna heater’s stones for happy sauna spirits, or set a table warmer over a tealight, a candle holder with a basin where scented oils evaporate slowly, filling the room with fragrance rather than burning it off. Aroma oils are available on request as a separate order.',
@@ -59,7 +59,7 @@ export const categories = [
     slug: 'bathroom-essentials',
     title: 'Bathroom Essentials',
     seed: 'kivistone-bathroom',
-    image: '/assets/products/bathroom-essentials/r-116.webp',
+    image: '/assets/products/covers/bathroom-essentials.webp',
     description:
       'Soapstone’s high thermal mass absorbs heat and releases it slowly, which is exactly what makes it useful past the sauna room too, spa stones for a hot stone treatment, and a soap holder that stays put on a wet bathroom counter.',
     short: 'Soapstone’s natural properties are just as useful outside the sauna room. A Kivistone spa stones set has a high thermal mass that absorbs heat and releases it slowly, perfect for a hot stone treatment, while a Kivistone soap holder is heavy, non-porous, and stays put on a wet counter. Every piece is cut and hand-finished from the same Finnish soapstone as the rest of the collection.',
