@@ -2,6 +2,7 @@
 import { Suspense, useEffect, useState } from 'react';
 import { Link, NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from './AuthContext.jsx';
+import usePageMeta from '../hooks/usePageMeta.js';
 import './admin.css';
 
 const NAV_ITEMS = [
@@ -18,6 +19,8 @@ export default function AdminLayout() {
   const navigate = useNavigate();
   const location = useLocation();
   const [sidebarOpen, setSidebarOpen] = useState(false);
+
+  usePageMeta({ title: 'Kivistone Admin', noIndex: true });
 
   useEffect(() => {
     setSidebarOpen(false);

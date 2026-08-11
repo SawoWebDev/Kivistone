@@ -3,11 +3,14 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from './AuthContext.jsx';
 import Button from '../components/Button/Button.jsx';
+import usePageMeta from '../hooks/usePageMeta.js';
 import './admin.css';
 
 export default function Login() {
   const { username, loading, login } = useAuth();
   const navigate = useNavigate();
+
+  usePageMeta({ title: 'Admin Login — Kivistone', noIndex: true });
 
   const [form, setForm] = useState({ username: '', password: '' });
   const [showPassword, setShowPassword] = useState(false);
