@@ -31,7 +31,7 @@ export default function AdminLayout() {
 
   const handleLogout = async () => {
     await logout();
-    navigate('/admin/login', { replace: true });
+    navigate('/login', { replace: true });
   };
 
   const current = NAV_ITEMS.find((item) => location.pathname.startsWith(item.to));
