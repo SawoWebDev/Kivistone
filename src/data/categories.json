@@ -1,0 +1,58 @@
+[
+  {
+    "slug": "candle-holders",
+    "title": "Candle Holders",
+    "seed": "kivistone-candle",
+    "image": "/assets/products/candle-holders/r-125.webp",
+    "feature": true,
+    "description": "Fire and stone, two of nature’s fundamental elements put together into a harmonious yet impressive blend. Whether the occasion is official or festive, Kivistone candle holders won’t be left unnoticed.",
+    "short": "Fire and stone have always been an intriguing mix, one that draws us back to the Stone Age. Brought together in a Kivistone candle holder, these two natural elements create a harmonious, hand-carved piece from genuine Finnish soapstone. Whether the occasion is formal or festive, a Kivistone candle holder stands out, filling its surroundings with a warm and cozy glow.",
+    "specs": ["Tealight & taper", "Flame safe", "Hand-finished"]
+  },
+  {
+    "slug": "dish-plates",
+    "title": "Dish Plates",
+    "seed": "kivistone-plates",
+    "image": "/assets/products/dish-plates/r-153-stone.webp",
+    "feature": true,
+    "description": "Soapstone is a good conductor of heat and withstands high temperature without any damage. As a natural material it emits no harmful chemicals and does not change the taste of the food heated above it, perfect for sizzling plates and hot dishes.",
+    "short": "Soapstone is a natural conductor of heat, so it withstands high temperatures without cracking or warping. As a completely natural material, it emits no harmful chemicals and never changes the taste of the food heated above it, making Kivistone dish plates perfect for sizzling plates and serving hot dishes straight from the oven or grill. Choose a stone plate on its own, or paired with a wooden tray in cedar, aspen, or hemlock.",
+    "specs": ["Oven & grill safe", "Holds heat", "Food-safe stone"]
+  },
+  {
+    "slug": "cups",
+    "title": "Cups",
+    "seed": "kivistone-cups",
+    "image": "/assets/products/cups/r-112.webp",
+    "description": "For a cool drink after the sauna. Kivistone stone cups, glasses, and shot glasses are cut from a single block of soapstone and keep a cold drink refreshingly cool for longer than glass or ceramic ever could.",
+    "short": "For a cool drink after sauna, Kivistone stone cups, glasses, and shot glasses are cut from a single block of soapstone. The stone’s natural mass holds onto cold far longer than glass or ceramic, so whatever you pour stays refreshingly chilled to the last sip.",
+    "specs": ["Single-block stone", "Holds the chill", "Dishwasher friendly"]
+  },
+  {
+    "slug": "coolers",
+    "title": "Coolers",
+    "seed": "kivistone-coolers",
+    "image": "/assets/products/coolers/r-92.webp",
+    "description": "Soapstone is naturally non-porous, so it preserves and contains liquids cleanly, and it is an excellent conductor of temperature. Chilled in the fridge, a Kivistone cooler holds the cold and keeps a bottle or can resting on it refreshingly cool for hours.",
+    "short": "Nordic-style coolers built for strong cold retention, recommended for cooling down after the sauna. Soapstone is naturally non-porous, so it holds and preserves liquids cleanly without absorbing odors or flavors. Chilled in the fridge, a Kivistone cooler holds the cold and keeps a bottle, can, or shot glass resting on it refreshingly cool for hours, ideal for wine, spirits, and canned drinks alike.",
+    "specs": ["Freezer ready", "Wine & spirits", "Strong cold retention"]
+  },
+  {
+    "slug": "aroma-cups",
+    "title": "Aroma Cups",
+    "seed": "kivistone-aroma",
+    "image": "/assets/products/aroma-cups/r-160.webp",
+    "description": "Designed to add gentle humidity with essential oils, Kivistone aroma cups sit securely between the rocks on top of the sauna heater, or on a tealight as a table warmer, releasing fragrance slowly rather than burning it off.",
+    "short": "Enjoy the relaxing, vitalizing effect of aromatic oils with a Kivistone aroma cup or scent warmer. Place an aroma cup on the sauna heater’s stones for happy sauna spirits, or set a table warmer over a tealight, a candle holder with a basin where scented oils evaporate slowly, filling the room with fragrance rather than burning it off. Aroma oils are available on request as a separate order.",
+    "specs": ["Heater-safe stone", "Tealight & sauna use", "Slow, even diffusion"]
+  },
+  {
+    "slug": "bathroom-essentials",
+    "title": "Bathroom Essentials",
+    "seed": "kivistone-bathroom",
+    "image": "/assets/products/bathroom-essentials/r-116.webp",
+    "description": "Soapstone’s high thermal mass absorbs heat and releases it slowly, which is exactly what makes it useful past the sauna room too, spa stones for a hot stone treatment, and a soap holder that stays put on a wet bathroom counter.",
+    "short": "Soapstone’s natural properties are just as useful outside the sauna room. A Kivistone spa stones set has a high thermal mass that absorbs heat and releases it slowly, perfect for a hot stone treatment, while a Kivistone soap holder is heavy, non-porous, and stays put on a wet counter. Every piece is cut and hand-finished from the same Finnish soapstone as the rest of the collection.",
+    "specs": ["Hot stone therapy", "Non-porous stone", "Hand-finished"]
+  }
+]
